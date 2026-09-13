@@ -1,75 +1,105 @@
-import { MapPin, Phone, MessageCircle } from "lucide-react";
+import { MapPin, Phone, MessageCircle, Clock, Shield } from "lucide-react";
 
 export default function AboutSection() {
   const waUrl =
-    "https://wa.me/6285204572677?text=Halo%20Kak%2C%20saya%20ingin%20bertanya%20tentang%20paket%20Jeep%20Ijen.";
+    "https://wa.me/6285204572677?text=Halo%20Jeep%20Ijen%2C%20saya%20ingin%20tanya%20informasi%20paket%20dan%20ketersediaan.";
 
   return (
-    <section id="tentang" className="py-16 sm:py-20 bg-base-light border-b border-base-border">
+    <section id="tentang" className="py-16 sm:py-20 lg:py-24 bg-base-subtle border-b border-base-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
-          {/* Left: About Text */}
-          <div className="lg:col-span-7 space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-wider text-accent">
-              Tentang Kami
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-charcoal tracking-tight">
-              Jeep Ijen Banyuwangi
+          {/* Left: About Text & Direct Action (7 cols) */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold text-charcoal-muted tracking-wide">
+              <span className="w-1.5 h-1.5 rounded-full bg-earth" />
+              <span>Tentang Usaha Kami</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl font-bold text-charcoal tracking-tight">
+              Usaha Jeep Lokal Berbasis di Banyuwangi
             </h2>
-            <p className="text-base sm:text-lg text-charcoal-muted leading-relaxed max-w-xl">
-              Kami melayani perjalanan Jeep untuk wisatawan yang ingin menjelajahi kawasan Ijen dan sekitarnya.
-            </p>
-            <div className="pt-2">
+
+            <div className="space-y-4 text-base text-charcoal-muted leading-relaxed">
+              <p>
+                Jeep Ijen adalah penyedia layanan sewa Jeep 4x4 lokal yang berbasis di Dusun Watu Ulo, Rejosari, Kecamatan Glagah, Banyuwangi. Kami fokus melayani perjalanan wisata para wisatawan yang ingin berkunjung ke kawasan Kawah Ijen.
+              </p>
+              <p>
+                Dengan didampingi sopir lokal yang terbiasa melintasi jalur pegunungan Ijen, kami memastikan perjalanan Anda berlangsung aman, tertib, dan menyenangkan. Hubungi kami langsung untuk berdiskusi mengenai jadwal dan kebutuhan perjalanan Anda.
+              </p>
+            </div>
+
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
               <a
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-olive hover:bg-olive-hover text-white text-sm font-bold transition-colors shadow-sm"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-olive hover:bg-olive-hover text-white text-sm font-semibold transition-all shadow-sm"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
-                <span>Hubungi Kami via WhatsApp</span>
+                <span>Hubungi Pemilik via WhatsApp</span>
+              </a>
+              <a
+                href="tel:085204572677"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg bg-base-white hover:bg-base-light border border-base-border text-charcoal text-sm font-medium transition-colors"
+              >
+                <Phone className="w-4 h-4 text-charcoal-light" />
+                <span>0852-0457-2677</span>
               </a>
             </div>
           </div>
 
-          {/* Right: Location & Contact Card */}
+          {/* Right: Verified Business Info Box (5 cols) */}
           <div className="lg:col-span-5">
-            <div className="rounded-xl border border-base-border bg-white p-6 sm:p-7 shadow-sm space-y-5">
+            <div className="rounded-xl border border-base-border bg-base-white p-7 sm:p-8 space-y-6 shadow-sm">
               
-              {/* Location */}
+              <div className="border-b border-base-border pb-4">
+                <p className="text-xs font-semibold text-charcoal-light uppercase tracking-wider">
+                  Informasi Usaha
+                </p>
+                <h3 className="text-lg font-bold text-charcoal mt-1">
+                  Jeep Ijen Banyuwangi
+                </h3>
+              </div>
+
+              {/* Address */}
               <div className="flex items-start gap-3.5">
-                <div className="w-9 h-9 rounded-lg bg-olive-soft text-olive flex items-center justify-center shrink-0 mt-0.5">
-                  <MapPin className="w-5 h-5" />
+                <div className="w-8 h-8 rounded-lg bg-base-sand text-charcoal flex items-center justify-center shrink-0 mt-0.5">
+                  <MapPin className="w-4 h-4 text-earth" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-charcoal-light">
-                    Alamat Usaha
-                  </p>
+                  <p className="text-xs font-semibold text-charcoal-light">Alamat Kantor / Garasi</p>
                   <p className="text-sm font-semibold text-charcoal mt-1 leading-snug">
                     Dusun Watu Ulo, Rejosari, Kecamatan Glagah, Kabupaten Banyuwangi, Jawa Timur
                   </p>
-                  <p className="text-xs text-charcoal-muted mt-1">Banyuwangi, Jawa Timur</p>
                 </div>
               </div>
 
-              {/* Contact */}
-              <div className="pt-4 border-t border-base-border/70 flex items-start gap-3.5">
-                <div className="w-9 h-9 rounded-lg bg-accent-soft text-accent flex items-center justify-center shrink-0 mt-0.5">
-                  <Phone className="w-5 h-5" />
+              {/* Service Area */}
+              <div className="flex items-start gap-3.5">
+                <div className="w-8 h-8 rounded-lg bg-base-sand text-charcoal flex items-center justify-center shrink-0 mt-0.5">
+                  <Shield className="w-4 h-4 text-olive" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-charcoal-light">
-                    WhatsApp & Telepon
+                  <p className="text-xs font-semibold text-charcoal-light">Wilayah Layanan</p>
+                  <p className="text-sm font-semibold text-charcoal mt-1 leading-snug">
+                    Kawasan Kawah Ijen, Pos Paltuding, dan titik temu Banyuwangi sekitarnya.
                   </p>
-                  <a
-                    href="tel:085204572677"
-                    className="text-base font-bold text-charcoal hover:text-accent transition-colors block mt-0.5"
-                  >
+                </div>
+              </div>
+
+              {/* WhatsApp Contact */}
+              <div className="flex items-start gap-3.5">
+                <div className="w-8 h-8 rounded-lg bg-base-sand text-charcoal flex items-center justify-center shrink-0 mt-0.5">
+                  <Phone className="w-4 h-4 text-earth" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-charcoal-light">Kontak Langsung</p>
+                  <p className="text-sm font-bold text-charcoal mt-1">
                     0852-0457-2677
-                  </a>
+                  </p>
                   <p className="text-xs text-charcoal-muted mt-0.5">
-                    Respon cepat untuk tanya paket dan ketersediaan
+                    Telepon & WhatsApp pemilik usaha
                   </p>
                 </div>
               </div>

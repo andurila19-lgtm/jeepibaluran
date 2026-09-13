@@ -13,95 +13,103 @@ export default function FaqSection() {
 
   const faqs: FaqItem[] = [
     {
-      q: "Bagaimana cara booking?",
-      a: "Silakan hubungi kami langsung melalui WhatsApp dengan menyertakan tanggal rencana keberangkatan Anda. Kami akan mengonfirmasi ketersediaan unit Jeep dan langkah pemesanannya.",
+      q: "Bagaimana cara melakukan pemesanan Jeep Ijen?",
+      a: "Pemesanan sangat mudah. Silakan hubungi kami langsung via WhatsApp di nomor 0852-0457-2677 dengan menyebutkan tanggal rencana perjalanan, jumlah orang, dan titik penjemputan. Kami akan mengonfirmasi ketersediaan unit dan panduan selanjutnya.",
     },
     {
-      q: "Berapa harga Jeep Ijen?",
-      a: "Silakan hubungi kami melalui WhatsApp untuk informasi terbaru mengenai harga paket perjalanan sesuai tanggal keberangkatan Anda.",
+      q: "Berapa tarif sewa Jeep ke Kawah Ijen?",
+      a: "Tarif kami sesuaikan dengan titik penjemputan (misal hotel/stasiun Banyuwangi atau meeting point tertentu) serta tanggal perjalanan Anda. Silakan tanyakan langsung via WhatsApp untuk mendapatkan informasi tarif terbaru dan transparan.",
     },
     {
-      q: "Apakah tersedia private trip?",
-      a: "Ya, kami melayani Private Trip untuk Anda yang menginginkan perjalanan santai dan fleksibel khusus keluarga atau rombongan sendiri.",
+      q: "Apakah tersedia Private Trip untuk rombongan keluarga atau teman?",
+      a: "Ya, kami melayani Private Trip di mana satu unit Jeep hanya diisi oleh rombongan Anda sendiri. Perjalanan menjadi lebih santai, privat, dan leluasa.",
     },
     {
-      q: "Berapa kapasitas Jeep?",
-      a: "Silakan hubungi kami melalui WhatsApp untuk informasi terbaru terkait kapasitas armada agar perjalanan Anda tetap nyaman.",
+      q: "Di mana saja titik penjemputan yang dilayani?",
+      a: "Kami dapat berkoordinasi untuk penjemputan di wilayah Banyuwangi, seperti stasiun, hotel, penginapan, maupun titik temu yang disepakati bersama sebelum menuju Pos Paltuding.",
     },
     {
-      q: "Apakah bisa request penjemputan?",
-      a: "Silakan hubungi kami melalui WhatsApp untuk koordinasi titik lokasi penjemputan di wilayah Banyuwangi dan sekitarnya.",
+      q: "Kapan waktu terbaik untuk melakukan reservasi?",
+      a: "Sebaiknya lakukan konfirmasi beberapa hari sebelum jadwal keberangkatan, terutama saat akhir pekan atau musim liburan, untuk memastikan ketersediaan armada Jeep pada tanggal yang Anda inginkan.",
     },
   ];
 
   const waUrl =
-    "https://wa.me/6285204572677?text=Halo%20Kak%2C%20saya%20ingin%20bertanya%20tentang%20paket%20Jeep%20Ijen.";
+    "https://wa.me/6285204572677?text=Halo%20Jeep%20Ijen%2C%20saya%20ingin%20tanya%20informasi%20seputar%20layanan.";
 
   const toggle = (idx: number) => {
     setOpenIdx(openIdx === idx ? null : idx);
   };
 
   return (
-    <section id="faq" className="py-16 sm:py-20 bg-white border-b border-base-border">
+    <section id="faq" className="py-16 sm:py-20 lg:py-24 bg-base-white border-b border-base-border">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center mb-12">
-          <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-2">
-            Tanya Jawab
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-charcoal tracking-tight">
-            Pertanyaan yang Sering Ditanyakan
+        <div className="text-center mb-12 sm:mb-14">
+          <div className="inline-flex items-center justify-center gap-2 text-xs font-semibold text-charcoal-muted tracking-wide mb-2.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-earth" />
+            <span>Tanya Jawab</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-charcoal tracking-tight">
+            Pertanyaan yang Sering Diajukan
           </h2>
-          <p className="mt-2 text-base text-charcoal-muted">
-            Informasi umum seputar pemesanan dan layanan Jeep Ijen.
+          <p className="mt-3 text-base text-charcoal-muted">
+            Jawaban praktis seputar pemesanan dan layanan Jeep Ijen Banyuwangi.
           </p>
         </div>
 
-        {/* Standard Clean Accordion */}
-        <div className="space-y-3">
+        {/* Clean Accordion (border-b dividers rather than heavy boxed cards) */}
+        <div className="divide-y divide-base-border border-y border-base-border">
           {faqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
-              <div
-                key={idx}
-                className="rounded-xl border border-base-border bg-base-light overflow-hidden transition-colors"
-              >
+              <div key={idx} className="transition-colors">
                 <button
                   type="button"
                   onClick={() => toggle(idx)}
-                  className="w-full py-4 px-5 sm:px-6 flex items-center justify-between text-left focus:outline-none"
+                  className="w-full py-5 flex items-center justify-between text-left focus:outline-none group"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-bold text-base text-charcoal pr-4">
+                  <span className="font-semibold text-base sm:text-lg text-charcoal pr-6 group-hover:text-earth transition-colors">
                     {faq.q}
                   </span>
                   <ChevronDown
                     className={`w-5 h-5 text-charcoal-muted shrink-0 transition-transform duration-200 ${
-                      isOpen ? "rotate-180 text-accent" : ""
+                      isOpen ? "rotate-180 text-earth" : ""
                     }`}
                   />
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-5 pt-1 text-sm sm:text-base text-charcoal-muted leading-relaxed border-t border-base-border/50">
+                  <div className="pb-6 pt-1 text-sm sm:text-base text-charcoal-muted leading-relaxed">
                     <p>{faq.a}</p>
-                    <div className="mt-3">
-                      <a
-                        href={waUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:text-accent-hover transition-colors"
-                      >
-                        <MessageCircle className="w-3.5 h-3.5 fill-current" />
-                        <span>Tanya lewat WhatsApp</span>
-                      </a>
-                    </div>
                   </div>
                 )}
               </div>
             );
           })}
+        </div>
+
+        {/* WhatsApp Help Banner */}
+        <div className="mt-12 text-center p-6 rounded-xl bg-base-light border border-base-border">
+          <p className="text-sm font-semibold text-charcoal">
+            Ada hal lain yang ingin Anda tanyakan?
+          </p>
+          <p className="text-xs text-charcoal-muted mt-1">
+            Pemilik Jeep Ijen siap menjawab pertanyaan Anda secara ramah melalui WhatsApp.
+          </p>
+          <div className="pt-4">
+            <a
+              href={waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-olive hover:bg-olive-hover text-white text-xs font-semibold tracking-wide transition-all shadow-sm"
+            >
+              <MessageCircle className="w-3.5 h-3.5 fill-current" />
+              <span>Tanya Langsung ke 0852-0457-2677</span>
+            </a>
+          </div>
         </div>
 
       </div>

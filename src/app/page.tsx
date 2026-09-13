@@ -1,6 +1,5 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import IntroSection from "@/components/IntroSection";
 import PackagesSection from "@/components/PackagesSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import GallerySection from "@/components/GallerySection";
@@ -12,41 +11,25 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-base-light text-charcoal">
       {/* Top Navigation */}
       <Navbar />
 
-      {/* Main Content Sections */}
+      {/* Main Content Sections: Hero -> Paket -> Pengalaman -> Galeri -> Tentang -> FAQ -> WhatsApp */}
       <main className="flex-1">
-        {/* Hero Section */}
         <Hero />
-
-        {/* Intro Section */}
-        <IntroSection />
-
-        {/* Paket Section */}
         <PackagesSection />
-
-        {/* Experience Section */}
         <ExperienceSection />
-
-        {/* Galeri Section */}
         <GallerySection />
-
-        {/* Tentang Kami Section */}
         <AboutSection />
-
-        {/* FAQ Section */}
         <FaqSection />
-
-        {/* Final CTA Section */}
         <FinalCta />
       </main>
 
       {/* Footer */}
       <Footer />
 
-      {/* Floating WhatsApp Button */}
+      {/* Floating WhatsApp */}
       <FloatingWhatsApp />
     </div>
   );
