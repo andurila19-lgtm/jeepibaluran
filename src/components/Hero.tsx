@@ -21,12 +21,12 @@ export default function Hero() {
             </div>
 
             {/* Headline: Natural casing, human-scale, confident */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-bold text-charcoal leading-[1.2] tracking-tight animate-fade-up">
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-[44px] font-bold text-charcoal leading-[1.25] sm:leading-[1.2] tracking-tight animate-fade-up">
               Jelajahi Savana Bekol & Africa van Java dengan Jeep 4x4
             </h1>
 
             {/* Paragraph: Direct, grounded, hospitable */}
-            <p className="text-base sm:text-lg text-charcoal-muted leading-relaxed max-w-xl animate-fade-up">
+            <p className="text-sm sm:text-lg text-charcoal-muted leading-relaxed max-w-xl animate-fade-up">
               Sensasi safari alam liar Taman Nasional Baluran bersama sopir lokal berpengalaman. Nikmati indahnya Savana Bekol berlatar Gunung Baluran, berburu foto kawanan satwa liar, hingga hembusan angin pantai di Pantai Bama tanpa lelah berjalan kaki.
             </p>
 
@@ -81,7 +81,7 @@ export default function Hero() {
               <div className="relative rounded-2xl overflow-hidden border border-base-border shadow-md bg-base-white">
                 
                 {/* Floating Live Badge */}
-                <div className="absolute top-4 right-4 z-10 bg-[#192720]/90 backdrop-blur-md text-white text-xs px-3.5 py-2 rounded-xl shadow-lg border border-white/20 animate-float flex items-center gap-2">
+                <div className="absolute top-3 sm:top-4 right-3 sm:right-4 z-10 bg-[#192720]/90 backdrop-blur-md text-white text-[11px] sm:text-xs px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl shadow-lg border border-white/20 animate-float flex items-center gap-1.5 sm:gap-2">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
@@ -90,12 +90,12 @@ export default function Hero() {
                 </div>
 
                 {/* Floating Feature Chip */}
-                <div className="absolute bottom-16 left-4 z-10 bg-white/95 backdrop-blur-md text-charcoal text-[11px] font-semibold px-3 py-1.5 rounded-lg shadow-md border border-base-border hidden sm:flex items-center gap-1.5">
+                <div className="absolute bottom-14 sm:bottom-16 left-3 sm:left-4 z-10 bg-white/95 backdrop-blur-md text-charcoal text-[10.5px] sm:text-[11px] font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg shadow-md border border-base-border flex items-center gap-1.5">
                   <span className="text-earth">★ 5.0</span>
                   <span>Spot Foto di Atas Jeep</span>
                 </div>
 
-                <div className="relative h-[300px] sm:h-[400px] lg:h-[440px] w-full">
+                <div className="relative h-[280px] sm:h-[400px] lg:h-[440px] w-full">
                   <Image
                     src="/images/jeep-baluran-oranye-tamu.webp"
                     alt="Wisatawan bersafari di atas Jeep Oranye resmi Baluran"
@@ -105,9 +105,9 @@ export default function Hero() {
                     className="object-cover object-center"
                   />
                 </div>
-                <div className="p-3.5 bg-base-white border-t border-base-border/70 flex items-center justify-between text-xs text-charcoal-muted">
-                  <span className="font-medium">Unit Asli Jeep Baluran — Sensasi foto di atas Jeep</span>
-                  <span className="text-charcoal-light text-[11px]">TN Baluran, Jatim</span>
+                <div className="p-3 sm:p-3.5 bg-base-white border-t border-base-border/70 flex flex-col xs:flex-row xs:items-center justify-between gap-1 text-xs text-charcoal-muted">
+                  <span className="font-medium truncate">Unit Asli Jeep Baluran — Sensasi foto di atas Jeep</span>
+                  <span className="text-charcoal-light text-[11px] shrink-0">TN Baluran, Jatim</span>
                 </div>
               </div>
             </div>

@@ -5,12 +5,12 @@ export default function FloatingWhatsApp() {
     "https://wa.me/6285204572677?text=Halo%20Jeep%20Baluran%2C%20saya%20ingin%20tanya%20informasi%20paket%20safari%20dan%20ketersediaan%20unit.";
 
   return (
-    <aside aria-label="Kontak WhatsApp" className="fixed bottom-5 right-5 z-40">
+    <aside aria-label="Kontak WhatsApp" className="fixed bottom-4 sm:bottom-5 right-4 sm:right-6 z-50 pointer-events-auto">
       <a
         href={waUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center gap-2.5 px-4 py-3 rounded-full bg-olive hover:bg-olive-hover text-white shadow-lg hover:shadow-xl hover:ring-4 hover:ring-olive/20 transition-all duration-300 border border-white/20 active:opacity-90"
+        className="group flex items-center gap-2 p-3 sm:px-4 sm:py-3 rounded-full bg-olive hover:bg-olive-hover text-white shadow-xl hover:shadow-2xl hover:ring-4 hover:ring-olive/20 transition-all duration-300 border border-white/20 active:scale-95"
         aria-label="Chat WhatsApp Jeep Baluran"
       >
         <div className="relative">
