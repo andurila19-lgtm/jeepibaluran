@@ -3,14 +3,15 @@ import { MessageCircle, MapPin, Phone } from "lucide-react";
 
 export default function Footer() {
   const waUrl =
-    "https://wa.me/6285204572677?text=Halo%20Jeep%20Ijen%2C%20saya%20ingin%20tanya%20informasi%20paket%20dan%20ketersediaan.";
+    "https://wa.me/6285204572677?text=Halo%20Jeep%20Baluran%2C%20saya%20ingin%20tanya%20informasi%20paket%20safari%20dan%20ketersediaan%20unit.";
 
   const navLinks = [
-    { name: "Paket Perjalanan", href: "#paket" },
-    { name: "Pengalaman & Rute", href: "#pengalaman" },
-    { name: "Galeri Foto", href: "#galeri" },
-    { name: "Tentang Usaha Kami", href: "#tentang" },
-    { name: "Tanya Jawab (FAQ)", href: "#faq" },
+    { name: "Beranda", href: "/" },
+    { name: "Paket Safari", href: "/paket" },
+    { name: "Rute & Spot Baluran", href: "/rute" },
+    { name: "Galeri Armada", href: "/galeri" },
+    { name: "Tentang Kami", href: "/tentang" },
+    { name: "Kontak & Lokasi", href: "/kontak" },
   ];
 
   return (
@@ -27,30 +28,28 @@ export default function Footer() {
               </div>
               <div>
                 <span className="text-xl font-bold text-white tracking-tight block leading-tight">
-                  Jeep Ijen
+                  Jeep Baluran
                 </span>
                 <span className="text-xs text-white/60 font-medium">
-                  Banyuwangi, Jawa Timur
+                  Taman Nasional Baluran (Africa van Java)
                 </span>
               </div>
             </div>
 
             <p className="text-sm text-white/70 leading-relaxed max-w-md">
-              Layanan transportasi Jeep 4x4 lokal yang melayani perjalanan wisata para wisatawan menuju kawasan Kawah Ijen dan sekitarnya dengan aman, ramah, dan berpengalaman.
+              Layanan transportasi sewa Jeep 4x4 lokal yang melayani perjalanan safari wisata para tamu menjelajahi Savana Bekol, Pantai Bama, dan mengamati satwa liar dengan aman, ramah, dan menyenangkan.
             </p>
 
             <div className="space-y-2 text-xs text-white/75 pt-1">
               <p className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-earth shrink-0 mt-0.5" />
                 <span>
-                  Dusun Watu Ulo, Rejosari, Kecamatan Glagah, Kabupaten Banyuwangi, Jawa Timur
+                  Pos Batangan (Pintu Gerbang TN Baluran), Jl. Raya Banyuwangi - Situbondo KM 35, Jawa Timur
                 </span>
               </p>
               <p className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-earth shrink-0" />
-                <a href="tel:085204572677" className="hover:text-white transition-colors">
-                  0852-0457-2677
-                </a>
+                <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>WhatsApp: 0852-0457-2677</span>
               </p>
             </div>
           </div>
@@ -77,7 +76,7 @@ export default function Footer() {
               Hubungi Kami
             </p>
             <p className="text-xs text-white/70 leading-relaxed">
-              Konsultasi jadwal keberangkatan, titik jemput, dan ketersediaan armada langsung via WhatsApp:
+              Konsultasi jadwal keberangkatan, titik kumpul, dan ketersediaan armada langsung via WhatsApp:
             </p>
             <a
               href={waUrl}
@@ -94,8 +93,8 @@ export default function Footer() {
 
         {/* Bottom copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50 text-center sm:text-left">
-          <p>© {new Date().getFullYear()} Jeep Ijen Banyuwangi. Dusun Watu Ulo, Glagah.</p>
-          <p>Layanan Wisata Jeep Lokal Ramah & Terpercaya</p>
+          <p>© {new Date().getFullYear()} Jeep Baluran Official. Pos Batangan TN Baluran.</p>
+          <p>Layanan Safari Jeep Wisata Lokal Terpercaya</p>
         </div>
 
       </div>
