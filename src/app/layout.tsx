@@ -19,7 +19,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jeepbaluran.com"),
+  metadataBase: new URL("https://jeepbaluran.reaksy.com"),
   title: "Jeep Baluran | Sewa Jeep Wisata Taman Nasional Baluran",
   description:
     "Sewa Jeep 4x4 Taman Nasional Baluran (Africa van Java). Jelajahi Savana Bekol, Pantai Bama, dan safari satwa liar bersama sopir lokal berpengalaman.",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "Jeep Baluran | Sewa Jeep Wisata Taman Nasional Baluran",
     description:
       "Sewa Jeep 4x4 Taman Nasional Baluran (Africa van Java). Jelajahi Savana Bekol, Pantai Bama, dan safari satwa liar bersama sopir lokal berpengalaman.",
-    url: "https://jeepbaluran.com",
+    url: "https://jeepbaluran.reaksy.com",
     siteName: "Jeep Baluran",
     locale: "id_ID",
     type: "website",
