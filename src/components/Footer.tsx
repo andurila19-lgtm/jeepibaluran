@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { MessageCircle, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
+import { MessageCircle, MapPin, ShieldCheck } from "lucide-react";
 
 export default function Footer() {
   const waUrl =
@@ -8,61 +9,67 @@ export default function Footer() {
   const navLinks = [
     { name: "Beranda", href: "/" },
     { name: "Paket Safari", href: "/paket" },
-    { name: "Rute & Spot Baluran", href: "/rute" },
-    { name: "Galeri Armada", href: "/galeri" },
+    { name: "Rute & Spot", href: "/rute" },
+    { name: "Galeri Foto", href: "/galeri" },
     { name: "Tentang Kami", href: "/tentang" },
     { name: "Kontak & Lokasi", href: "/kontak" },
   ];
 
   return (
-    <footer className="bg-[#161B18] text-white/80 pt-16 pb-12 border-t border-charcoal">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
-          
-          {/* Brand Info (6 cols) */}
-          <div className="md:col-span-6 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-olive text-white flex items-center justify-center font-bold text-sm tracking-tight shrink-0">
-                4×4
+    <footer className="bg-[#0B1319] text-white/80 py-8 sm:py-12 lg:py-16 border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Main Grid: Compact 1-col on mobile, 2-col on tablet, 12-col on desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 pb-6 sm:pb-10 border-b border-white/10">
+
+          {/* Col 1: Brand & Direct Contact (lg: 5 cols) */}
+          <div className="lg:col-span-5 space-y-3">
+            <div className="flex items-center gap-2.5">
+              <div className="relative w-8 h-8 rounded-full overflow-hidden border border-[#F59E0B]/50 shadow-xs shrink-0 bg-[#26382B]">
+                <Image
+                  src="/images/logo-baluran-emblem.webp"
+                  alt="Logo Jeep Baluran"
+                  fill
+                  sizes="32px"
+                  className="object-cover"
+                />
               </div>
               <div>
-                <span className="text-xl font-bold text-white tracking-tight block leading-tight">
+                <span className="text-base sm:text-lg font-bold text-white tracking-wider uppercase font-serif leading-none block">
                   Jeep Baluran
                 </span>
-                <span className="text-xs text-white/60 font-medium">
-                  Taman Nasional Baluran (Africa van Java)
+                <span className="text-[10px] text-[#F59E0B] font-semibold tracking-widest uppercase">
+                  TAMAN NASIONAL BALURAN
                 </span>
               </div>
             </div>
 
-            <p className="text-sm text-white/70 leading-relaxed max-w-md">
-              Layanan transportasi sewa Jeep 4x4 lokal yang melayani perjalanan safari wisata para tamu menjelajahi Savana Bekol, Pantai Bama, dan mengamati satwa liar dengan aman, ramah, dan menyenangkan.
+            <p className="text-xs text-white/70 leading-relaxed max-w-sm hidden sm:block">
+              Layanan transportasi sewa armada Jeep 4x4 lokal resmi untuk petualangan safari keluarga di Savana Bekol dan Pantai Bama.
             </p>
 
-            <div className="space-y-2 text-xs text-white/75 pt-1">
-              <p className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-earth shrink-0 mt-0.5" />
-                <span>
-                  Pos Batangan (Pintu Gerbang TN Baluran), Jl. Raya Banyuwangi - Situbondo KM 35, Jawa Timur
-                </span>
+            <div className="space-y-1.5 text-xs text-white/75 pt-0.5">
+              <p className="flex items-center gap-2">
+                <MapPin className="w-3.5 h-3.5 text-[#F59E0B] shrink-0" />
+                <span>Pos Batangan (Gerbang Utama TN Baluran KM 35)</span>
               </p>
-              <p className="flex items-center gap-2.5">
-                <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>WhatsApp: 0852-0457-2677</span>
+              <p className="flex items-center gap-2">
+                <MessageCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>WhatsApp: <strong>0852-0457-2677</strong></span>
               </p>
             </div>
           </div>
 
-          {/* Navigation Links (3 cols) */}
-          <div className="md:col-span-3">
-            <p className="text-xs font-semibold uppercase tracking-wider text-white mb-4">
-              Navigasi Halaman
-            </p>
-            <ul className="space-y-2.5 text-sm text-white/70">
+          {/* Col 2: Fast Navigation in 2-Column Grid for Mobile (lg: 3 cols) */}
+          <div className="lg:col-span-3">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[#F59E0B] mb-2 sm:mb-3">
+              Navigasi Cepat
+            </h3>
+            {/* 2-column on mobile & tablet so it takes only 3 compact rows */}
+            <ul className="grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-1.5 text-xs text-white/70">
               {navLinks.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="hover:text-white transition-colors">
+                  <Link href={item.href} className="hover:text-[#F59E0B] hover:underline transition-colors py-0.5 block">
                     {item.name}
                   </Link>
                 </li>
@@ -70,31 +77,45 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* WhatsApp Direct (3 cols) */}
-          <div className="md:col-span-3 space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-wider text-white mb-4">
-              Hubungi Kami
-            </p>
-            <p className="text-xs text-white/70 leading-relaxed">
-              Konsultasi jadwal keberangkatan, titik kumpul, dan ketersediaan armada langsung via WhatsApp:
-            </p>
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-earth hover:bg-earth-hover text-white text-xs font-semibold transition-all shadow-sm"
-            >
-              <MessageCircle className="w-4 h-4 fill-current" />
-              <span>0852-0457-2677</span>
-            </a>
+          {/* Col 3: Operational Info & Quick Action (lg: 4 cols) */}
+          <div className="sm:col-span-2 lg:col-span-4 space-y-2 sm:space-y-3">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[#F59E0B] mb-1 sm:mb-2">
+              Informasi Operasional
+            </h3>
+            <div className="text-xs text-white/75 space-y-1 leading-snug">
+              <p>
+                <strong className="text-white">Jam Layanan:</strong> 05:00 - 18:00 WIB (Setiap Hari)
+              </p>
+              <p>
+                <strong className="text-white">Paket Shuttle:</strong> Rp 600.000 / Jeep PP (5–6 Org)
+              </p>
+              <p className="text-white/60 text-[11px]">
+                Melayani Sunrise Safari (Fajar), Day Safari, dan Sunset Safari.
+              </p>
+            </div>
+
+            <div className="pt-1 hidden sm:block">
+              <a
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F59E0B] hover:bg-[#EAB308] text-black text-xs font-bold transition-all shadow-xs"
+              >
+                <MessageCircle className="w-3.5 h-3.5 fill-current" />
+                <span>Chat WhatsApp</span>
+              </a>
+            </div>
           </div>
 
         </div>
 
-        {/* Bottom copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50 text-center sm:text-left">
-          <p>© {new Date().getFullYear()} Jeep Baluran Official. Pos Batangan TN Baluran.</p>
-          <p>Layanan Safari Jeep Wisata Lokal Terpercaya</p>
+        {/* Bottom copyright: Ultra compact single/double line */}
+        <div className="pt-4 sm:pt-6 flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-3 text-[11px] sm:text-xs text-white/50 text-center sm:text-left">
+          <p>© {new Date().getFullYear()} Jeep Baluran Official. Seluruh Hak Cipta Dilindungi.</p>
+          <p className="flex items-center gap-1.5 text-white/60">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#F59E0B]" />
+            <span>Operator Safari Jeep Resmi Pos Batangan</span>
+          </p>
         </div>
 
       </div>

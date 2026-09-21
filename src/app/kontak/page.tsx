@@ -3,17 +3,40 @@ import Link from "next/link";
 import { MessageCircle, CalendarCheck, MapPin, Clock, Navigation, CheckCircle2, AlertCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Kontak & Lokasi Titik Kumpul Jeep Baluran | Pos Batangan TN Baluran",
+  title: "Kontak & Lokasi Meeting Point Pos Batangan | Jeep Baluran",
   description:
-    "Hubungi layanan resmi sewa Jeep 4x4 Taman Nasional Baluran via WhatsApp 0852-0457-2677. Panduan lokasi meeting point di Pos Batangan dan rute dari Banyuwangi/Situbondo.",
+    "Hubungi kontak resmi sewa Jeep Baluran via WhatsApp 0852-0457-2677 untuk booking tour Banyuwangi & open trip Baluran. Panduan rute meeting point di Pos Batangan TN Baluran.",
+  alternates: {
+    canonical: "https://jeepbaluran.reaksy.com/kontak",
+  },
+  openGraph: {
+    title: "Kontak & Lokasi Meeting Point Pos Batangan | Jeep Baluran",
+    description:
+      "Hubungi kontak resmi sewa Jeep Baluran via WhatsApp 0852-0457-2677 untuk booking tour Banyuwangi & open trip Baluran. Panduan rute meeting point Pos Batangan.",
+    url: "https://jeepbaluran.reaksy.com/kontak",
+    siteName: "Jeep Baluran",
+    images: [
+      {
+        url: "/images/jeep-baluran-oranye-tamu.webp",
+        width: 1200,
+        height: 675,
+        alt: "Kontak Resmi Sewa Jeep Baluran & Titik Kumpul Pos Batangan",
+      },
+    ],
+    locale: "id_ID",
+    type: "website",
+  },
   keywords: [
-    "Kontak Jeep Baluran",
-    "No WA Jeep Baluran",
-    "Lokasi Pos Batangan Baluran",
-    "Meeting Point Jeep Baluran",
-    "Titik Kumpul Safari Baluran",
+    "kontak Jeep Baluran",
+    "no WA Jeep Baluran",
+    "meeting point Jeep Baluran",
+    "Pos Batangan Baluran",
+    "sewa Jeep Baluran",
+    "tour Banyuwangi",
+    "open trip Baluran",
   ],
 };
+
 
 export default function KontakPage() {
   const waUrl =
@@ -22,7 +45,7 @@ export default function KontakPage() {
   return (
     <div className="py-12 sm:py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs text-charcoal-muted mb-6">
           <Link href="/" className="hover:text-charcoal transition-colors">
@@ -48,7 +71,7 @@ export default function KontakPage() {
 
         {/* Contact Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
-          
+
           {/* Card 1: WhatsApp Utama */}
           <div className="rounded-2xl border-2 border-olive/50 bg-base-light p-6 sm:p-8 space-y-4 hover:border-olive hover:shadow-md transition-all duration-300">
             <div className="w-12 h-12 rounded-xl bg-olive text-white flex items-center justify-center">

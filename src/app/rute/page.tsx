@@ -4,17 +4,27 @@ import { ArrowRight, MessageCircle, Clock, Shield } from "lucide-react";
 import GoogleMapsRoute from "@/components/GoogleMapsRoute";
 
 export const metadata: Metadata = {
-  title: "Rute & Spot Wisata Jeep Baluran | Savana Bekol & Pantai Bama",
+  title: "Rute Wisata Jeep Baluran & Spot Savana Bekol | Tour Banyuwangi",
   description:
-    "Panduan rute resmi safari Jeep Taman Nasional Baluran: dari Pos Batangan, Evergreen Forest, Savana Bekol berlatar Gunung Baluran, hingga pesisir Pantai Bama.",
+    "Panduan rute safari Jeep Baluran untuk tour Banyuwangi & open trip Jawa Timur. Jalur makadam dari Pos Batangan, Evergreen Forest, Savana Bekol, hingga Pantai Bama.",
   keywords: [
     "Rute Jeep Baluran",
     "Spot Wisata Baluran",
+    "Tour Banyuwangi",
     "Savana Bekol Baluran",
     "Pantai Bama Baluran",
-    "Evergreen Forest Baluran",
-    "Menara Pandang Bekol",
+    "Baluran Jeep",
   ],
+  alternates: {
+    canonical: "https://jeepbaluran.reaksy.com/rute",
+  },
+  openGraph: {
+    title: "Rute Wisata Jeep Baluran & Spot Savana Bekol | Tour Banyuwangi",
+    description:
+      "Panduan rute safari Jeep Baluran untuk tour Banyuwangi & open trip Jawa Timur. Jalur makadam dari Pos Batangan ke Savana Bekol dan Pantai Bama.",
+    url: "https://jeepbaluran.reaksy.com/rute",
+    images: ["/images/jeep-baluran-oranye-tamu.webp"],
+  },
 };
 
 export default function RutePage() {
@@ -24,7 +34,7 @@ export default function RutePage() {
   return (
     <div className="py-10 sm:py-14 lg:py-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs text-charcoal-muted mb-5">
           <Link href="/" className="hover:text-charcoal transition-colors">

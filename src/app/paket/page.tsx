@@ -3,17 +3,27 @@ import Link from "next/link";
 import { MessageCircle, Check, X, Sun, Sunset, Car, Clock, Users, ShieldCheck, MapPin, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Paket & Tarif Sewa Jeep Baluran 2026 | Shuttle Rp 600.000 / Jeep",
+  title: "Paket Sewa Jeep Baluran & Tour Banyuwangi | Shuttle Rp 600rb",
   description:
-    "Pilihan paket sewa Jeep 4x4 Taman Nasional Baluran resmi. Paket Shuttle Rp 600.000 (Visitor Center - Evergreen - Savana Bekol - Pantai Bama PP) hingga paket sunrise fajar.",
+    "Pilihan paket sewa Jeep 4x4 Taman Nasional Baluran untuk tour Banyuwangi & open trip Baluran. Paket Shuttle Rp 600.000 PP Savana Bekol & Bama hingga Sunrise Safari.",
   keywords: [
     "Paket Jeep Baluran",
-    "Harga Sewa Jeep Baluran",
-    "Tarif Jeep Baluran 2026",
-    "Paket Shuttle Baluran 600rb",
-    "Sunrise Safari Baluran",
-    "Jeep Savana Bekol Pantai Bama",
+    "Sewa Jeep Baluran",
+    "Tour Banyuwangi",
+    "Open Trip Baluran",
+    "Harga Jeep Baluran",
+    "Shuttle Baluran 600rb",
   ],
+  alternates: {
+    canonical: "https://jeepbaluran.reaksy.com/paket",
+  },
+  openGraph: {
+    title: "Paket Sewa Jeep Baluran & Tour Banyuwangi | Shuttle Rp 600rb",
+    description:
+      "Pilihan paket sewa Jeep 4x4 Taman Nasional Baluran resmi untuk tour Banyuwangi. Shuttle Rp 600.000 / Jeep PP lengkap.",
+    url: "https://jeepbaluran.reaksy.com/paket",
+    images: ["/images/jeep-baluran-oranye-tamu.webp"],
+  },
 };
 
 export default function PaketPage() {
@@ -31,7 +41,7 @@ export default function PaketPage() {
   return (
     <div className="py-12 sm:py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs text-charcoal-muted mb-6">
           <Link href="/" className="hover:text-charcoal transition-colors">
@@ -57,7 +67,7 @@ export default function PaketPage() {
 
         {/* 3 Main Packages */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-          
+
           {/* Paket 1: Shuttle Baluran (BEST SELLER) */}
           <div className="rounded-2xl border-2 border-olive/50 bg-base-light p-6 sm:p-8 flex flex-col justify-between relative hover:border-olive hover:shadow-lg transition-all duration-300">
             <div className="absolute -top-3.5 left-6 bg-olive text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">

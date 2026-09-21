@@ -1,8 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 40 20% 98%;
+    --foreground: 150 10% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 10% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 10% 12%;
+
+    --primary: 151 18% 21%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 25% 94%;
+    --secondary-foreground: 150 10% 12%;
+
+    --muted: 40 20% 93%;
+    --muted-foreground: 150 8% 36%;
+
+    --accent: 19 69% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 43 20% 87%;
+    --input: 43 20% 87%;
+    --ring: 151 18% 21%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 150 10% 8%;
+    --foreground: 40 20% 98%;
+
+    --card: 150 10% 10%;
+    --card-foreground: 40 20% 98%;
+
+    --popover: 150 10% 10%;
+    --popover-foreground: 40 20% 98%;
+
+    --primary: 40 20% 98%;
+    --primary-foreground: 151 18% 21%;
+
+    --secondary: 150 8% 18%;
+    --secondary-foreground: 40 20% 98%;
+
+    --muted: 150 8% 18%;
+    --muted-foreground: 150 6% 65%;
+
+    --accent: 19 69% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 150 8% 18%;
+    --input: 150 8% 18%;
+    --ring: 19 69% 45%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
@@ -31,7 +99,7 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -45,6 +113,18 @@
   }
   50% {
     transform: translateY(-4px);
+  }
+}
+
+@keyframes kenburnsSubtle {
+  0% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.045);
+  }
+  100% {
+    transform: scale(1.0);
   }
 }
 
@@ -69,6 +149,11 @@
   animation: floatSubtle 4s ease-in-out infinite;
 }
 
+.animate-ken-burns {
+  animation: kenburnsSubtle 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
 .animate-marquee {
   display: flex;
   width: 200%;
@@ -77,4 +162,170 @@
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+/* ==========================================================================
+   Hero Cinematic Motion System (Step 4 Revision)
+   ========================================================================== */
+
+/* 1. Hero Content Staggered Entrances (Precise user-requested px & timings) */
+@keyframes heroEyebrowEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroHeadlineEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroDescEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroCtaEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroInfoEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2. Image Frame Entrance: scale 0.97 -> 1, opacity 0 -> 1, 900ms */
+@keyframes heroFrameEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+}
+
+/* 3. Hero Badge & Tag Entrances: subtle fade + translateY, no bounce, no infinite loop */
+@keyframes heroBadgeEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroTagEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 4. Hero Image Initial Cinematic Zoom: scale 1.08 -> 1.00 over 10s ease-out, runs once */
+@keyframes heroCinematicZoom {
+  0% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1.00);
+  }
+}
+
+/* Animation Classes with Stagger Delays (100–150ms stagger) */
+.hero-motion-eyebrow {
+  animation: heroEyebrowEntrance 750ms cubic-bezier(0.16, 1, 0.3, 1) 80ms both;
+}
+
+.hero-motion-headline {
+  animation: heroHeadlineEntrance 850ms cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+}
+
+.hero-motion-text {
+  animation: heroDescEntrance 850ms cubic-bezier(0.16, 1, 0.3, 1) 340ms both;
+}
+
+.hero-motion-cta {
+  animation: heroCtaEntrance 800ms cubic-bezier(0.16, 1, 0.3, 1) 480ms both;
+}
+
+.hero-motion-facts {
+  animation: heroInfoEntrance 750ms cubic-bezier(0.16, 1, 0.3, 1) 620ms both;
+}
+
+.hero-motion-frame {
+  animation: heroFrameEntrance 900ms cubic-bezier(0.16, 1, 0.3, 1) 150ms both;
+}
+
+.hero-motion-badge {
+  animation: heroBadgeEntrance 650ms cubic-bezier(0.16, 1, 0.3, 1) 650ms both;
+}
+
+.hero-motion-tag {
+  animation: heroTagEntrance 650ms cubic-bezier(0.16, 1, 0.3, 1) 780ms both;
+}
+
+.hero-cinematic-zoom {
+  animation: heroCinematicZoom 10s cubic-bezier(0.16, 1, 0.3, 1) 0ms 1 normal forwards;
+  will-change: transform;
+  transform-origin: center center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ken-burns,
+  .animate-float,
+  .animate-fade-in,
+  .animate-fade-up,
+  .animate-marquee,
+  .hero-motion-eyebrow,
+  .hero-motion-headline,
+  .hero-motion-text,
+  .hero-motion-cta,
+  .hero-motion-facts,
+  .hero-motion-frame,
+  .hero-motion-badge,
+  .hero-motion-tag,
+  .hero-cinematic-zoom {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }

@@ -3,16 +3,27 @@ import Link from "next/link";
 import { MessageCircle, ShieldCheck, HeartHandshake, MapPin, Users, CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Tentang Kami | Layanan Sewa Jeep Resmi TN Baluran",
+  title: "Tentang Layanan Sewa Jeep Baluran & Operator Tour Banyuwangi",
   description:
-    "Mengenal penyedia layanan sewa Jeep 4x4 lokal Taman Nasional Baluran. Pengemudi asli berpengalaman yang mengutamakan keramahan, kenyamanan keluarga, dan keamanan safari.",
+    "Mengenal penyedia layanan sewa Jeep Baluran untuk tour Banyuwangi & open trip Jawa Timur. Komunitas sopir lokal terpercaya berbasis di Pos Batangan TN Baluran.",
   keywords: [
     "Tentang Jeep Baluran",
-    "Sopir Jeep Baluran",
+    "Sewa Jeep Baluran",
+    "Tour Banyuwangi",
+    "Open Trip Jawa Timur",
     "Driver Lokal Baluran",
-    "Jeep Wisata Resmi Baluran",
     "Pos Batangan Baluran",
   ],
+  alternates: {
+    canonical: "https://jeepbaluran.reaksy.com/tentang",
+  },
+  openGraph: {
+    title: "Tentang Layanan Sewa Jeep Baluran & Operator Tour Banyuwangi",
+    description:
+      "Mengenal penyedia layanan sewa Jeep Baluran untuk tour Banyuwangi & open trip Jawa Timur. Komunitas sopir lokal terpercaya.",
+    url: "https://jeepbaluran.reaksy.com/tentang",
+    images: ["/images/jeep-baluran-oranye-tamu.webp"],
+  },
 };
 
 export default function TentangPage() {
@@ -45,7 +56,7 @@ export default function TentangPage() {
   return (
     <div className="py-12 sm:py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs text-charcoal-muted mb-6">
           <Link href="/" className="hover:text-charcoal transition-colors">

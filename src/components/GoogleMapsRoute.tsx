@@ -5,7 +5,6 @@ import Image from "next/image";
 import {
   Navigation,
   Clock,
-  Compass,
   Car,
   ChevronLeft,
   ChevronRight,
@@ -16,6 +15,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { Button } from "@/components/ui/button";
 
 interface GoogleMapsRouteProps {
   embedded?: boolean;
@@ -39,7 +39,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
       desc: "Titik temu resmi perjalanan safari Anda di gerbang masuk utama TN Baluran. Bertemu driver Jeep 4x4 lokal kami, pengecekan tiket resmi, dan persiapan briefing santai sebelum start.",
       badge: "Titik Kumpul Resmi",
       badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-300",
-      pinBg: "bg-emerald-600 text-white",
+      pinBg: "bg-emerald-700 text-white",
       image: "/images/jeep-baluran-kuning-front.webp",
       imageAlt: "Armada Jeep 4x4 Kuning siap di Pos Batangan gerbang utama Baluran",
       highlights: [
@@ -61,8 +61,8 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
       role: "Terowongan Kanopi Hijau Sejuk",
       desc: "Menyusuri jalur rimbun hutan musim dengan kanopi dedaunan lebat yang teduh menaungi jalanan. Udara sejuk dan alami menjadi transisi sebelum keluar menuju padang savana terbuka.",
       badge: "Kanopi Rimbun Sejuk",
-      badgeColor: "bg-emerald-50 text-olive border-olive/30",
-      pinBg: "bg-olive text-white",
+      badgeColor: "bg-emerald-50 text-[#2B3E34] border-[#2B3E34]/30",
+      pinBg: "bg-[#2B3E34] text-white",
       image: "/images/jeep-baluran-oranye-safari.webp",
       imageAlt: "Jeep Safari Oranye melintasi jalur kanopi hutan musim Baluran",
       highlights: [
@@ -109,7 +109,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
       desc: "Ujung rute timur Baluran: menikmati pantai pasir putih berair jernih dengan ombak tenang, jalan santai di jembatan kayu mangrove purba, serta santai minum es kelapa muda.",
       badge: "Pesisir Pasir Putih",
       badgeColor: "bg-sky-100 text-sky-800 border-sky-300",
-      pinBg: "bg-sky-600 text-white",
+      pinBg: "bg-sky-700 text-white",
       image: "/images/jeep-baluran-oranye-tamu.webp",
       imageAlt: "Rombongan tamu berfoto di atas Jeep Oranye Baluran di pesisir Bama",
       highlights: [
@@ -131,8 +131,8 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
       role: "Selesai Trip Safari Pulang Pergi (PP)",
       desc: "Tiba kembali di gerbang utama Pos Batangan dengan aman dan membawa banyak koleksi foto estetik. Driver kami siap mengantar Anda kembali ke kendaraan pribadi.",
       badge: "Selesai PP Lengkap",
-      badgeColor: "bg-charcoal text-white border-charcoal",
-      pinBg: "bg-charcoal text-white",
+      badgeColor: "bg-[#1B211E] text-white border-[#1B211E]",
+      pinBg: "bg-[#1B211E] text-white",
       image: "/images/jeep-baluran-kuning-front.webp",
       imageAlt: "Armada Jeep Baluran 4x4 selesai safari dengan nyaman",
       highlights: [
@@ -154,14 +154,14 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
   )}`;
 
   const routeCard = (
-    <div className="rounded-2xl border border-base-border bg-white shadow-sm overflow-hidden">
+    <div className="rounded-2xl border border-[#E5E2D7] bg-white shadow-sm overflow-hidden">
       {/* Header Bar: Navigation Info & Mode Switcher */}
-      <div className="bg-[#192720] text-white p-4 sm:p-6 border-b border-white/10">
+      <div className="bg-[#1C2621] text-white p-4 sm:p-6 border-b border-white/10">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-          
+
           <div className="space-y-1">
             <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 tracking-wide uppercase">
-              <Navigation className="w-3.5 h-3.5 animate-pulse" />
+              <Navigation className="w-3.5 h-3.5" />
               <span>Rundown Rute Google Maps 4x4</span>
             </div>
             <h3 className="text-lg sm:text-xl font-bold tracking-tight text-white flex items-center gap-2">
@@ -176,7 +176,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
           <div className="flex flex-wrap items-center gap-2 sm:gap-3">
             <div className="hidden sm:flex items-center gap-3 bg-white/10 px-3 py-1.5 rounded-lg text-xs text-white/80 border border-white/10">
               <span className="flex items-center gap-1">
-                <Clock className="w-3 h-3 text-amber-400" />
+                <Clock className="w-3 h-3 text-amber-300" />
                 3 - 4 Jam
               </span>
               <span>•</span>
@@ -191,23 +191,21 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
               <button
                 type="button"
                 onClick={() => setViewMode("stepper")}
-                className={`flex items-center justify-center gap-1.5 px-2.5 py-1.5 rounded-md font-semibold transition-all ${
-                  viewMode === "stepper"
-                    ? "bg-earth text-white shadow-sm"
+                className={`flex items-center justify-center gap-1.5 px-2.5 py-1.5 rounded-md font-semibold transition-all ${viewMode === "stepper"
+                    ? "bg-[#C25624] text-white shadow-xs"
                     : "text-white/70 hover:text-white"
-                }`}
+                  }`}
               >
                 <Layers className="w-3.5 h-3.5" />
-                <span className="truncate">Langkah Interaktif</span>
+                <span className="truncate">Langkah Rute</span>
               </button>
               <button
                 type="button"
                 onClick={() => setViewMode("compact")}
-                className={`flex items-center justify-center gap-1.5 px-2.5 py-1.5 rounded-md font-semibold transition-all ${
-                  viewMode === "compact"
-                    ? "bg-earth text-white shadow-sm"
+                className={`flex items-center justify-center gap-1.5 px-2.5 py-1.5 rounded-md font-semibold transition-all ${viewMode === "compact"
+                    ? "bg-[#C25624] text-white shadow-xs"
                     : "text-white/70 hover:text-white"
-                }`}
+                  }`}
               >
                 <List className="w-3.5 h-3.5" />
                 <span className="truncate">Semua Titik</span>
@@ -219,19 +217,19 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
         </div>
       </div>
 
-      {/* VIEW MODE 1: STEPPER INTERAKTIF (Compact, 0 scrolling needed) */}
+      {/* VIEW MODE 1: STEPPER INTERAKTIF */}
       {viewMode === "stepper" && (
-        <div className="p-3.5 sm:p-6 lg:p-7 bg-[#FAF9F6]">
-          
+        <div className="p-3.5 sm:p-6 lg:p-7 bg-[#FAF9F5]">
+
           {/* Horizontal Step Tracker with Progress Line */}
           <div className="relative mb-5 sm:mb-6 pb-1 sm:pb-2">
-            
+
             {/* Background connecting track */}
-            <div className="absolute top-5 left-4 right-4 h-1 bg-base-border rounded-full z-0 hidden sm:block" />
-            
+            <div className="absolute top-5 left-4 right-4 h-1 bg-[#E5E2D7] rounded-full z-0 hidden sm:block" />
+
             {/* Active progress fill */}
             <div
-              className="absolute top-5 left-4 h-1 bg-earth rounded-full z-0 transition-all duration-500 hidden sm:block"
+              className="absolute top-5 left-4 h-1 bg-[#C25624] rounded-full z-0 transition-all duration-500 hidden sm:block"
               style={{ width: `calc(${progressPercent}% - 32px)` }}
             />
 
@@ -246,37 +244,34 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
                     key={idx}
                     type="button"
                     onClick={() => setActiveIdx(idx)}
-                    className={`group flex flex-col items-center text-center p-1 sm:p-2 rounded-xl transition-all cursor-pointer min-w-0 ${
-                      isActive
-                        ? "bg-white shadow-md border border-earth/30 ring-2 ring-earth/20"
+                    className={`group flex flex-col items-center text-center p-1 sm:p-2 rounded-xl transition-all cursor-pointer min-w-0 ${isActive
+                        ? "bg-white shadow-sm border border-[#C25624]/30 ring-2 ring-[#C25624]/20"
                         : "hover:bg-white/60 border border-transparent"
-                    }`}
+                      }`}
                   >
                     {/* Circle Pin Icon */}
                     <div
-                      className={`w-7 h-7 sm:w-9 sm:h-9 rounded-full flex items-center justify-center font-bold text-xs sm:text-sm border-2 transition-transform duration-300 ${
-                        isActive
-                          ? `${step.pinBg} border-white shadow-sm scale-110 ring-2 ring-earth/40`
+                      className={`w-7 h-7 sm:w-9 sm:h-9 rounded-full flex items-center justify-center font-bold text-xs sm:text-sm border-2 transition-transform duration-300 ${isActive
+                          ? `${step.pinBg} border-white shadow-xs scale-110 ring-2 ring-[#C25624]/30`
                           : isPassed
-                          ? "bg-olive text-white border-white"
-                          : "bg-base-sand text-charcoal border-base-border group-hover:border-charcoal/40"
-                      }`}
+                            ? "bg-[#2B3E34] text-white border-white"
+                            : "bg-[#EDEAE1] text-[#1B211E] border-[#E5E2D7] group-hover:border-[#1B211E]/40"
+                        }`}
                     >
                       {step.code}
                     </div>
 
-                    {/* Step Label: mobileName on mobile, shortName on sm+ */}
+                    {/* Step Label */}
                     <span
-                      className={`mt-1 sm:mt-1.5 text-[10px] sm:text-xs font-semibold leading-tight text-center w-full truncate transition-colors ${
-                        isActive ? "text-earth font-bold" : "text-charcoal-muted"
-                      }`}
+                      className={`mt-1 sm:mt-1.5 text-[10px] sm:text-xs font-semibold leading-tight text-center w-full truncate transition-colors ${isActive ? "text-[#C25624] font-bold" : "text-[#414C45]"
+                        }`}
                     >
                       <span className="sm:hidden">{step.mobileName}</span>
                       <span className="hidden sm:inline">{step.shortName}</span>
                     </span>
 
                     {/* KM Label */}
-                    <span className="text-[9px] sm:text-[10px] text-charcoal-light mt-0.5 truncate w-full text-center">
+                    <span className="text-[9px] sm:text-[10px] text-[#69766E] mt-0.5 truncate w-full text-center">
                       {step.distance}
                     </span>
                   </button>
@@ -285,25 +280,25 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
             </div>
           </div>
 
-          {/* Active Step Showcase Card (Split View, fits in single view) */}
-          <div className="bg-white rounded-2xl border border-base-border shadow-xs overflow-hidden">
+          {/* Active Step Showcase Card */}
+          <div className="bg-white rounded-2xl border border-[#E5E2D7] shadow-xs overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12">
-              
+
               {/* Left Column: Details & Controls (7 cols) */}
               <div className="lg:col-span-7 p-4 sm:p-6 lg:p-7 flex flex-col justify-between space-y-4">
-                
+
                 <div className="space-y-3">
                   {/* Top Meta Chips */}
-                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-base-border/70 pb-3">
+                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#E5E2D7] pb-3">
                     <div className="flex items-center gap-2">
-                      <span className="w-6 h-6 rounded-lg bg-earth text-white font-black text-xs flex items-center justify-center">
+                      <span className="w-6 h-6 rounded-lg bg-[#C25624] text-white font-black text-xs flex items-center justify-center">
                         {current.code}
                       </span>
-                      <span className="text-xs font-bold text-charcoal">
+                      <span className="text-xs font-bold text-[#1B211E]">
                         {current.time}
                       </span>
-                      <span className="text-charcoal-light text-xs">•</span>
-                      <span className="text-xs font-medium text-charcoal-light">
+                      <span className="text-[#69766E] text-xs">•</span>
+                      <span className="text-xs font-medium text-[#69766E]">
                         {current.distance}
                       </span>
                     </div>
@@ -315,31 +310,31 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
 
                   {/* Title & Role */}
                   <div>
-                    <h4 className="text-lg sm:text-2xl font-bold text-charcoal tracking-tight">
+                    <h4 className="text-lg sm:text-2xl font-bold text-[#1B211E] tracking-tight">
                       {current.name}
                     </h4>
-                    <p className="text-xs sm:text-sm font-semibold text-olive mt-0.5">
+                    <p className="text-xs sm:text-sm font-semibold text-[#2B3E34] mt-0.5">
                       {current.role}
                     </p>
                   </div>
 
                   {/* Description */}
-                  <p className="text-xs sm:text-sm text-charcoal-muted leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#414C45] leading-relaxed">
                     {current.desc}
                   </p>
 
                   {/* Highlights Pills */}
                   <div className="pt-1">
-                    <p className="text-[11px] font-bold text-charcoal uppercase tracking-wider mb-2">
+                    <p className="text-[11px] font-bold text-[#1B211E] uppercase tracking-wider mb-2">
                       Aktivitas & Keunggulan Spot Ini:
                     </p>
                     <div className="flex flex-wrap gap-1.5">
                       {current.highlights.map((h, i) => (
                         <span
                           key={i}
-                          className="inline-flex items-center gap-1.5 text-[10.5px] sm:text-[11px] px-2.5 py-1 rounded-md bg-base-subtle border border-base-border text-charcoal font-medium"
+                          className="inline-flex items-center gap-1.5 text-[10.5px] sm:text-[11px] px-2.5 py-1 rounded-md bg-[#F4F2EA] border border-[#E5E2D7] text-[#1B211E] font-medium"
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-olive" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#2B3E34]" />
                           <span>{h}</span>
                         </span>
                       ))}
@@ -347,82 +342,81 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
                   </div>
 
                   {/* Transit Information Pill */}
-                  <div className="p-3 rounded-xl bg-base-light border border-base-border text-xs text-charcoal-muted flex items-start gap-2.5">
-                    <Car className="w-4 h-4 text-earth shrink-0 mt-0.5" />
+                  <div className="p-3 rounded-xl bg-[#FAF9F5] border border-[#E5E2D7] text-xs text-[#414C45] flex items-start gap-2.5">
+                    <Car className="w-4 h-4 text-[#C25624] shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-semibold text-charcoal">Info Jalur Makadam: </span>
+                      <span className="font-semibold text-[#1B211E]">Info Jalur Makadam: </span>
                       <span>{current.transitInfo}</span>
                     </div>
                   </div>
                 </div>
 
-                {/* Bottom Navigation Buttons: Fully Responsive, No Overflow */}
-                <div className="pt-3 border-t border-base-border/70 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3">
-                  {/* Top row on mobile: Previous and Next 50/50 */}
+                {/* Bottom Navigation Buttons: Fully Responsive */}
+                <div className="pt-3 border-t border-[#E5E2D7] flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3">
                   <div className="grid grid-cols-2 sm:flex sm:items-center gap-2 w-full sm:w-auto">
-                    <button
+                    <Button
                       type="button"
+                      variant="outline"
+                      size="sm"
                       disabled={isFirst}
                       onClick={() => setActiveIdx((prev) => Math.max(0, prev - 1))}
-                      className={`inline-flex items-center justify-center gap-1.5 px-3 py-2.5 sm:py-2 rounded-lg text-xs font-semibold border transition-all ${
-                        isFirst
-                          ? "opacity-40 cursor-not-allowed border-base-border text-charcoal-light"
-                          : "bg-white border-base-border hover:border-charcoal text-charcoal active:scale-95 cursor-pointer"
-                      }`}
+                      className="gap-1 text-xs border-[#E5E2D7]"
                     >
                       <ChevronLeft className="w-4 h-4 shrink-0" />
                       <span>Sebelumnya</span>
-                    </button>
+                    </Button>
 
-                    <button
+                    <Button
                       type="button"
+                      variant="earth"
+                      size="sm"
                       disabled={isLast}
                       onClick={() => setActiveIdx((prev) => Math.min(waypoints.length - 1, prev + 1))}
-                      className={`sm:hidden inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-lg text-xs font-semibold text-white transition-all shadow-sm ${
-                        isLast
-                          ? "opacity-40 cursor-not-allowed bg-charcoal"
-                          : "bg-earth hover:bg-earth-hover active:scale-95 cursor-pointer"
-                      }`}
+                      className="sm:hidden gap-1 text-xs font-semibold shadow-2xs"
                     >
-                      <span>Berikutnya ({waypoints[activeIdx + 1]?.code || "Selesai"})</span>
+                      <span>Lanjut ({waypoints[activeIdx + 1]?.code || "Finish"})</span>
                       <ChevronRight className="w-4 h-4 shrink-0" />
-                    </button>
+                    </Button>
                   </div>
 
-                  {/* Desktop Actions + Mobile WhatsApp Button */}
+                  {/* Desktop Actions + WhatsApp Button */}
                   <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full sm:w-auto">
-                    <a
-                      href={waUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 sm:py-2 rounded-lg bg-olive text-white text-xs font-semibold hover:bg-olive-hover transition-colors shadow-2xs active:scale-98"
+                    <Button
+                      asChild
+                      variant="olive"
+                      size="sm"
+                      className="gap-1.5 text-xs font-semibold shadow-2xs"
                     >
-                      <MessageCircle className="w-3.5 h-3.5 fill-current text-emerald-400" />
-                      <span>Tanya Spot Ini via WA</span>
-                    </a>
+                      <a
+                        href={waUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <MessageCircle className="w-3.5 h-3.5 fill-current text-emerald-400" />
+                        <span>Tanya Spot Ini via WA</span>
+                      </a>
+                    </Button>
 
-                    <button
+                    <Button
                       type="button"
+                      variant="earth"
+                      size="sm"
                       disabled={isLast}
                       onClick={() => setActiveIdx((prev) => Math.min(waypoints.length - 1, prev + 1))}
-                      className={`hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-semibold text-white transition-all shadow-sm ${
-                        isLast
-                          ? "opacity-40 cursor-not-allowed bg-charcoal"
-                          : "bg-earth hover:bg-earth-hover active:scale-95 cursor-pointer"
-                      }`}
+                      className="hidden sm:inline-flex gap-1 text-xs font-semibold shadow-2xs"
                     >
-                      <span>Lanjut Titik ({waypoints[activeIdx + 1]?.code || "Selesai"})</span>
+                      <span>Lanjut Titik ({waypoints[activeIdx + 1]?.code || "Finish"})</span>
                       <ChevronRight className="w-4 h-4 shrink-0" />
-                    </button>
+                    </Button>
                   </div>
                 </div>
 
               </div>
 
-              {/* Right Column: Visual Photo & Quick Snapshot (5 cols) */}
-              <div className="lg:col-span-5 bg-base-subtle p-4 sm:p-6 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-base-border">
+              {/* Right Column: Visual Photo (5 cols) */}
+              <div className="lg:col-span-5 bg-[#F4F2EA] p-4 sm:p-6 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-[#E5E2D7]">
                 <div className="space-y-3">
-                  <div className="relative h-48 sm:h-56 lg:h-64 w-full rounded-xl overflow-hidden border border-base-border shadow-xs bg-charcoal">
+                  <div className="relative h-48 sm:h-56 lg:h-64 w-full rounded-xl overflow-hidden border border-[#E5E2D7] shadow-2xs bg-[#1B211E]">
                     <Image
                       src={current.image}
                       alt={current.imageAlt}
@@ -430,24 +424,24 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
                       sizes="(max-width: 1024px) 100vw, 40vw"
                       className="object-cover object-center transition-all duration-500"
                     />
-                    <div className="absolute top-2.5 left-2.5 bg-black/70 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded-md border border-white/20 uppercase tracking-wider">
+                    <div className="absolute top-2.5 left-2.5 bg-black/75 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded-md border border-white/20 uppercase tracking-wider">
                       Titik {current.code}
                     </div>
                   </div>
 
-                  <div className="p-3 bg-white rounded-xl border border-base-border text-xs space-y-1">
-                    <div className="flex items-center justify-between text-[11px] text-charcoal-light">
+                  <div className="p-3 bg-white rounded-xl border border-[#E5E2D7] text-xs space-y-1">
+                    <div className="flex items-center justify-between text-[11px] text-[#69766E]">
                       <span>Estimasi Berhenti:</span>
-                      <span className="font-bold text-charcoal">{current.duration}</span>
+                      <span className="font-bold text-[#1B211E]">{current.duration}</span>
                     </div>
-                    <div className="flex items-center justify-between text-[11px] text-charcoal-light">
+                    <div className="flex items-center justify-between text-[11px] text-[#69766E]">
                       <span>Jarak Kumulatif:</span>
-                      <span className="font-bold text-charcoal">{current.distance}</span>
+                      <span className="font-bold text-[#1B211E]">{current.distance}</span>
                     </div>
                   </div>
                 </div>
 
-                <p className="text-[11px] text-charcoal-light text-center mt-3">
+                <p className="text-[11px] text-[#69766E] text-center mt-3">
                   Driver Jeep kami siap mendampingi sesi foto keluarga & sahabat.
                 </p>
               </div>
@@ -458,9 +452,9 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
         </div>
       )}
 
-      {/* VIEW MODE 2: RINGKASAN SEMUA TITIK (Flexible compact table) */}
+      {/* VIEW MODE 2: RINGKASAN SEMUA TITIK */}
       {viewMode === "compact" && (
-        <div className="p-4 sm:p-6 bg-[#FAF9F6]">
+        <div className="p-4 sm:p-6 bg-[#FAF9F5]">
           <div className="space-y-3">
             {waypoints.map((step, idx) => (
               <div
@@ -469,7 +463,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
                   setActiveIdx(idx);
                   setViewMode("stepper");
                 }}
-                className="group p-3.5 sm:p-4 rounded-xl border border-base-border bg-white hover:border-earth/50 hover:shadow-xs cursor-pointer transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+                className="group p-3.5 sm:p-4 rounded-xl border border-[#E5E2D7] bg-white hover:border-[#C25624]/50 hover:shadow-xs cursor-pointer transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3"
               >
                 <div className="flex items-center gap-3">
                   <div className={`w-8 h-8 rounded-lg ${step.pinBg} flex items-center justify-center font-bold text-xs shrink-0`}>
@@ -477,22 +471,22 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <h5 className="text-sm font-bold text-charcoal group-hover:text-earth transition-colors">
+                      <h5 className="text-sm font-bold text-[#1B211E] group-hover:text-[#C25624] transition-colors">
                         {step.name}
                       </h5>
                       <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full border ${step.badgeColor} hidden md:inline-block`}>
                         {step.badge}
                       </span>
                     </div>
-                    <p className="text-xs text-charcoal-muted mt-0.5 line-clamp-1">
+                    <p className="text-xs text-[#414C45] mt-0.5 line-clamp-1">
                       {step.desc}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-base-border/50 text-xs">
-                  <span className="text-charcoal-light font-medium">{step.distance} • {step.time}</span>
-                  <span className="font-bold text-earth group-hover:translate-x-0.5 transition-transform flex items-center gap-1">
+                <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#E5E2D7] text-xs">
+                  <span className="text-[#69766E] font-medium">{step.distance} • {step.time}</span>
+                  <span className="font-bold text-[#C25624] group-hover:translate-x-0.5 transition-transform flex items-center gap-1">
                     <span>Lihat Detail</span>
                     <ArrowRight className="w-3 h-3" />
                   </span>
@@ -504,12 +498,12 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
       )}
 
       {/* Footer Reassurance */}
-      <div className="bg-[#FAF9F6] border-t border-base-border/80 p-3.5 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-charcoal-muted">
+      <div className="bg-[#FAF9F5] border-t border-[#E5E2D7] p-3.5 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#414C45]">
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-olive shrink-0" />
-          <span>Waktu & durasi di setiap spot sangat fleksibel sesuai kenyamanan rombongan Anda.</span>
+          <CheckCircle2 className="w-4 h-4 text-[#2B3E34] shrink-0" />
+          <span>Waktu & durasi di setiap spot sangat fleksibel sesuai ritme keluarga Anda.</span>
         </div>
-        <span className="font-semibold text-earth">
+        <span className="font-semibold text-[#C25624]">
           Paket Shuttle Rp 600.000 / Jeep PP Lengkap
         </span>
       </div>
@@ -526,21 +520,21 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
   }
 
   return (
-    <section id="rundown" className="py-14 sm:py-18 lg:py-20 bg-base-subtle border-b border-base-border">
+    <section id="rundown" className="py-14 sm:py-18 lg:py-20 bg-[#F4F2EA] border-b border-[#E5E2D7]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <ScrollReveal>
           <div className="max-w-2xl mb-8 sm:mb-10">
-            <div className="inline-flex items-center gap-2 text-xs font-semibold text-charcoal-muted tracking-wide mb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-earth" />
+            <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#69766E] tracking-wide mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C25624]" />
               <span>Rundown Rute Google Maps</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-charcoal tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1B211E] tracking-tight">
               Alur & Rute Perjalanan Safari 4x4
             </h2>
-            <p className="mt-2 text-sm sm:text-base text-charcoal-muted leading-relaxed">
-              Pilih titik A–E untuk melihat detail masing-masing spot tanpa perlu scroll panjang.
+            <p className="mt-2 text-sm sm:text-base text-[#414C45] leading-relaxed">
+              Pilih titik A–E di bawah untuk navigasi interaktif jalur makadam dari pintu gerbang hingga pantai.
             </p>
           </div>
         </ScrollReveal>

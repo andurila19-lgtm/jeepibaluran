@@ -4,17 +4,27 @@ import Image from "next/image";
 import { MessageCircle, Shield, Users, Camera, Wrench, CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Galeri Foto & Armada Asli Jeep Baluran 4x4 | Unit Kuning & Oranye",
+  title: "Galeri Foto Armada 4x4 Jeep Baluran | Open Trip Jawa Timur",
   description:
-    "Dokumentasi asli armada sewa Jeep 4x4 Taman Nasional Baluran dan keseruan momen wisatawan berfoto di atas mobil di Savana Bekol dan Pantai Bama.",
+    "Dokumentasi asli armada sewa Jeep 4x4 Baluran untuk tour Banyuwangi & open trip Jawa Timur. Potret wisatawan berfoto di atas Jeep di Savana Bekol dan Bama.",
   keywords: [
     "Galeri Jeep Baluran",
     "Foto Jeep Baluran",
+    "Tour Banyuwangi",
+    "Open Trip Jawa Timur",
     "Armada Jeep 4x4 Baluran",
-    "Jeep Kuning Baluran",
-    "Jeep Oranye Baluran",
     "Spot Foto Atap Mobil Baluran",
   ],
+  alternates: {
+    canonical: "https://jeepbaluran.reaksy.com/galeri",
+  },
+  openGraph: {
+    title: "Galeri Foto Armada 4x4 Jeep Baluran | Open Trip Jawa Timur",
+    description:
+      "Dokumentasi asli armada sewa Jeep 4x4 Baluran untuk tour Banyuwangi & open trip Jawa Timur.",
+    url: "https://jeepbaluran.reaksy.com/galeri",
+    images: ["/images/jeep-baluran-oranye-tamu.webp"],
+  },
 };
 
 export default function GaleriPage() {
@@ -59,7 +69,7 @@ export default function GaleriPage() {
   return (
     <div className="py-12 sm:py-16 lg:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs text-charcoal-muted mb-6">
           <Link href="/" className="hover:text-charcoal transition-colors">

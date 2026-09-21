@@ -1,316 +1,310 @@
-import { MessageCircle, Check, X, ArrowRight, Sun, Sunset, Car } from "lucide-react";
+import { MessageCircle, Check, Info, ArrowRight, Clock, Users, Shield } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export default function PackagesSection() {
   const waBase = "https://wa.me/6285204572677";
-  const waPaket1 = `${waBase}?text=${encodeURIComponent(
-    "Halo Jeep Baluran, saya ingin menanyakan Paket Sunrise Safari Baluran (Savana Bekol & Pantai Bama) dan ketersediaan unit."
+  const waShuttle = `${waBase}?text=${encodeURIComponent(
+    "Halo Jeep Baluran, saya ingin booking Paket Shuttle Baluran (Rp 600.000 / Jeep PP) untuk tanggal [Tentukan Tanggal]."
   )}`;
-  const waPaket2 = `${waBase}?text=${encodeURIComponent(
-    "Halo Jeep Baluran, saya ingin menanyakan Paket Eksplor Day Safari Baluran untuk keluarga/rombongan."
+  const waSunrise = `${waBase}?text=${encodeURIComponent(
+    "Halo Jeep Baluran, saya ingin menanyakan Paket Sunrise Savana Baluran untuk tanggal [Tentukan Tanggal]."
   )}`;
-  const waPaket3 = `${waBase}?text=${encodeURIComponent(
-    "Halo Jeep Baluran, saya ingin menanyakan Paket Private Trip Jeep Baluran dengan antar-jemput dari Banyuwangi/Ketapang."
+  const waPrivate = `${waBase}?text=${encodeURIComponent(
+    "Halo Jeep Baluran, saya ingin konsultasi Paket Private + Antar-Jemput dari hotel/stasiun Banyuwangi."
   )}`;
 
   return (
-    <section id="paket" className="py-16 sm:py-20 lg:py-24 bg-base-white border-b border-base-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="paket" className="py-20 sm:py-28 bg-[#FAF8F5] border-b border-[#EAE6DC]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <ScrollReveal>
-        <div className="max-w-2xl mb-12 sm:mb-14">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-charcoal-muted tracking-wide mb-2.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-earth" />
-            <span>Pilihan Paket Safari 4x4</span>
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14 sm:mb-16">
+            <div className="max-w-2xl space-y-2.5">
+              <span className="font-mono text-xs text-[#C45525] font-bold uppercase tracking-widest block">
+                PILIHAN PAKET TRIP
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-black text-[#1A1D1A] tracking-tight">
+                Paket Safari Jeep Baluran
+              </h2>
+              <p className="text-sm sm:text-base text-[#6E736D] leading-relaxed">
+                Tarif dihitung per unit mobil (bukan per orang). Sudah termasuk Jeep 4x4, pengemudi lokal, BBM, dan parkir.
+              </p>
+            </div>
+
+            <div className="hidden lg:flex items-center gap-2 bg-[#E9F2E7] text-[#24522A] px-4 py-2 rounded-full text-xs font-semibold border border-[#D5E4CF] shrink-0">
+              <Shield className="w-3.5 h-3.5 text-[#24522A]" />
+              <span>Tarif Transparan & Bebas Biaya Tersembunyi</span>
+            </div>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-charcoal tracking-tight">
-            Paket Sewa Jeep Taman Nasional Baluran
-          </h2>
-          <p className="mt-3 text-base sm:text-lg text-charcoal-muted leading-relaxed">
-            Pilihan paket petualangan safari melintasi jalan makadam savana, spot satwa liar di Savana Bekol, hingga pesisir tenang Pantai Bama.
-          </p>
-        </div>
         </ScrollReveal>
 
-        {/* 3 Packages Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {/* 3 Column Pricing Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch mb-10 sm:mb-12">
           
-          {/* Paket 1: Sunrise Safari */}
+          {/* Card 1: Paket Shuttle Baluran (FEATURED / POPULER) */}
+          <ScrollReveal delay={50}>
+            <div className="relative rounded-2xl bg-white border-2 border-[#C45525] p-6 sm:p-8 flex flex-col justify-between shadow-md hover:shadow-xl transition-all h-full">
+              
+              {/* Orange Top Badge */}
+              <div className="absolute -top-3.5 left-6 bg-[#C45525] text-white text-[10.5px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-sm">
+                POPULER SAAT LIBURAN
+              </div>
+
+              <div className="space-y-4 pt-2">
+                <div className="flex items-center justify-between text-xs text-[#6E736D] font-mono">
+                  <span className="flex items-center gap-1.5 font-semibold text-[#1A1D1A]">
+                    <Clock className="w-3.5 h-3.5 text-[#C45525]" />
+                    05:00 - 18:00 WIB
+                  </span>
+                  <span>3 – 4 Jam Santai</span>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-black text-[#1A1D1A]">
+                    Paket Shuttle Baluran
+                  </h3>
+                  <p className="text-xs text-[#6E736D] mt-2 leading-relaxed">
+                    Format standar safari terpopuler pulang-pergi. Penjemputan di Visitor Center Pos Batangan, melintasi Evergreen Forest, Savana Bekol, hingga pesisir Pantai Bama.
+                  </p>
+                </div>
+
+                {/* Highlight Box */}
+                <div className="bg-[#FAF8F5] rounded-xl p-4 space-y-2 border border-[#EAE6DC] text-xs text-[#1A1D1A]">
+                  <p className="font-bold text-[11px] text-[#C45525] uppercase tracking-wider">
+                    Rute & Destinasi Utama:
+                  </p>
+                  <ul className="space-y-1.5">
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#C45525] font-bold">•</span>
+                      <span>Pos Batangan ⇄ Evergreen ⇄ Bekol ⇄ Bama (PP)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#C45525] font-bold">•</span>
+                      <span>Spot foto menara pandang Bekol & atap mobil</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#C45525] font-bold">•</span>
+                      <span>Mengamati kawanan rusa timor, merak & banteng</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#C45525] font-bold">•</span>
+                      <span>Jembatan kayu hutan mangrove Pantai Bama</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="flex items-center gap-4 text-xs text-[#6E736D] pt-1">
+                  <span className="flex items-center gap-1">
+                    <Users className="w-3.5 h-3.5 text-[#1A2E22]" />
+                    Kapasitas 1-6 Orang
+                  </span>
+                  <span>•</span>
+                  <span>Sopir, BBM & Parkir</span>
+                </div>
+              </div>
+
+              {/* Price & Action */}
+              <div className="pt-6 border-t border-[#EAE6DC] flex items-center justify-between gap-2 mt-6">
+                <div>
+                  <span className="text-[11px] text-[#6E736D] block font-mono">Tarif per Mobil:</span>
+                  <p className="text-2xl sm:text-3xl font-black text-[#1A1D1A]">
+                    Rp 600.000
+                  </p>
+                </div>
+
+                <a
+                  href={waShuttle}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-5 py-3 rounded-xl bg-[#1A1D1A] hover:bg-[#C45525] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-xs"
+                >
+                  <span>Booking</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+              </div>
+
+            </div>
+          </ScrollReveal>
+
+          {/* Card 2: Paket Sunrise Savana */}
           <ScrollReveal delay={100}>
-          <div className="rounded-xl border border-base-border bg-base-light p-6 sm:p-7 flex flex-col justify-between hover:border-charcoal/40 hover:shadow-md transition-all duration-300 h-full">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between border-b border-base-border/80 pb-3">
-                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-earth uppercase tracking-wider">
-                  <Sun className="w-3.5 h-3.5" />
-                  Favorit Satwa
-                </span>
-                <span className="text-[11px] text-charcoal-light">05:00 - 10:00 WIB</span>
+            <div className="rounded-2xl bg-white border border-[#EAE6DC] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all h-full">
+              
+              <div className="space-y-4">
+                <div className="flex items-center justify-between text-xs text-[#6E736D] font-mono">
+                  <span className="flex items-center gap-1.5 font-semibold text-[#1A1D1A]">
+                    <Clock className="w-3.5 h-3.5 text-[#C45525]" />
+                    05:00 - 09:30 WIB
+                  </span>
+                  <span>Fajar Emas</span>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-black text-[#1A1D1A]">
+                    Paket Sunrise Savana
+                  </h3>
+                  <p className="text-xs text-[#6E736D] mt-2 leading-relaxed">
+                    Safari subuh mengejar momen golden hour terbitnya matahari di Savana Bekol. Waktu paling aktif bagi kawanan satwa liar keluar merumput bebas.
+                  </p>
+                </div>
+
+                {/* Highlight Box */}
+                <div className="bg-[#FAF8F5] rounded-xl p-4 space-y-2 border border-[#EAE6DC] text-xs text-[#1A1D1A]">
+                  <p className="font-bold text-[11px] text-[#C45525] uppercase tracking-wider">
+                    Fasilitas & Sorotan Fajar:
+                  </p>
+                  <ul className="space-y-1.5">
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#C45525] font-bold">•</span>
+                      <span>Berangkat fajar 05:00 WIB dari Pos Batangan</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#C45525] font-bold">•</span>
+                      <span>Spot sunrise eksotis menara pandang Bekol</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#C45525] font-bold">•</span>
+                      <span>Peluang maksimal mengamati satwa liar pagi</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#C45525] font-bold">•</span>
+                      <span>Lanjut santai pagi ke Pantai Bama & Mangrove</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="flex items-center gap-4 text-xs text-[#6E736D] pt-1">
+                  <span className="flex items-center gap-1">
+                    <Users className="w-3.5 h-3.5 text-[#1A2E22]" />
+                    Kapasitas 1-6 Orang
+                  </span>
+                  <span>•</span>
+                  <span>Sopir, BBM & Parkir</span>
+                </div>
               </div>
 
-              <div>
-                <h3 className="text-xl font-bold text-charcoal">
-                  Sunrise Safari Baluran
-                </h3>
-                <p className="mt-2 text-xs sm:text-sm text-charcoal-muted leading-relaxed">
-                  Waktu terbaik berburu momen fajar di Savana Bekol saat kawanan rusa, banteng jawa, dan merak keluar merumput di padang savana.
-                </p>
+              {/* Price & Action */}
+              <div className="pt-6 border-t border-[#EAE6DC] flex items-center justify-between gap-2 mt-6">
+                <div>
+                  <span className="text-[11px] text-[#6E736D] block font-mono">Tarif per Mobil:</span>
+                  <p className="text-2xl sm:text-3xl font-black text-[#1A1D1A]">
+                    Mulai Rp 600.000
+                  </p>
+                </div>
+
+                <a
+                  href={waSunrise}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-5 py-3 rounded-xl bg-[#1A1D1A] hover:bg-[#C45525] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-xs"
+                >
+                  <span>Booking</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
               </div>
 
-              <div className="space-y-2.5 pt-2 text-xs sm:text-sm text-charcoal">
-                <div className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Spot Sunrise Savana Bekol & Menara Pandang</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Jelajah Pantai Bama & Hutan Mangrove</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Sopir lokal pemandu spot satwa liar</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Start dari Gerbang Batangan Baluran</span>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-base-border/80">
-                <p className="text-xs text-charcoal-light font-medium">Informasi Tarif:</p>
-                <div className="flex items-baseline gap-1 mt-0.5">
-                  <span className="text-2xl font-black text-charcoal">Mulai Rp 600.000</span>
-                  <span className="text-xs text-charcoal-muted">/ Jeep</span>
-                </div>
-                <p className="text-[11px] text-charcoal-muted mt-0.5">
-                  Kapasitas 1 unit Jeep (hingga 5–6 orang)
-                </p>
-              </div>
             </div>
-
-            <div className="pt-6">
-              <a
-                href={waPaket1}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-earth hover:bg-earth-hover text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow hover:ring-2 hover:ring-earth/20 active:opacity-95"
-                id="paket-sunrise-btn"
-              >
-                <MessageCircle className="w-4 h-4 fill-current" />
-                <span>Tanya Paket Sunrise</span>
-              </a>
-            </div>
-          </div>
           </ScrollReveal>
 
-          {/* Paket 2: Eksplor Savana & Pantai Bama (Day Safari) */}
-          <ScrollReveal delay={200}>
-          <div className="rounded-xl border-2 border-olive/40 bg-base-light p-6 sm:p-7 flex flex-col justify-between relative hover:border-olive hover:shadow-lg transition-all duration-300 h-full">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between border-b border-base-border/80 pb-3">
-                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-olive uppercase tracking-wider">
-                  <Sunset className="w-3.5 h-3.5" />
-                  Keluarga Santai
-                </span>
-                <span className="text-[11px] text-charcoal-light">Fleksibel Siang/Sore</span>
+          {/* Card 3: Paket Private All-In Antar-Jemput */}
+          <ScrollReveal delay={150}>
+            <div className="rounded-2xl bg-white border border-[#EAE6DC] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all h-full">
+              
+              <div className="space-y-4">
+                <div className="flex items-center justify-between text-xs text-[#6E736D] font-mono">
+                  <span className="flex items-center gap-1.5 font-semibold text-[#1A1D1A]">
+                    <Clock className="w-3.5 h-3.5 text-[#C45525]" />
+                    Fleksibel
+                  </span>
+                  <span>All-In Jemput</span>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-black text-[#1A1D1A]">
+                    Private All-In Jemput Kota
+                  </h3>
+                  <p className="text-xs text-[#6E736D] mt-2 leading-relaxed">
+                    Solusi praktis tanpa repot sewa kendaraan terpisah. Dijemput langsung dari hotel Anda di Kota Banyuwangi, Stasiun Ketapang, atau pelabuhan.
+                  </p>
+                </div>
+
+                {/* Highlight Box */}
+                <div className="bg-[#FAF8F5] rounded-xl p-4 space-y-2 border border-[#EAE6DC] text-xs text-[#1A1D1A]">
+                  <p className="font-bold text-[11px] text-[#C45525] uppercase tracking-wider">
+                    Layanan Penjemputan Privat:
+                  </p>
+                  <ul className="space-y-1.5">
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#C45525] font-bold">•</span>
+                      <span>Penjemputan hotel/stasiun di Banyuwangi</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#C45525] font-bold">•</span>
+                      <span>Transportasi langsung menuju TN Baluran</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#C45525] font-bold">•</span>
+                      <span>Full tour safari dalam kawasan Baluran (PP)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-[#C45525] font-bold">•</span>
+                      <span>Diantar kembali ke hotel/stasiun selesai trip</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="flex items-center gap-4 text-xs text-[#6E736D] pt-1">
+                  <span className="flex items-center gap-1">
+                    <Users className="w-3.5 h-3.5 text-[#1A2E22]" />
+                    Kapasitas 1-6 Orang
+                  </span>
+                  <span>•</span>
+                  <span>Privat Rombongan</span>
+                </div>
               </div>
 
-              <div>
-                <h3 className="text-xl font-bold text-charcoal">
-                  Eksplor Savana & Bama
-                </h3>
-                <p className="mt-2 text-xs sm:text-sm text-charcoal-muted leading-relaxed">
-                  Trip santai tanpa buru-buru. Sangat cocok untuk liburan keluarga, anak-anak, dan foto santai di pohon eksotis Savana Bekol.
-                </p>
+              {/* Price & Action */}
+              <div className="pt-6 border-t border-[#EAE6DC] flex items-center justify-between gap-2 mt-6">
+                <div>
+                  <span className="text-[11px] text-[#6E736D] block font-mono">Tarif per Mobil:</span>
+                  <p className="text-xl sm:text-2xl font-black text-[#1A1D1A]">
+                    Hubungi WA
+                  </p>
+                </div>
+
+                <a
+                  href={waPrivate}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-5 py-3 rounded-xl bg-[#1A1D1A] hover:bg-[#C45525] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-xs"
+                >
+                  <span>Konsultasi</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
               </div>
 
-              <div className="space-y-2.5 pt-2 text-xs sm:text-sm text-charcoal">
-                <div className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Lintas Hutan Musim (Evergreen Forest)</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Spot Foto Savana Bekol (Bisa foto di atas Jeep)</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Eksplor Pantai Bama & Mangrove Trail (PP)</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Start & Finish dari Visitor Center Baluran</span>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-base-border/80">
-                <p className="text-xs text-charcoal-light font-medium">Tarif Resmi:</p>
-                <div className="flex items-baseline gap-1 mt-0.5">
-                  <span className="text-2xl font-black text-charcoal">Rp 600.000</span>
-                  <span className="text-xs text-charcoal-muted">/ Jeep (PP)</span>
-                </div>
-                <p className="text-[11px] text-charcoal-muted mt-0.5">
-                  Kapasitas 1 unit Jeep (hingga 5–6 orang)
-                </p>
-              </div>
             </div>
-
-            <div className="pt-6">
-              <a
-                href={waPaket2}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-olive hover:bg-olive-hover text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow hover:ring-2 hover:ring-olive/20 active:opacity-95"
-                id="paket-day-safari-btn"
-              >
-                <MessageCircle className="w-4 h-4 fill-current" />
-                <span>Tanya Paket Eksplor</span>
-              </a>
-            </div>
-          </div>
-          </ScrollReveal>
-
-          {/* Paket 3: Antar-Jemput Banyuwangi / Ketapang */}
-          <ScrollReveal delay={300}>
-          <div className="rounded-xl border border-base-border bg-base-light p-6 sm:p-7 flex flex-col justify-between hover:border-charcoal/40 hover:shadow-md transition-all duration-300 h-full">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between border-b border-base-border/80 pb-3">
-                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-earth uppercase tracking-wider">
-                  <Car className="w-3.5 h-3.5" />
-                  All-in Jemput
-                </span>
-                <span className="text-[11px] text-charcoal-light">Kota / Ketapang</span>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-bold text-charcoal">
-                  Private Trip + Antar Jemput
-                </h3>
-                <p className="mt-2 text-xs sm:text-sm text-charcoal-muted leading-relaxed">
-                  Layanan jemput langsung dari hotel, stasiun Banyuwangi Kota, atau Ketapang menuju Baluran pulang-pergi tanpa repot cari kendaraan.
-                </p>
-              </div>
-
-              <div className="space-y-2.5 pt-2 text-xs sm:text-sm text-charcoal">
-                <div className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Penjemputan hotel / stasiun Banyuwangi</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Full trip safari di dalam TN Baluran</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Diantar kembali ke hotel / stasiun</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Privat untuk Anda dan rombongan</span>
-                </div>
-              </div>
-
-              <div className="pt-4 border-t border-base-border/80">
-                <p className="text-xs text-charcoal-light font-medium">Informasi Tarif:</p>
-                <p className="text-sm sm:text-base font-bold text-charcoal mt-0.5">
-                  Hubungi via WhatsApp
-                </p>
-                <p className="text-[11px] text-charcoal-muted mt-0.5">
-                  Konsultasikan lokasi hotel Anda
-                </p>
-              </div>
-            </div>
-
-            <div className="pt-6">
-              <a
-                href={waPaket3}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-lg bg-earth hover:bg-earth-hover text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow hover:ring-2 hover:ring-earth/20 active:opacity-95"
-                id="paket-antar-jemput-btn"
-              >
-                <MessageCircle className="w-4 h-4 fill-current" />
-                <span>Tanya Paket Jemput</span>
-              </a>
-            </div>
-          </div>
           </ScrollReveal>
 
         </div>
 
-        {/* Transparansi Fasilitas: Include & Exclude Box */}
-        <div className="mt-12 rounded-xl border border-base-border bg-base-subtle p-6 sm:p-8">
-          <h4 className="text-base sm:text-lg font-bold text-charcoal mb-4">
-            Rincian Fasilitas Sewa Jeep Baluran
-          </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            {/* Include */}
-            <div className="space-y-2.5">
-              <p className="text-xs font-bold text-olive uppercase tracking-wider flex items-center gap-1.5">
-                <Check className="w-4 h-4 text-olive" />
-                Sudah Termasuk (Include):
+        {/* Green Ticket Notice Box (From Mockup) */}
+        <ScrollReveal delay={200}>
+          <div className="rounded-2xl bg-[#F4F9F2] border border-[#D5E4CF] p-5 sm:p-6 flex items-start sm:items-center gap-4 text-xs sm:text-sm text-[#2D4532]">
+            <div className="w-9 h-9 rounded-xl bg-[#DCECD7] text-[#24522A] flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
+              <Info className="w-5 h-5" />
+            </div>
+            <div className="space-y-1">
+              <p className="font-bold text-[#1F3D26]">
+                Catatan Tiket Masuk Resmi Taman Nasional Baluran:
               </p>
-              <ul className="space-y-2 text-xs sm:text-sm text-charcoal-muted">
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-olive mt-1.5 shrink-0" />
-                  <span>Sewa 1 unit armada Jeep 4x4 prima</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-olive mt-1.5 shrink-0" />
-                  <span>Sopir lokal berpengalaman sekaligus pemandu spot satwa</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-olive mt-1.5 shrink-0" />
-                  <span>Bahan Bakar Minyak (BBM) selama rute safari</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-olive mt-1.5 shrink-0" />
-                  <span>Biaya parkir kendaraan di spot wisata dalam TN Baluran</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Exclude */}
-            <div className="space-y-2.5">
-              <p className="text-xs font-bold text-earth uppercase tracking-wider flex items-center gap-1.5">
-                <X className="w-4 h-4 text-earth" />
-                Belum Termasuk (Exclude):
+              <p className="text-xs text-[#425F46] leading-relaxed">
+                Tarif sewa armada Jeep di atas belum termasuk tiket masuk resmi kawasan TN Baluran (Wisatawan Domestik: Rp 16.000 / orang di hari kerja, Rp 18.500 di akhir pekan; Wisatawan Mancanegara sesuai tarif balai TN). Tiket dibeli langsung di loket resmi pintu gerbang Pos Batangan saat kedatangan.
               </p>
-              <ul className="space-y-2 text-xs sm:text-sm text-charcoal-muted">
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-earth mt-1.5 shrink-0" />
-                  <span>Tiket masuk resmi Taman Nasional Baluran (dibeli di loket pintu gerbang)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-earth mt-1.5 shrink-0" />
-                  <span>Makan & minum pribadi (tersedia warung di Pantai Bama)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-earth mt-1.5 shrink-0" />
-                  <span>Pengeluaran pribadi lainnya</span>
-                </li>
-              </ul>
             </div>
-
           </div>
-        </div>
-
-        {/* Practical reassurance notice */}
-        <div className="mt-8 p-4 sm:p-5 rounded-xl bg-base-white border border-base-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-sm text-charcoal-muted">
-          <p className="leading-relaxed">
-            <strong className="text-charcoal font-semibold">Pemesanan Sangat Mudah:</strong> Cukup chat WhatsApp sebutkan tanggal rencana dan jumlah rombongan. Pemilik akan mengonfirmasi ketersediaan unit Jeep.
-          </p>
-          <a
-            href="https://wa.me/6285204572677"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 font-semibold text-earth hover:text-earth-hover inline-flex items-center gap-1"
-          >
-            <span>Chat 0852-0457-2677</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </a>
-        </div>
+        </ScrollReveal>
 
       </div>
     </section>

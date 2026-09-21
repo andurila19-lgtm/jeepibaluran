@@ -1,120 +1,133 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { MessageCircle, ArrowRight, MapPin, CheckCircle2, Shield } from "lucide-react";
+import { MessageCircle, Star, MapPin } from "lucide-react";
 
 export default function Hero() {
+  const [scrollY, setScrollY] = useState(0);
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mediaQuery.matches);
+
+    const handleMediaChange = (e: MediaQueryListEvent) => {
+      setReducedMotion(e.matches);
+    };
+    mediaQuery.addEventListener("change", handleMediaChange);
+
+    if (mediaQuery.matches) {
+      return () => mediaQuery.removeEventListener("change", handleMediaChange);
+    }
+
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      mediaQuery.removeEventListener("change", handleMediaChange);
+    };
+  }, []);
+
   const waUrl =
     "https://wa.me/6285204572677?text=Halo%20Jeep%20Baluran%2C%20saya%20ingin%20tanya%20informasi%20paket%20safari%20dan%20ketersediaan%20unit.";
 
+  // Parallax subtle calculation
+  const isScrolled = scrollY > 0 && !reducedMotion;
+  const imageParallaxY = isScrolled ? Math.min(50, scrollY * 0.08) : 0;
+
   return (
-    <section className="relative bg-base-light pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-24 border-b border-base-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          
-          {/* Left Column: Authentic narrative & clear action (lg: 6 cols) */}
-          <div className="lg:col-span-6 space-y-6">
-            
-            {/* Subtle Origin Eyebrow */}
-            <div className="inline-flex items-center gap-2 text-xs font-semibold text-charcoal-muted tracking-wide animate-fade-in">
-              <span className="w-2 h-2 rounded-full bg-earth shrink-0" />
-              <span>Sewa Jeep Safari 4x4 Taman Nasional Baluran</span>
-            </div>
+    <div className="relative w-full">
+      {/* 1. Main Hero Container (Full-screen clean cinematic viewport, zero white gap) */}
+      <section className="relative min-h-[calc(100dvh-4rem)] sm:min-h-[calc(100dvh-5rem)] flex flex-col justify-center items-center overflow-hidden bg-[#0A141D] text-white px-4 sm:px-6 lg:px-8 py-8 sm:py-14 lg:py-20">
+        
+        {/* Full-Bleed Cinematic Drone Video Background */}
+        <div
+          className="absolute inset-0 -top-[5%] w-full h-[110%] pointer-events-none overflow-hidden"
+          style={{
+            transform: imageParallaxY ? `translate3d(0, ${imageParallaxY}px, 0)` : "none",
+            willChange: isScrolled ? "transform" : "auto",
+          }}
+        >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            poster="/images/jeep-baluran-oranye-tamu.webp"
+            className="w-full h-full object-cover object-center hero-cinematic-zoom brightness-95"
+          >
+            <source src="/Cinematic_drone_tracking_shot.webm" type="video/webm" />
+            <source src="/Cinematic_drone_tracking_shot.mp4" type="video/mp4" />
+          </video>
+          {/* Deep Cinematic Multi-Stop Tint Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0A141D]/75 via-[#0A141D]/35 to-[#0A141D]/85" />
+          <div className="absolute inset-0 bg-black/10" />
+        </div>
 
-            {/* Headline: Natural casing, human-scale, confident */}
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-[44px] font-bold text-charcoal leading-[1.25] sm:leading-[1.2] tracking-tight animate-fade-up">
-              Jelajahi Savana Bekol & Africa van Java dengan Jeep 4x4
-            </h1>
+        {/* Hero Content (Centered with comfortable spacing) */}
+        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">
 
-            {/* Paragraph: Direct, grounded, hospitable */}
-            <p className="text-sm sm:text-lg text-charcoal-muted leading-relaxed max-w-xl animate-fade-up">
-              Sensasi safari alam liar Taman Nasional Baluran bersama sopir lokal berpengalaman. Nikmati indahnya Savana Bekol berlatar Gunung Baluran, berburu foto kawanan satwa liar, hingga hembusan angin pantai di Pantai Bama tanpa lelah berjalan kaki.
-            </p>
+          {/* Headline: Mix of Serif White + Golden-Amber Italic Serif */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-white tracking-tight leading-tight sm:leading-[1.1] hero-motion-headline">
+            Jelajahi Savana Bekol <br className="hidden sm:inline" />
+            <span className="italic font-serif text-[#F59E0B] block sm:inline">
+              bersama sahabat lokal Baluran.
+            </span>
+          </h1>
 
-            {/* CTAs: Direct and unmistakable */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 animate-fade-up">
-              <a
-                href={waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-lg bg-earth hover:bg-earth-hover text-white text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow hover:ring-2 hover:ring-earth/20 active:opacity-95"
-                id="hero-whatsapp-btn"
-              >
-                <MessageCircle className="w-4 h-4 fill-current" />
-                <span>Tanya via WhatsApp</span>
-              </a>
+          {/* Supporting Narrative */}
+          <p className="text-xs sm:text-base lg:text-lg text-white/85 max-w-2xl mx-auto leading-relaxed hero-motion-text px-2">
+            Petualangan safari 4x4 santai & ramah keluarga melintasi Evergreen Forest, padang Savana Bekol, hingga Pantai Bama. Semua sudah lengkap — armada Jeep 4x4, BBM, sopir lokal, dan spot foto bebas di atas atap Jeep.
+          </p>
 
-              <Link
-                href="/paket"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg bg-base-white hover:bg-base-subtle hover:border-charcoal/30 border border-base-border text-charcoal text-sm font-medium transition-all duration-200 shadow-sm active:opacity-95"
-                id="hero-tanya-paket-btn"
-              >
-                <span>Lihat Paket Safari</span>
-                <ArrowRight className="w-4 h-4 text-charcoal-light" />
-              </Link>
-            </div>
+          {/* Dual CTAs: Standard comfortable layout */}
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 hero-motion-cta w-full max-w-xs sm:max-w-none mx-auto">
+            {/* Primary Button: Golden Yellow Pill */}
+            <a
+              href={waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              id="hero-book-wa-btn"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 sm:py-3.5 rounded-full bg-[#F59E0B] hover:bg-[#EAB308] text-black text-sm sm:text-base font-bold transition-all duration-200 shadow-lg shadow-[#F59E0B]/25 active:scale-95"
+            >
+              <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
+              <span>Book via WhatsApp</span>
+            </a>
 
-            {/* Grounded Key Facts - natural row, no cards */}
-            <div className="pt-4 border-t border-base-border/80 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-charcoal-light">
-              <div className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-earth shrink-0" />
-                <span>Pos Batangan, Gerbang TN Baluran</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-olive shrink-0" />
-                <span>Ramah anak & lansia (tanpa mendaki)</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Shield className="w-3.5 h-3.5 text-olive shrink-0" />
-                <span>Sopir lokal paham spot satwa liar</span>
-              </div>
-            </div>
-
+            {/* Secondary Button: Glass Dark Translucent Pill */}
+            <a
+              href="#paket"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm sm:text-base font-medium border border-white/20 backdrop-blur-xs transition-all duration-200"
+            >
+              <span>Lihat Paket & Tarif ↓</span>
+            </a>
           </div>
 
-          {/* Right Column: Strong Real Photography (lg: 6 cols) */}
-          <div className="lg:col-span-6 animate-fade-in">
-            <div className="relative">
-              {/* Asymmetric warm backing */}
-              <div className="absolute -inset-3 rounded-2xl bg-base-sand/70 -rotate-1 hidden sm:block pointer-events-none" />
-              
-              {/* Main Image Frame */}
-              <div className="relative rounded-2xl overflow-hidden border border-base-border shadow-md bg-base-white">
-                
-                {/* Floating Live Badge */}
-                <div className="absolute top-3 sm:top-4 right-3 sm:right-4 z-10 bg-[#192720]/90 backdrop-blur-md text-white text-[11px] sm:text-xs px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl shadow-lg border border-white/20 animate-float flex items-center gap-1.5 sm:gap-2">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
-                  </span>
-                  <span className="font-semibold text-emerald-300">Shuttle Rp 600rb / Jeep</span>
-                </div>
-
-                {/* Floating Feature Chip */}
-                <div className="absolute bottom-14 sm:bottom-16 left-3 sm:left-4 z-10 bg-white/95 backdrop-blur-md text-charcoal text-[10.5px] sm:text-[11px] font-semibold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg shadow-md border border-base-border flex items-center gap-1.5">
-                  <span className="text-earth">★ 5.0</span>
-                  <span>Spot Foto di Atas Jeep</span>
-                </div>
-
-                <div className="relative h-[280px] sm:h-[400px] lg:h-[440px] w-full">
-                  <Image
-                    src="/images/jeep-baluran-oranye-tamu.webp"
-                    alt="Wisatawan bersafari di atas Jeep Oranye resmi Baluran"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover object-center"
-                  />
-                </div>
-                <div className="p-3 sm:p-3.5 bg-base-white border-t border-base-border/70 flex flex-col xs:flex-row xs:items-center justify-between gap-1 text-xs text-charcoal-muted">
-                  <span className="font-medium truncate">Unit Asli Jeep Baluran — Sensasi foto di atas Jeep</span>
-                  <span className="text-charcoal-light text-[11px] shrink-0">TN Baluran, Jatim</span>
-                </div>
-              </div>
-            </div>
+          {/* Trust Subline beneath buttons */}
+          <div className="pt-1 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs sm:text-sm text-white/75 hero-motion-facts">
+            <span className="inline-flex items-center gap-1.5 text-white whitespace-nowrap">
+              <Star className="w-3.5 h-3.5 fill-[#F59E0B] text-[#F59E0B]" />
+              <strong className="text-[#F59E0B]">4.9</strong> on Google (180+ ulasan)
+            </span>
+            <span className="text-white/40">•</span>
+            <span className="whitespace-nowrap">Tanpa perantara calo</span>
           </div>
 
         </div>
-      </div>
-    </section>
+
+      </section>
+    </div>
   );
 }

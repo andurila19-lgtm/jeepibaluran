@@ -1,135 +1,157 @@
-import Link from "next/link";
-import { MapPin, MessageCircle, Clock, Shield, Compass, ArrowRight } from "lucide-react";
+import Link from "next/image";
+import { ShieldCheck, Users, MapPin, Clock, MessageCircle, CheckCircle2, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { Button } from "@/components/ui/button";
 
 export default function AboutSection() {
   const waUrl =
     "https://wa.me/6285204572677?text=Halo%20Jeep%20Baluran%2C%20saya%20ingin%20tanya%20informasi%20paket%20safari%20dan%20ketersediaan%20unit.";
 
+  const trustPoints = [
+    {
+      icon: ShieldCheck,
+      title: "100% Legal & Terdaftar",
+      desc: "Armada dan pengemudi resmi terkoordinasi dengan pengelola Balai Taman Nasional Baluran demi keamanan dan ketertiban wisata Anda.",
+    },
+    {
+      icon: CheckCircle2,
+      title: "Tarif Pasti Rp 600.000 PP Tanpa Calo",
+      desc: "Harga jujur dan transparan langsung ke pemilik armada untuk rute shuttle lengkap Batangan ⇄ Evergreen ⇄ Bekol ⇄ Bama PP.",
+    },
+    {
+      icon: Users,
+      title: "Pengemudi Warga Asli Baluran",
+      desc: "Tumbuh besar di sekitar kawasan Baluran, sangat menguasai lekuk medan makadam dan jam terbaik melihat satwa liar berkeliaran.",
+    },
+  ];
+
   return (
-    <section id="tentang" className="py-16 sm:py-20 lg:py-24 bg-base-subtle border-b border-base-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-          
-          {/* Left: About Text & Direct Action (7 cols) */}
-          <div className="lg:col-span-7 space-y-6">
-            <ScrollReveal>
-            <div className="inline-flex items-center gap-2 text-xs font-semibold text-charcoal-muted tracking-wide">
-              <span className="w-1.5 h-1.5 rounded-full bg-earth" />
-              <span>Tentang Layanan Kami</span>
-            </div>
+    <section id="tentang" className="py-16 sm:py-20 lg:py-24 bg-[#FAF8F5] border-b border-[#EAE6DC]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <h2 className="text-3xl sm:text-4xl font-bold text-charcoal tracking-tight">
-              Komunitas Sewa Jeep Lokal Taman Nasional Baluran
+        {/* Section Header */}
+        <ScrollReveal>
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A2E22]/5 border border-[#1A2E22]/15 text-[#1A2E22] text-xs font-semibold uppercase tracking-wider mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C45525]" />
+              <span>TENTANG OPERATOR</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1A1D1A] tracking-tight">
+              Paguyuban Pengemudi Jeep Safari Baluran
             </h2>
+            <p className="mt-2.5 text-xs sm:text-sm text-[#6E736D] leading-relaxed">
+              Bukan perantara atau agen luar kota. Kami adalah paguyuban pengemudi dan pemilik armada Jeep 4x4 lokal yang melayani Anda langsung dari gerbang Pos Batangan.
+            </p>
+          </div>
+        </ScrollReveal>
 
-            <div className="space-y-4 text-base text-charcoal-muted leading-relaxed">
-              <p>
-                Jeep Baluran adalah penyedia layanan sewa armada Jeep 4x4 lokal yang berbasis langsung di area Taman Nasional Baluran. Kami berfokus mendampingi wisatawan, rombongan keluarga, maupun komunitas fotografer untuk menjelajahi keindahan savana dan pesisir Baluran secara aman, tertib, dan nyaman.
-              </p>
-              <p>
-                Dengan didampingi sopir lokal yang hapal jalur makadam, waktu keluarnya satwa liar (rusa, banteng jawa, burung merak), serta spot foto terbaik di Savana Bekol dan Pantai Bama, perjalanan safari Anda dijamin berkesan tanpa perlu khawatir lelah berjalan kaki.
-              </p>
-            </div>
-
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
-              <a
-                href={waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-olive hover:bg-olive-hover text-white text-sm font-semibold transition-all shadow-sm"
-              >
-                <MessageCircle className="w-4 h-4 fill-current" />
-                <span>Hubungi Pemilik via WhatsApp</span>
-              </a>
-              <Link
-                href="/paket"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg bg-base-white hover:bg-base-light border border-base-border text-charcoal text-sm font-medium transition-colors"
-              >
-                <span>Lihat Pilihan Paket</span>
-                <ArrowRight className="w-4 h-4 text-charcoal-light" />
-              </Link>
-            </div>
-            </ScrollReveal>
+        {/* Content Grid: Left 3 Trust Pillars + Right Basecamp Card */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          
+          {/* Left: 3 Trust Pillars (7 cols) */}
+          <div className="lg:col-span-7 space-y-4">
+            {trustPoints.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <ScrollReveal key={idx} delay={100 + idx * 75}>
+                  <div className="p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border border-[#EAE6DC] hover:border-[#1A2E22]/30 transition-all duration-300 shadow-xs flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-[#1A2E22]/5 text-[#1A2E22] flex items-center justify-center shrink-0 mt-0.5 border border-[#1A2E22]/10">
+                      <Icon className="w-5 h-5 text-[#C45525]" />
+                    </div>
+                    <div>
+                      <h3 className="text-base sm:text-lg font-bold text-[#1A1D1A]">
+                        {item.title}
+                      </h3>
+                      <p className="mt-1.5 text-xs sm:text-sm text-[#6E736D] leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
           </div>
 
-          {/* Right: Verified Business Info Box (5 cols) */}
+          {/* Right: Direct Basecamp & WhatsApp Card (5 cols) */}
           <div className="lg:col-span-5">
-            <ScrollReveal delay={150}>
-            <div className="rounded-xl border border-base-border bg-base-white p-7 sm:p-8 space-y-6 shadow-sm">
-              
-              <div className="border-b border-base-border pb-4">
-                <p className="text-xs font-semibold text-charcoal-light uppercase tracking-wider">
-                  Informasi Layanan & Meeting Point
-                </p>
-                <h3 className="text-lg font-bold text-charcoal mt-1">
-                  Jeep Baluran Official
-                </h3>
-              </div>
+            <ScrollReveal delay={200}>
+              <div className="rounded-2xl border border-[#EAE6DC] bg-[#FFFFFF] p-6 sm:p-7 shadow-xs space-y-5">
+                <div className="border-b border-[#EAE6DC] pb-4">
+                  <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#C45525] block">
+                    PENGELOLA RESMI
+                  </span>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#1A1D1A] mt-0.5">
+                    Jeep Baluran Pos Batangan
+                  </h3>
+                  <p className="text-xs text-[#6E736D] mt-1">
+                    Koordinator armada & reservasi langsung tanpa biaya perantara.
+                  </p>
+                </div>
 
-              {/* Meeting Point / Gate */}
-              <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-base-sand text-charcoal flex items-center justify-center shrink-0 mt-0.5">
-                  <MapPin className="w-4 h-4 text-earth" />
+                {/* Basecamp Location */}
+                <div className="flex items-start gap-3.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#F3EFE6] flex items-center justify-center shrink-0 mt-0.5 border border-[#EAE6DC]">
+                    <MapPin className="w-4 h-4 text-[#C45525]" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-[#1A1D1A]">Titik Kumpul Utama</p>
+                    <p className="text-xs text-[#6E736D] mt-0.5 leading-snug">
+                      Pos Batangan (Visitor Center Pintu Gerbang Masuk TN Baluran KM 35, Banyuwangi - Situbondo).
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-xs font-semibold text-charcoal-light">Meeting Point Utama</p>
-                  <p className="text-sm font-semibold text-charcoal mt-1 leading-snug">
-                    Pos Batangan (Pintu Gerbang Utama TN Baluran), Jl. Raya Banyuwangi - Situbondo KM 35
-                  </p>
+
+                {/* Jam Operasional */}
+                <div className="flex items-start gap-3.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#F3EFE6] flex items-center justify-center shrink-0 mt-0.5 border border-[#EAE6DC]">
+                    <Clock className="w-4 h-4 text-[#1A2E22]" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-[#1A1D1A]">Jam Operasional Safari</p>
+                    <p className="text-xs text-[#6E736D] mt-0.5 leading-snug">
+                      Buka Setiap Hari: 05:00 - 18:00 WIB (Termasuk Sunrise Safari & Weekend).
+                    </p>
+                  </div>
+                </div>
+
+                {/* Contact WA */}
+                <div className="flex items-start gap-3.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#F3EFE6] flex items-center justify-center shrink-0 mt-0.5 border border-[#EAE6DC]">
+                    <MessageCircle className="w-4 h-4 text-[#C45525]" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-[#1A1D1A]">WhatsApp Pemilik Langsung</p>
+                    <p className="text-xs font-bold text-[#1A2E22] mt-0.5">
+                      0852-0457-2677
+                    </p>
+                    <p className="text-[11px] text-[#6E736D] mt-0.5">
+                      Fast response untuk cek ketersediaan Jeep dan konsultasi rute.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-2">
+                  <Button
+                    asChild
+                    className="w-full bg-[#C45525] hover:bg-[#b04a1e] text-white font-semibold rounded-xl h-11 text-xs sm:text-sm shadow-xs transition-all"
+                  >
+                    <a
+                      href={waUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="gap-2 justify-center"
+                    >
+                      <MessageCircle className="w-4 h-4 fill-current" />
+                      <span>Chat WhatsApp Sekarang</span>
+                    </a>
+                  </Button>
                 </div>
               </div>
-
-              {/* Service Area */}
-              <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-base-sand text-charcoal flex items-center justify-center shrink-0 mt-0.5">
-                  <Compass className="w-4 h-4 text-olive" />
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-charcoal-light">Jangkauan Layanan</p>
-                  <p className="text-sm font-semibold text-charcoal mt-1 leading-snug">
-                    Seluruh kawasan TN Baluran (Savana Bekol, Pantai Bama, Mangrove) + opsi penjemputan dari Banyuwangi & Situbondo.
-                  </p>
-                </div>
-              </div>
-
-              {/* Operational Hours */}
-              <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-base-sand text-charcoal flex items-center justify-center shrink-0 mt-0.5">
-                  <Clock className="w-4 h-4 text-olive" />
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-charcoal-light">Jam Operasional</p>
-                  <p className="text-sm font-bold text-charcoal mt-1">
-                    Setiap Hari: 05:00 - 18:00 WIB
-                  </p>
-                  <p className="text-xs text-charcoal-muted mt-0.5">
-                    Melayani Sunrise Safari (Fajar) hingga Sunset Safari (Senja)
-                  </p>
-                </div>
-              </div>
-
-              {/* WhatsApp Contact */}
-              <div className="flex items-start gap-3.5">
-                <div className="w-8 h-8 rounded-lg bg-base-sand text-charcoal flex items-center justify-center shrink-0 mt-0.5">
-                  <MessageCircle className="w-4 h-4 text-earth" />
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-charcoal-light">Kontak Langsung Pemilik</p>
-                  <p className="text-sm font-bold text-charcoal mt-1">
-                    0852-0457-2677
-                  </p>
-                  <p className="text-xs text-charcoal-muted mt-0.5">
-                    Telepon & WhatsApp pemilik armada
-                  </p>
-                </div>
-              </div>
-
-            </div>
             </ScrollReveal>
           </div>
 
         </div>
+
       </div>
     </section>
   );

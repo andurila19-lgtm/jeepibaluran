@@ -13,47 +13,80 @@ const jakartaSans = Plus_Jakarta_Sans({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#2B3E34",
+  themeColor: "#1C2621",
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jeepbaluran.reaksy.com"),
-  title: "Jeep Baluran | Sewa Jeep Wisata Taman Nasional Baluran",
+  title: {
+    default: "Tour Banyuwangi & Jeep Baluran | Open Trip Jawa Timur",
+    template: "%s | Jeep Baluran",
+  },
   description:
-    "Sewa Jeep 4x4 Taman Nasional Baluran (Africa van Java). Jelajahi Savana Bekol, Pantai Bama, dan safari satwa liar bersama sopir lokal berpengalaman.",
+    "Layanan sewa armada 4x4 Jeep Baluran untuk tour Banyuwangi & open trip Jawa Timur. Jelajahi Savana Bekol, Pantai Bama, dan satwa liar bersama pengemudi lokal. Hubungi WhatsApp untuk cek unit.",
   keywords: [
+    "tour Banyuwangi",
     "Jeep Baluran",
-    "Sewa Jeep Baluran",
-    "Jeep Wisata Baluran",
-    "Safari Baluran 4x4",
-    "Savana Bekol Jeep",
+    "open trip Baluran",
+    "tour Jawa Timur",
+    "open trip Jawa Timur",
+    "sewa Jeep Baluran",
+    "Baluran Jeep",
+    "Banyuwangi Jeep",
+    "Situbondo Jeep",
+    "Savana Bekol 4x4",
     "Pantai Bama Baluran",
-    "Tour Baluran Banyuwangi",
-    "Jeep Taman Nasional Baluran",
   ],
   authors: [{ name: "Jeep Baluran Official" }],
+  creator: "Jeep Baluran Official",
+  publisher: "Jeep Baluran Official",
+  alternates: {
+    canonical: "https://jeepbaluran.reaksy.com",
+  },
   openGraph: {
-    title: "Jeep Baluran | Sewa Jeep Wisata Taman Nasional Baluran",
+    title: "Tour Banyuwangi & Jeep Baluran | Open Trip Jawa Timur",
     description:
-      "Sewa Jeep 4x4 Taman Nasional Baluran (Africa van Java). Jelajahi Savana Bekol, Pantai Bama, dan safari satwa liar bersama sopir lokal berpengalaman.",
+      "Layanan sewa armada 4x4 Jeep Baluran untuk tour Banyuwangi & open trip Jawa Timur. Jelajahi Savana Bekol, Pantai Bama, dan satwa liar bersama pengemudi lokal.",
     url: "https://jeepbaluran.reaksy.com",
     siteName: "Jeep Baluran",
     locale: "id_ID",
     type: "website",
     images: [
       {
-        url: "/images/jeep-hero.png",
+        url: "/images/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Jeep Wisata Taman Nasional Baluran",
+        alt: "JEEP BALURAN - Safari Jeep 4x4 Baluran Resmi",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tour Banyuwangi & Jeep Baluran | Open Trip Jawa Timur",
+    description:
+      "Layanan sewa armada 4x4 Jeep Baluran untuk tour Banyuwangi & open trip Jawa Timur. Jelajahi Savana Bekol dan Pantai Bama bersama sopir lokal.",
+    images: ["/images/og-image.webp"],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/images/logo-baluran-emblem.webp", type: "image/webp" },
+    ],
+    apple: [{ url: "/apple-icon.png" }],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -62,27 +95,50 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "TouristInformationCenter",
-      "@id": "https://jeepbaluran.com/#organization",
+      "@id": "https://jeepbaluran.reaksy.com/#organization",
       "name": "Jeep Baluran Official",
-      "image": "https://jeepbaluran.com/images/jeep-hero.png",
+      "image": "https://jeepbaluran.reaksy.com/images/jeep-baluran-oranye-tamu.webp",
       "description":
-        "Penyedia jasa sewa armada Jeep 4x4 untuk eksplorasi wisata Taman Nasional Baluran, Savana Bekol, dan Pantai Bama.",
+        "Penyedia jasa sewa armada Jeep 4x4 untuk eksplorasi wisata Taman Nasional Baluran, Savana Bekol, dan Pantai Bama sebagai pendukung tour Banyuwangi dan open trip Jawa Timur.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Pos Batangan, Gerbang Masuk Taman Nasional Baluran, Jl. Raya Banyuwangi - Situbondo KM 35",
-        "addressLocality": "Wongsorejo / Banyuputih",
+        "addressLocality": "Banyuputih",
         "addressRegion": "Jawa Timur",
+        "postalCode": "68374",
         "addressCountry": "ID"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -7.8385,
+        "longitude": 114.4287
+      },
       "telephone": "+6285204572677",
-      "url": "https://jeepbaluran.com",
-      "priceRange": "$$",
+      "url": "https://jeepbaluran.reaksy.com",
+      "priceRange": "Rp 600.000",
       "openingHours": "Mo-Su 05:00-18:00",
-      "areaServed": "Taman Nasional Baluran, Savana Bekol, Pantai Bama, Banyuwangi, Situbondo"
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "Taman Nasional Baluran"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Banyuwangi"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Situbondo"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Jawa Timur"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
-      "@id": "https://jeepbaluran.com/#faq",
+      "@id": "https://jeepbaluran.reaksy.com/#faq",
       "mainEntity": [
         {
           "@type": "Question",
