@@ -1,8 +1,10 @@
 import { MessageCircle } from "lucide-react";
+import TrackedWhatsAppButton from "@/components/TrackedWhatsAppButton";
 
 export default function FinalCta() {
   const waUrl =
-    "https://wa.me/6285204572677?text=Halo%20Jeep%20Baluran%2C%20saya%20ingin%20tanya%20informasi%20paket%20safari%20dan%20ketersediaan%20unit.";
+    "https://wa.me/6285204572677?text=" +
+    encodeURIComponent("Halo Kak, saya ingin konsultasi jadwal dan booking Jeep Baluran di Pos Batangan.");
 
   return (
     <section className="py-10 xs:py-12 sm:py-16 lg:py-20 bg-[#0E1B16] text-white relative overflow-hidden border-t border-white/10">
@@ -27,16 +29,17 @@ export default function FinalCta() {
         </p>
 
         <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a
+          <TrackedWhatsAppButton
             href={waUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            packageName="Reservasi Jeep Baluran"
+            ctaPosition="final_cta_section"
+            ariaLabel="Chat WhatsApp Reservasi Resmi Safari Jeep Baluran"
             id="final-cta-btn"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#F59E0B] hover:bg-[#EAB308] text-black text-xs sm:text-sm font-bold shadow-lg shadow-[#F59E0B]/20 transition-all active:scale-95"
           >
             <MessageCircle className="w-4 h-4 fill-current" />
             <span>Chat WhatsApp (+62 852-0457-2677)</span>
-          </a>
+          </TrackedWhatsAppButton>
         </div>
 
         {/* 4 Trust Badges in 1 compact flex line on mobile */}

@@ -1,17 +1,19 @@
 import { MessageCircle } from "lucide-react";
+import TrackedWhatsAppButton from "@/components/TrackedWhatsAppButton";
 
 export default function FloatingWhatsApp() {
   const waUrl =
-    "https://wa.me/6285204572677?text=Halo%20Jeep%20Baluran%2C%20saya%20ingin%20tanya%20informasi%20paket%20safari%20dan%20ketersediaan%20unit.";
+    "https://wa.me/6285204572677?text=" +
+    encodeURIComponent("Halo Kak, saya ingin tanya informasi ketersediaan Jeep Baluran untuk safari.");
 
   return (
     <aside aria-label="Kontak WhatsApp Langsung" className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 pointer-events-auto">
-      <a
+      <TrackedWhatsAppButton
         href={waUrl}
-        target="_blank"
-        rel="noopener noreferrer"
+        packageName="Floating Widget Inquiry"
+        ctaPosition="floating_whatsapp_widget"
         className="group flex items-center gap-2 p-2.5 sm:px-3.5 sm:py-2.5 rounded-full bg-[#2B3E34] hover:bg-[#213129] text-white shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 active:scale-95"
-        aria-label="Chat WhatsApp Jeep Baluran"
+        ariaLabel="Chat WhatsApp Jeep Baluran"
       >
         <div className="relative flex items-center justify-center">
           <MessageCircle className="w-5 h-5 fill-current text-emerald-400" />
@@ -23,7 +25,7 @@ export default function FloatingWhatsApp() {
         <span className="text-xs font-semibold pr-1 hidden sm:inline-block">
           Tanya Pemilik
         </span>
-      </a>
+      </TrackedWhatsAppButton>
     </aside>
   );
 }

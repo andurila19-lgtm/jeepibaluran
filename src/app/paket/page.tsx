@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MessageCircle, Check, X, Sun, Sunset, Car, Clock, Users, ShieldCheck, MapPin, ArrowRight } from "lucide-react";
+import TrackedWhatsAppButton from "@/components/TrackedWhatsAppButton";
+import { safeJsonStringify } from "@/lib/security";
 
 export const metadata: Metadata = {
   title: "Paket Sewa Jeep Baluran & Tour Banyuwangi | Shuttle Rp 600rb",
@@ -38,8 +40,31 @@ export default function PaketPage() {
     "Halo Jeep Baluran, saya ingin konsultasi Paket Private Trip + Antar Jemput dari hotel/stasiun di Banyuwangi."
   )}`;
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "https://jeepbaluran.reaksy.com/",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Paket Safari",
+        "item": "https://jeepbaluran.reaksy.com/paket",
+      },
+    ],
+  };
+
   return (
     <div className="py-12 sm:py-16 lg:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonStringify(breadcrumbSchema) }}
+      />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Breadcrumb */}
@@ -131,15 +156,15 @@ export default function PaketPage() {
             </div>
 
             <div className="pt-6">
-              <a
+              <TrackedWhatsAppButton
                 href={waShuttle}
-                target="_blank"
-                rel="noopener noreferrer"
+                packageName="Paket Shuttle Baluran"
+                ctaPosition="paket_page_shuttle_card"
                 className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-olive hover:bg-olive-hover text-white text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow hover:ring-2 hover:ring-olive/20 active:opacity-95"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
                 <span>Pesan Paket Shuttle (600rb)</span>
-              </a>
+              </TrackedWhatsAppButton>
             </div>
           </div>
 
@@ -202,15 +227,15 @@ export default function PaketPage() {
             </div>
 
             <div className="pt-6">
-              <a
+              <TrackedWhatsAppButton
                 href={waSunrise}
-                target="_blank"
-                rel="noopener noreferrer"
+                packageName="Sunrise Safari Baluran"
+                ctaPosition="paket_page_sunrise_card"
                 className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-earth hover:bg-earth-hover text-white text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow hover:ring-2 hover:ring-earth/20 active:opacity-95"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
                 <span>Tanya Paket Sunrise</span>
-              </a>
+              </TrackedWhatsAppButton>
             </div>
           </div>
 
@@ -271,15 +296,15 @@ export default function PaketPage() {
             </div>
 
             <div className="pt-6">
-              <a
+              <TrackedWhatsAppButton
                 href={waAntarJemput}
-                target="_blank"
-                rel="noopener noreferrer"
+                packageName="Paket Antar-Jemput Banyuwangi"
+                ctaPosition="paket_page_pickup_card"
                 className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-earth hover:bg-earth-hover text-white text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow hover:ring-2 hover:ring-earth/20 active:opacity-95"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
                 <span>Konsultasi Penjemputan</span>
-              </a>
+              </TrackedWhatsAppButton>
             </div>
           </div>
 
@@ -387,15 +412,15 @@ export default function PaketPage() {
           <p className="text-sm text-charcoal-muted mb-4">
             Ingin tanggal tertentu atau butuh lebih dari 1 unit Jeep?
           </p>
-          <a
+          <TrackedWhatsAppButton
             href={waShuttle}
-            target="_blank"
-            rel="noopener noreferrer"
+            packageName="Paket Page Bottom CTA"
+            ctaPosition="paket_page_bottom_cta"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-earth hover:bg-earth-hover text-white text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg active:opacity-95"
           >
             <MessageCircle className="w-5 h-5 fill-current" />
             <span>Chat WhatsApp Pemilik (0852-0457-2677)</span>
-          </a>
+          </TrackedWhatsAppButton>
         </div>
 
       </div>

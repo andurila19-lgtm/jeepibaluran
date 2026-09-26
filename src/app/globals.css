@@ -1,27 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 40 20% 98%;
+    --background: 43 35% 93%;
     --foreground: 150 10% 12%;
 
-    --card: 0 0% 100%;
+    --card: 42 45% 96%;
     --card-foreground: 150 10% 12%;
 
-    --popover: 0 0% 100%;
+    --popover: 42 45% 96%;
     --popover-foreground: 150 10% 12%;
 
     --primary: 151 18% 21%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 40 25% 94%;
+    --secondary: 42 22% 89%;
     --secondary-foreground: 150 10% 12%;
 
-    --muted: 40 20% 93%;
+    --muted: 42 18% 88%;
     --muted-foreground: 150 8% 36%;
 
     --accent: 19 69% 45%;
@@ -30,8 +28,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 43 20% 87%;
-    --input: 43 20% 87%;
+    --border: 40 18% 83%;
+    --input: 40 18% 83%;
     --ring: 151 18% 21%;
 
     --radius: 0.75rem;
@@ -73,17 +71,28 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
     -webkit-tap-highlight-color: transparent;
   }
 
   body {
-    background-color: #FBFBFA;
-    color: #1B211E;
+    background-color: #F4F0E6;
+    background-image: 
+      radial-gradient(ellipse at 85% 15%, rgba(194, 86, 36, 0.035) 0%, transparent 55%),
+      radial-gradient(ellipse at 15% 75%, rgba(43, 62, 52, 0.04) 0%, transparent 55%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cg fill='none' stroke-linecap='round'%3E%3Cpath d='M-20,70 Q160,25 320,90 T620,50' stroke='%232B3E34' stroke-width='1.2' stroke-opacity='0.04'/%3E%3Cpath d='M-20,145 Q190,95 350,180 T620,130' stroke='%232B3E34' stroke-width='1.2' stroke-opacity='0.045'/%3E%3Cpath d='M-20,225 Q135,285 315,205 T620,230' stroke='%23C25624' stroke-width='1.2' stroke-opacity='0.04' stroke-dasharray='8,6'/%3E%3Cpath d='M-20,310 Q175,255 360,350 T620,295' stroke='%232B3E34' stroke-width='1.2' stroke-opacity='0.04'/%3E%3Cpath d='M-20,400 Q125,450 330,370 T620,410' stroke='%232B3E34' stroke-width='1.2' stroke-opacity='0.045'/%3E%3Cpath d='M-20,490 Q180,430 365,525 T620,470' stroke='%23C25624' stroke-width='1.2' stroke-opacity='0.035' stroke-dasharray='8,6'/%3E%3Ccircle cx='180' cy='220' r='50' stroke='%23C25624' stroke-width='1' stroke-opacity='0.035' stroke-dasharray='4,4'/%3E%3Ccircle cx='180' cy='220' r='90' stroke='%232B3E34' stroke-width='1' stroke-opacity='0.03'/%3E%3Cpath d='M175,220 L185,220 M180,215 L180,225' stroke='%23C25624' stroke-width='1.5' stroke-opacity='0.07'/%3E%3Ccircle cx='460' cy='380' r='40' stroke='%232B3E34' stroke-width='1' stroke-opacity='0.035'/%3E%3Ccircle cx='460' cy='380' r='75' stroke='%23C25624' stroke-width='1' stroke-opacity='0.03' stroke-dasharray='5,5'/%3E%3Cpath d='M455,380 L465,380 M460,375 L460,385' stroke='%232B3E34' stroke-width='1.5' stroke-opacity='0.07'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: auto, auto, 600px 600px;
+    color: #1E2521;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
 
   ::selection {
     background-color: #2B3E34;
-    color: #FFFFFF;
+    color: #FAF7F0;
   }
 }
 
@@ -308,12 +317,47 @@
   transform-origin: center center;
 }
 
+/* ==========================================================================
+   Smooth Interaction & Warm Surface Utilities
+   ========================================================================== */
+
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px -4px rgba(30, 37, 33, 0.09);
+}
+
+/* Warm organic background with gentle ambient light & expedition topographic contours */
+.bg-savana-canvas {
+  background-color: transparent;
+}
+
+.bg-savana-card {
+  background-color: #FAF7F0;
+  border-color: #DFD9CC;
+}
+
+.bg-savana-subtle {
+  background-color: #ECE7DB;
+  border-color: #DFD9CC;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-ken-burns,
   .animate-float,
   .animate-fade-in,
   .animate-fade-up,
   .animate-marquee,
+  .hover-lift,
+  .smooth-transition,
   .hero-motion-eyebrow,
   .hero-motion-headline,
   .hero-motion-text,
@@ -329,3 +373,4 @@
     transition: none !important;
   }
 }
+

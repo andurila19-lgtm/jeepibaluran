@@ -42,7 +42,7 @@ export default function GallerySection() {
   ];
 
   return (
-    <section id="galeri" className="py-16 sm:py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#EAE6DC]">
+    <section id="galeri" className="py-16 sm:py-20 lg:py-24 bg-savana-canvas border-b border-[#DFD9CC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
@@ -67,7 +67,7 @@ export default function GallerySection() {
             {photos.map((item, idx) => (
               <div
                 key={idx}
-                className={`group relative rounded-2xl overflow-hidden border border-[#EAE6DC] bg-[#1A1D1A] shadow-xs transition-all duration-300 ${item.span}`}
+                className={`group relative rounded-2xl overflow-hidden border border-[#DFD9CC] bg-[#1A1D1A] shadow-soft hover:shadow-elevated transition-all duration-300 ${item.span}`}
               >
                 <div className={`relative ${item.height} w-full overflow-hidden`}>
                   <Image

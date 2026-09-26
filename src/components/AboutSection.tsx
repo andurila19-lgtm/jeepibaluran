@@ -1,7 +1,6 @@
-import Link from "next/image";
 import { ShieldCheck, Users, MapPin, Clock, MessageCircle, CheckCircle2, ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import { Button } from "@/components/ui/button";
+import TrackedWhatsAppButton from "@/components/TrackedWhatsAppButton";
 
 export default function AboutSection() {
   const waUrl =
@@ -26,7 +25,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="tentang" className="py-16 sm:py-20 lg:py-24 bg-[#FAF8F5] border-b border-[#EAE6DC]">
+    <section id="tentang" className="py-16 sm:py-20 lg:py-24 bg-savana-canvas border-b border-[#DFD9CC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
@@ -54,7 +53,7 @@ export default function AboutSection() {
               const Icon = item.icon;
               return (
                 <ScrollReveal key={idx} delay={100 + idx * 75}>
-                  <div className="p-5 sm:p-6 rounded-2xl bg-[#FFFFFF] border border-[#EAE6DC] hover:border-[#1A2E22]/30 transition-all duration-300 shadow-xs flex items-start gap-4">
+                  <div className="p-5 sm:p-6 rounded-2xl bg-[#FAF7F0] border border-[#DFD9CC] hover:border-[#1A2E22]/30 hover-lift shadow-card hover:shadow-soft transition-all duration-300 flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-[#1A2E22]/5 text-[#1A2E22] flex items-center justify-center shrink-0 mt-0.5 border border-[#1A2E22]/10">
                       <Icon className="w-5 h-5 text-[#C45525]" />
                     </div>
@@ -75,8 +74,8 @@ export default function AboutSection() {
           {/* Right: Direct Basecamp & WhatsApp Card (5 cols) */}
           <div className="lg:col-span-5">
             <ScrollReveal delay={200}>
-              <div className="rounded-2xl border border-[#EAE6DC] bg-[#FFFFFF] p-6 sm:p-7 shadow-xs space-y-5">
-                <div className="border-b border-[#EAE6DC] pb-4">
+              <div className="rounded-2xl border border-[#DFD9CC] bg-[#FAF7F0] p-6 sm:p-7 shadow-card space-y-5">
+                <div className="border-b border-[#DFD9CC] pb-4">
                   <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#C45525] block">
                     PENGELOLA RESMI
                   </span>
@@ -90,7 +89,7 @@ export default function AboutSection() {
 
                 {/* Basecamp Location */}
                 <div className="flex items-start gap-3.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#F3EFE6] flex items-center justify-center shrink-0 mt-0.5 border border-[#EAE6DC]">
+                  <div className="w-8 h-8 rounded-lg bg-[#ECE7DB] flex items-center justify-center shrink-0 mt-0.5 border border-[#DFD9CC]">
                     <MapPin className="w-4 h-4 text-[#C45525]" />
                   </div>
                   <div>
@@ -103,7 +102,7 @@ export default function AboutSection() {
 
                 {/* Jam Operasional */}
                 <div className="flex items-start gap-3.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#F3EFE6] flex items-center justify-center shrink-0 mt-0.5 border border-[#EAE6DC]">
+                  <div className="w-8 h-8 rounded-lg bg-[#ECE7DB] flex items-center justify-center shrink-0 mt-0.5 border border-[#DFD9CC]">
                     <Clock className="w-4 h-4 text-[#1A2E22]" />
                   </div>
                   <div>
@@ -116,7 +115,7 @@ export default function AboutSection() {
 
                 {/* Contact WA */}
                 <div className="flex items-start gap-3.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#F3EFE6] flex items-center justify-center shrink-0 mt-0.5 border border-[#EAE6DC]">
+                  <div className="w-8 h-8 rounded-lg bg-[#ECE7DB] flex items-center justify-center shrink-0 mt-0.5 border border-[#DFD9CC]">
                     <MessageCircle className="w-4 h-4 text-[#C45525]" />
                   </div>
                   <div>
@@ -131,20 +130,16 @@ export default function AboutSection() {
                 </div>
 
                 <div className="pt-2">
-                  <Button
-                    asChild
-                    className="w-full bg-[#C45525] hover:bg-[#b04a1e] text-white font-semibold rounded-xl h-11 text-xs sm:text-sm shadow-xs transition-all"
+                  <TrackedWhatsAppButton
+                    href={waUrl}
+                    packageName="Informasi Operator Jeep Baluran"
+                    ctaPosition="about_operator_card"
+                    ariaLabel="Chat WhatsApp Pengelola Resmi Jeep Baluran"
+                    className="w-full bg-[#C45525] hover:bg-[#b04a1e] text-white font-semibold rounded-xl h-11 text-xs sm:text-sm shadow-xs transition-all active:scale-95 flex items-center justify-center gap-2"
                   >
-                    <a
-                      href={waUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="gap-2 justify-center"
-                    >
-                      <MessageCircle className="w-4 h-4 fill-current" />
-                      <span>Chat WhatsApp Sekarang</span>
-                    </a>
-                  </Button>
+                    <MessageCircle className="w-4 h-4 fill-current" />
+                    <span>Chat WhatsApp Sekarang</span>
+                  </TrackedWhatsAppButton>
                 </div>
               </div>
             </ScrollReveal>

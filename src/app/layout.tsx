@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { safeJsonStringify } from "@/lib/security";
 import "./globals.css";
 
 const jakartaSans = Plus_Jakarta_Sans({
@@ -10,6 +12,13 @@ const jakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
   display: "swap",
   weight: ["400", "500", "600", "700", "800"],
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+  weight: ["400", "600", "700", "800", "900"],
 });
 
 export const viewport: Viewport = {
@@ -94,15 +103,18 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "TouristInformationCenter",
+      "@type": ["TravelAgency", "TouristInformationCenter", "LocalBusiness"],
       "@id": "https://jeepbaluran.reaksy.com/#organization",
       "name": "Jeep Baluran Official",
+      "alternateName": "Sewa Jeep Baluran Pos Batangan",
+      "legalName": "Paguyuban Pengemudi Jeep Safari Baluran",
       "image": "https://jeepbaluran.reaksy.com/images/jeep-baluran-oranye-tamu.webp",
+      "logo": "https://jeepbaluran.reaksy.com/images/logo-baluran-emblem.webp",
       "description":
         "Penyedia jasa sewa armada Jeep 4x4 untuk eksplorasi wisata Taman Nasional Baluran, Savana Bekol, dan Pantai Bama sebagai pendukung tour Banyuwangi dan open trip Jawa Timur.",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Pos Batangan, Gerbang Masuk Taman Nasional Baluran, Jl. Raya Banyuwangi - Situbondo KM 35",
+        "streetAddress": "Pos Batangan, Gerbang Masuk Taman Nasional Baluran, Jl. Raya Banyuwangi - Situbondo KM 35, Desa Wonorejo",
         "addressLocality": "Banyuputih",
         "addressRegion": "Jawa Timur",
         "postalCode": "68374",
@@ -116,6 +128,8 @@ const jsonLd = {
       "telephone": "+6285204572677",
       "url": "https://jeepbaluran.reaksy.com",
       "priceRange": "Rp 600.000",
+      "currenciesAccepted": "IDR",
+      "paymentAccepted": "Cash, QRIS, Bank Transfer",
       "openingHours": "Mo-Su 05:00-18:00",
       "areaServed": [
         {
@@ -135,6 +149,39 @@ const jsonLd = {
           "name": "Jawa Timur"
         }
       ]
+    },
+    {
+      "@type": "TouristAttraction",
+      "@id": "https://jeepbaluran.reaksy.com/#baluran",
+      "name": "Taman Nasional Baluran",
+      "description": "Kawasan konservasi alam liar dengan julukan Africa van Java, memiliki padang savana terluas di Pulau Jawa, hutan musim tropis, dan pantai pesisir.",
+      "url": "https://jeepbaluran.reaksy.com/rute"
+    },
+    {
+      "@type": "TouristAttraction",
+      "@id": "https://jeepbaluran.reaksy.com/#savana-bekol",
+      "name": "Savana Bekol",
+      "description": "Padang rumput alami 300 hektare berlatar panorama Gunung Baluran dengan kawanan rusa timor, merak liar, dan banteng Jawa."
+    },
+    {
+      "@type": "TouristAttraction",
+      "@id": "https://jeepbaluran.reaksy.com/#pantai-bama",
+      "name": "Pantai Bama & Hutan Mangrove",
+      "description": "Pantai pasir putih berair tenang dan jembatan kayu konservasi hutan mangrove purba di ujung timur Baluran."
+    },
+    {
+      "@type": "TouristTrip",
+      "@id": "https://jeepbaluran.reaksy.com/#trip-shuttle",
+      "name": "Paket Shuttle Safari Baluran (PP 3-4 Jam)",
+      "description": "Layanan sewa Jeep 4x4 kapasitas 5-6 orang pulang pergi dari Pos Batangan ke Evergreen Forest, Savana Bekol, dan Pantai Bama.",
+      "touristType": "Keluarga, Sahabat, Wisatawan Nusantara & Mancanegara",
+      "offers": {
+        "@type": "Offer",
+        "price": "600000",
+        "priceCurrency": "IDR",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-01-01"
+      }
     },
     {
       "@type": "FAQPage",
@@ -175,14 +222,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${jakartaSans.variable} scroll-smooth`}>
+    <html lang="id" className={`${jakartaSans.variable} ${playfairDisplay.variable} scroll-smooth`}>
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: safeJsonStringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans antialiased text-[#1B211E] bg-[#FBFBFA] min-h-screen flex flex-col">
+      <body className="font-sans antialiased text-[#1E2521] min-h-screen flex flex-col selection:bg-[#2B3E34] selection:text-white">
+        <GoogleAnalytics />
         <Navbar />
         <main className="flex-1">
           {children}

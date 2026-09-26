@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MessageCircle, ShieldCheck, HeartHandshake, MapPin, Users, CheckCircle2, ArrowRight } from "lucide-react";
+import TrackedWhatsAppButton from "@/components/TrackedWhatsAppButton";
+import { safeJsonStringify } from "@/lib/security";
 
 export const metadata: Metadata = {
   title: "Tentang Layanan Sewa Jeep Baluran & Operator Tour Banyuwangi",
@@ -53,8 +55,31 @@ export default function TentangPage() {
     },
   ];
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "https://jeepbaluran.reaksy.com/",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tentang Kami",
+        "item": "https://jeepbaluran.reaksy.com/tentang",
+      },
+    ],
+  };
+
   return (
     <div className="py-12 sm:py-16 lg:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonStringify(breadcrumbSchema) }}
+      />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Breadcrumb */}
@@ -125,15 +150,16 @@ export default function TentangPage() {
               </div>
 
               <div className="pt-2">
-                <a
+                <TrackedWhatsAppButton
                   href={waUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  packageName="Basecamp Card Inquiry"
+                  ctaPosition="tentang_page_basecamp_card"
+                  ariaLabel="Hubungi Operator Jeep Baluran via WhatsApp"
                   className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-earth hover:bg-earth-hover text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-sm"
                 >
                   <MessageCircle className="w-4 h-4 fill-current" />
                   <span>Hubungi via WhatsApp</span>
-                </a>
+                </TrackedWhatsAppButton>
               </div>
             </div>
           </div>
@@ -187,15 +213,16 @@ export default function TentangPage() {
               <span>Lihat Pilihan Paket Safari</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <a
+            <TrackedWhatsAppButton
               href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              packageName="Tentang Page Consultation"
+              ctaPosition="tentang_page_bottom_cta"
+              ariaLabel="Chat WhatsApp Pemilik Jeep Baluran"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-earth hover:bg-earth-hover text-white text-sm font-semibold transition-all duration-200 shadow-sm"
             >
               <MessageCircle className="w-4 h-4 fill-current" />
               <span>Chat WhatsApp Pemilik</span>
-            </a>
+            </TrackedWhatsAppButton>
           </div>
         </div>
 

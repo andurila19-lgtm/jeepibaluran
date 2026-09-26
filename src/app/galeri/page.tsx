@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { MessageCircle, Shield, Users, Camera, Wrench, CheckCircle2, ArrowRight } from "lucide-react";
+import TrackedWhatsAppButton from "@/components/TrackedWhatsAppButton";
+import { safeJsonStringify } from "@/lib/security";
 
 export const metadata: Metadata = {
   title: "Galeri Foto Armada 4x4 Jeep Baluran | Open Trip Jawa Timur",
@@ -29,7 +31,27 @@ export const metadata: Metadata = {
 
 export default function GaleriPage() {
   const waUrl =
-    "https://wa.me/6285204572677?text=Halo%20Jeep%20Baluran%2C%20saya%20tertarik%20dengan%20armada%20Jeep%20Anda%20dan%20ingin%20tanya%20jadwal%20safari.";
+    "https://wa.me/6285204572677?text=" +
+    encodeURIComponent("Halo Jeep Baluran, saya tertarik dengan armada Jeep Anda dan ingin tanya jadwal safari.");
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "https://jeepbaluran.reaksy.com/",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Galeri Armada",
+        "item": "https://jeepbaluran.reaksy.com/galeri",
+      },
+    ],
+  };
 
   const galleryItems = [
     {
@@ -68,6 +90,10 @@ export default function GaleriPage() {
 
   return (
     <div className="py-12 sm:py-16 lg:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonStringify(breadcrumbSchema) }}
+      />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Breadcrumb */}
@@ -200,15 +226,16 @@ export default function GaleriPage() {
               <span>Lihat Paket Shuttle Rp 600.000</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <a
+            <TrackedWhatsAppButton
               href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              packageName="Galeri Page Consultation"
+              ctaPosition="galeri_page_bottom_cta"
+              ariaLabel="Chat WhatsApp Langsung Sewa Jeep Baluran"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-earth hover:bg-earth-hover text-white text-sm font-semibold transition-all duration-200 shadow-sm"
             >
               <MessageCircle className="w-4 h-4 fill-current" />
               <span>Chat WhatsApp Langsung</span>
-            </a>
+            </TrackedWhatsAppButton>
           </div>
         </div>
 

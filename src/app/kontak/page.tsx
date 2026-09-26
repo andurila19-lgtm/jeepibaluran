@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MessageCircle, CalendarCheck, MapPin, Clock, Navigation, CheckCircle2, AlertCircle } from "lucide-react";
+import TrackedWhatsAppButton from "@/components/TrackedWhatsAppButton";
+import { safeJsonStringify } from "@/lib/security";
 
 export const metadata: Metadata = {
   title: "Kontak & Lokasi Meeting Point Pos Batangan | Jeep Baluran",
@@ -42,8 +44,31 @@ export default function KontakPage() {
   const waUrl =
     "https://wa.me/6285204572677?text=Halo%20Jeep%20Baluran%2C%20saya%20ingin%20tanya%20informasi%20sewa%20Jeep%20dan%20titik%20temu.";
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "https://jeepbaluran.reaksy.com/",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Kontak & Lokasi",
+        "item": "https://jeepbaluran.reaksy.com/kontak",
+      },
+    ],
+  };
+
   return (
     <div className="py-12 sm:py-16 lg:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonStringify(breadcrumbSchema) }}
+      />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Breadcrumb */}
@@ -87,15 +112,16 @@ export default function KontakPage() {
               </p>
             </div>
             <div className="pt-2">
-              <a
+              <TrackedWhatsAppButton
                 href={waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                packageName="Kontak WA Utama"
+                ctaPosition="kontak_page_main_card"
+                ariaLabel="Hubungi WhatsApp Resmi 0852-0457-2677"
                 className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-olive hover:bg-olive-hover text-white text-xs sm:text-sm font-semibold transition-all duration-200 shadow-sm"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
                 <span>0852-0457-2677</span>
-              </a>
+              </TrackedWhatsAppButton>
             </div>
           </div>
 
@@ -114,15 +140,16 @@ export default function KontakPage() {
               </p>
             </div>
             <div className="pt-2">
-              <a
+              <TrackedWhatsAppButton
                 href={waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                packageName="Cek Kuota Armada"
+                ctaPosition="kontak_page_quota_card"
+                ariaLabel="Tanya Ketersediaan Tanggal Safari Baluran"
                 className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-base-white hover:bg-base-subtle border border-base-border text-charcoal text-xs sm:text-sm font-semibold transition-all duration-200 shadow-sm"
               >
                 <MessageCircle className="w-4 h-4 text-olive" />
                 <span>Tanya Ketersediaan Tanggal</span>
-              </a>
+              </TrackedWhatsAppButton>
             </div>
           </div>
 

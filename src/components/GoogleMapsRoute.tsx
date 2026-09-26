@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Button } from "@/components/ui/button";
+import { trackMapClick, trackWhatsAppClick } from "@/lib/analytics";
 
 interface GoogleMapsRouteProps {
   embedded?: boolean;
@@ -154,7 +155,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
   )}`;
 
   const routeCard = (
-    <div className="rounded-2xl border border-[#E5E2D7] bg-white shadow-sm overflow-hidden">
+    <div className="rounded-2xl border border-[#DFD9CC] bg-[#FAF7F0] shadow-soft overflow-hidden">
       {/* Header Bar: Navigation Info & Mode Switcher */}
       <div className="bg-[#1C2621] text-white p-4 sm:p-6 border-b border-white/10">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
@@ -219,13 +220,13 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
 
       {/* VIEW MODE 1: STEPPER INTERAKTIF */}
       {viewMode === "stepper" && (
-        <div className="p-3.5 sm:p-6 lg:p-7 bg-[#FAF9F5]">
+        <div className="p-3.5 sm:p-6 lg:p-7 bg-[#FAF7F0]">
 
           {/* Horizontal Step Tracker with Progress Line */}
           <div className="relative mb-5 sm:mb-6 pb-1 sm:pb-2">
 
             {/* Background connecting track */}
-            <div className="absolute top-5 left-4 right-4 h-1 bg-[#E5E2D7] rounded-full z-0 hidden sm:block" />
+            <div className="absolute top-5 left-4 right-4 h-1 bg-[#DFD9CC] rounded-full z-0 hidden sm:block" />
 
             {/* Active progress fill */}
             <div
@@ -243,10 +244,16 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
                   <button
                     key={idx}
                     type="button"
-                    onClick={() => setActiveIdx(idx)}
+                    onClick={() => {
+                      setActiveIdx(idx);
+                      trackMapClick({
+                        spotName: step.name,
+                        pageLocation: typeof window !== "undefined" ? window.location.pathname : "/",
+                      });
+                    }}
                     className={`group flex flex-col items-center text-center p-1 sm:p-2 rounded-xl transition-all cursor-pointer min-w-0 ${isActive
-                        ? "bg-white shadow-sm border border-[#C25624]/30 ring-2 ring-[#C25624]/20"
-                        : "hover:bg-white/60 border border-transparent"
+                        ? "bg-[#ECE7DB] shadow-sm border border-[#C25624]/30 ring-2 ring-[#C25624]/20"
+                        : "hover:bg-[#ECE7DB]/50 border border-transparent"
                       }`}
                   >
                     {/* Circle Pin Icon */}
@@ -255,7 +262,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
                           ? `${step.pinBg} border-white shadow-xs scale-110 ring-2 ring-[#C25624]/30`
                           : isPassed
                             ? "bg-[#2B3E34] text-white border-white"
-                            : "bg-[#EDEAE1] text-[#1B211E] border-[#E5E2D7] group-hover:border-[#1B211E]/40"
+                            : "bg-[#E5DFD2] text-[#1E2521] border-[#DFD9CC] group-hover:border-[#1E2521]/40"
                         }`}
                     >
                       {step.code}
@@ -281,7 +288,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
           </div>
 
           {/* Active Step Showcase Card */}
-          <div className="bg-white rounded-2xl border border-[#E5E2D7] shadow-xs overflow-hidden">
+          <div className="bg-[#FAF7F0] rounded-2xl border border-[#DFD9CC] shadow-card overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12">
 
               {/* Left Column: Details & Controls (7 cols) */}
@@ -289,7 +296,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
 
                 <div className="space-y-3">
                   {/* Top Meta Chips */}
-                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#E5E2D7] pb-3">
+                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#DFD9CC] pb-3">
                     <div className="flex items-center gap-2">
                       <span className="w-6 h-6 rounded-lg bg-[#C25624] text-white font-black text-xs flex items-center justify-center">
                         {current.code}
@@ -332,7 +339,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
                       {current.highlights.map((h, i) => (
                         <span
                           key={i}
-                          className="inline-flex items-center gap-1.5 text-[10.5px] sm:text-[11px] px-2.5 py-1 rounded-md bg-[#F4F2EA] border border-[#E5E2D7] text-[#1B211E] font-medium"
+                          className="inline-flex items-center gap-1.5 text-[10.5px] sm:text-[11px] px-2.5 py-1 rounded-md bg-[#ECE7DB] border border-[#DFD9CC] text-[#1B211E] font-medium"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-[#2B3E34]" />
                           <span>{h}</span>
@@ -342,7 +349,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
                   </div>
 
                   {/* Transit Information Pill */}
-                  <div className="p-3 rounded-xl bg-[#FAF9F5] border border-[#E5E2D7] text-xs text-[#414C45] flex items-start gap-2.5">
+                  <div className="p-3 rounded-xl bg-[#ECE7DB]/80 border border-[#DFD9CC] text-xs text-[#414C45] flex items-start gap-2.5">
                     <Car className="w-4 h-4 text-[#C25624] shrink-0 mt-0.5" />
                     <div>
                       <span className="font-semibold text-[#1B211E]">Info Jalur Makadam: </span>
@@ -352,7 +359,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
                 </div>
 
                 {/* Bottom Navigation Buttons: Fully Responsive */}
-                <div className="pt-3 border-t border-[#E5E2D7] flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3">
+                <div className="pt-3 border-t border-[#DFD9CC] flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3">
                   <div className="grid grid-cols-2 sm:flex sm:items-center gap-2 w-full sm:w-auto">
                     <Button
                       type="button"
@@ -360,7 +367,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
                       size="sm"
                       disabled={isFirst}
                       onClick={() => setActiveIdx((prev) => Math.max(0, prev - 1))}
-                      className="gap-1 text-xs border-[#E5E2D7]"
+                      className="gap-1 text-xs border-[#DFD9CC] hover:bg-[#ECE7DB]"
                     >
                       <ChevronLeft className="w-4 h-4 shrink-0" />
                       <span>Sebelumnya</span>
@@ -391,6 +398,13 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
                         href={waUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => {
+                          trackWhatsAppClick({
+                            packageName: `Spot ${current.name}`,
+                            pageLocation: typeof window !== "undefined" ? window.location.pathname : "/",
+                            ctaPosition: "maps_spot_inquiry",
+                          });
+                        }}
                       >
                         <MessageCircle className="w-3.5 h-3.5 fill-current text-emerald-400" />
                         <span>Tanya Spot Ini via WA</span>
@@ -414,9 +428,9 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
               </div>
 
               {/* Right Column: Visual Photo (5 cols) */}
-              <div className="lg:col-span-5 bg-[#F4F2EA] p-4 sm:p-6 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-[#E5E2D7]">
+              <div className="lg:col-span-5 bg-[#ECE7DB]/70 p-4 sm:p-6 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-[#DFD9CC]">
                 <div className="space-y-3">
-                  <div className="relative h-48 sm:h-56 lg:h-64 w-full rounded-xl overflow-hidden border border-[#E5E2D7] shadow-2xs bg-[#1B211E]">
+                  <div className="relative h-48 sm:h-56 lg:h-64 w-full rounded-xl overflow-hidden border border-[#DFD9CC] shadow-2xs bg-[#1B211E]">
                     <Image
                       src={current.image}
                       alt={current.imageAlt}
@@ -429,7 +443,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
                     </div>
                   </div>
 
-                  <div className="p-3 bg-white rounded-xl border border-[#E5E2D7] text-xs space-y-1">
+                  <div className="p-3 bg-[#FAF7F0] rounded-xl border border-[#DFD9CC] text-xs space-y-1 shadow-card">
                     <div className="flex items-center justify-between text-[11px] text-[#69766E]">
                       <span>Estimasi Berhenti:</span>
                       <span className="font-bold text-[#1B211E]">{current.duration}</span>
@@ -454,7 +468,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
 
       {/* VIEW MODE 2: RINGKASAN SEMUA TITIK */}
       {viewMode === "compact" && (
-        <div className="p-4 sm:p-6 bg-[#FAF9F5]">
+        <div className="p-4 sm:p-6 bg-[#FAF7F0]">
           <div className="space-y-3">
             {waypoints.map((step, idx) => (
               <div
@@ -462,8 +476,12 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
                 onClick={() => {
                   setActiveIdx(idx);
                   setViewMode("stepper");
+                  trackMapClick({
+                    spotName: step.name,
+                    pageLocation: typeof window !== "undefined" ? window.location.pathname : "/",
+                  });
                 }}
-                className="group p-3.5 sm:p-4 rounded-xl border border-[#E5E2D7] bg-white hover:border-[#C25624]/50 hover:shadow-xs cursor-pointer transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+                className="group p-3.5 sm:p-4 rounded-xl border border-[#DFD9CC] bg-[#FAF7F0] hover:border-[#C25624]/50 hover:shadow-soft cursor-pointer transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3"
               >
                 <div className="flex items-center gap-3">
                   <div className={`w-8 h-8 rounded-lg ${step.pinBg} flex items-center justify-center font-bold text-xs shrink-0`}>
@@ -484,7 +502,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#E5E2D7] text-xs">
+                <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#DFD9CC] text-xs">
                   <span className="text-[#69766E] font-medium">{step.distance} • {step.time}</span>
                   <span className="font-bold text-[#C25624] group-hover:translate-x-0.5 transition-transform flex items-center gap-1">
                     <span>Lihat Detail</span>
@@ -498,7 +516,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
       )}
 
       {/* Footer Reassurance */}
-      <div className="bg-[#FAF9F5] border-t border-[#E5E2D7] p-3.5 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#414C45]">
+      <div className="bg-[#ECE7DB]/80 border-t border-[#DFD9CC] p-3.5 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#4E5852]">
         <div className="flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 text-[#2B3E34] shrink-0" />
           <span>Waktu & durasi di setiap spot sangat fleksibel sesuai ritme keluarga Anda.</span>
@@ -520,7 +538,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
   }
 
   return (
-    <section id="rundown" className="py-14 sm:py-18 lg:py-20 bg-[#F4F2EA] border-b border-[#E5E2D7]">
+    <section id="rundown" className="py-14 sm:py-18 lg:py-20 bg-savana-canvas border-b border-[#DFD9CC]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}

@@ -48,36 +48,44 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
 
-        // Existing Jeep Baluran Brand Colors (Preserved 100%)
+        // Eye-friendly Nature & Safari Brand Palette (Warm, Organic, Zero Glare)
         base: {
-          light: "#FBFBFA",
-          white: "#FFFFFF",
-          subtle: "#F4F2EA",
-          sand: "#EDEAE1",
-          border: "#E5E2D7",
+          light: "#F4F0E6", // Soothing warm linen canvas (comfort for the eyes, no harsh white)
+          white: "#FAF7F0", // Warm ivory card background
+          subtle: "#ECE7DB", // Soft warm stone for secondary containers
+          sand: "#E5DFD2", // Warm sand highlight
+          border: "#DFD9CC", // Soft organic border
         },
         charcoal: {
-          DEFAULT: "#1B211E",
-          muted: "#414C45",
-          light: "#69766E",
+          DEFAULT: "#1E2521",
+          muted: "#4E5852",
+          light: "#717C75",
         },
         earth: {
           DEFAULT: "#C25624",
           hover: "#A9481C",
-          light: "#FBF0EA",
+          light: "#F5ECE5",
         },
         accent: {
           DEFAULT: "#C25624",
           hover: "#A9481C",
-          soft: "#FBF0EA",
+          soft: "#F5ECE5",
           foreground: "hsl(var(--accent-foreground))",
         },
         olive: {
           DEFAULT: "#2B3E34",
           hover: "#213129",
-          soft: "#E8EFEA",
+          soft: "#E4EDE7",
           muted: "#3C5346",
         },
+      },
+      boxShadow: {
+        'soft': '0 4px 20px -2px rgba(30, 37, 33, 0.05)',
+        'elevated': '0 14px 34px -4px rgba(30, 37, 33, 0.08)',
+        'card': '0 2px 10px 0 rgba(30, 37, 33, 0.03)',
+      },
+      transitionTimingFunction: {
+        'smooth': 'cubic-bezier(0.16, 1, 0.3, 1)',
       },
       borderRadius: {
         lg: "var(--radius)",

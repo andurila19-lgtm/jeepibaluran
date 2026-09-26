@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, MessageCircle, Clock, Shield } from "lucide-react";
 import GoogleMapsRoute from "@/components/GoogleMapsRoute";
+import TrackedWhatsAppButton from "@/components/TrackedWhatsAppButton";
+import { safeJsonStringify } from "@/lib/security";
 
 export const metadata: Metadata = {
   title: "Rute Wisata Jeep Baluran & Spot Savana Bekol | Tour Banyuwangi",
@@ -29,10 +31,34 @@ export const metadata: Metadata = {
 
 export default function RutePage() {
   const waUrl =
-    "https://wa.me/6285204572677?text=Halo%20Jeep%20Baluran%2C%20saya%20ingin%20tanya%20rute%20safari%20dan%20ketersediaan%20armada.";
+    "https://wa.me/6285204572677?text=" +
+    encodeURIComponent("Halo Jeep Baluran, saya ingin tanya rute safari dan ketersediaan armada.");
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Beranda",
+        "item": "https://jeepbaluran.reaksy.com/",
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Rute & Spot Baluran",
+        "item": "https://jeepbaluran.reaksy.com/rute",
+      },
+    ],
+  };
 
   return (
     <div className="py-10 sm:py-14 lg:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonStringify(breadcrumbSchema) }}
+      />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Breadcrumb */}
@@ -124,15 +150,16 @@ export default function RutePage() {
               <span>Lihat Detail Paket & Tarif</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <a
+            <TrackedWhatsAppButton
               href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              packageName="Rute Page Consultation"
+              ctaPosition="rute_page_bottom_cta"
+              ariaLabel="Tanya Ketersediaan Safari Rute Baluran via WhatsApp"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-earth hover:bg-earth-hover text-white text-sm font-semibold transition-all duration-200 shadow-sm"
             >
               <MessageCircle className="w-4 h-4 fill-current" />
               <span>Tanya Ketersediaan via WhatsApp</span>
-            </a>
+            </TrackedWhatsAppButton>
           </div>
         </div>
 

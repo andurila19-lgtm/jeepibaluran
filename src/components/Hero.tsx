@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { MessageCircle, Star, MapPin } from "lucide-react";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
@@ -40,7 +41,8 @@ export default function Hero() {
   }, []);
 
   const waUrl =
-    "https://wa.me/6285204572677?text=Halo%20Jeep%20Baluran%2C%20saya%20ingin%20tanya%20informasi%20paket%20safari%20dan%20ketersediaan%20unit.";
+    "https://wa.me/6285204572677?text=" +
+    encodeURIComponent("Halo Kak, saya tertarik dengan sewa Jeep Baluran. Saya ingin cek jadwal dan ketersediaan armada.");
 
   // Parallax subtle calculation
   const isScrolled = scrollY > 0 && !reducedMotion;
@@ -64,7 +66,7 @@ export default function Hero() {
             loop
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
             poster="/images/jeep-baluran-oranye-tamu.webp"
             className="w-full h-full object-cover object-center hero-cinematic-zoom brightness-95"
           >
@@ -99,6 +101,13 @@ export default function Hero() {
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackWhatsAppClick({
+                  packageName: "Sewa Jeep Baluran (Hero)",
+                  pageLocation: "/",
+                  ctaPosition: "Hero Section",
+                })
+              }
               id="hero-book-wa-btn"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 sm:py-3.5 rounded-full bg-[#F59E0B] hover:bg-[#EAB308] text-black text-sm sm:text-base font-bold transition-all duration-200 shadow-lg shadow-[#F59E0B]/25 active:scale-95"
             >

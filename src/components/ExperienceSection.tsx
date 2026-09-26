@@ -61,7 +61,7 @@ export default function ExperienceSection() {
   ];
 
   return (
-    <section id="rute" className="py-16 sm:py-20 lg:py-24 bg-[#FAF8F5] border-b border-[#EAE6DC]">
+    <section id="rute" className="py-16 sm:py-20 lg:py-24 bg-savana-canvas border-b border-[#DFD9CC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* 1. Header Alur Perjalanan */}
@@ -91,7 +91,7 @@ export default function ExperienceSection() {
                 } ${
                   step.featured
                     ? "bg-[#1A2E22] text-white shadow-lg ring-2 ring-[#C45525]/30 -translate-y-1"
-                    : "bg-[#FFFFFF] text-[#1A1D1A] border border-[#EAE6DC] hover:border-[#1A2E22]/30 hover:shadow-xs"
+                    : "bg-[#FAF7F0] text-[#1A1D1A] border border-[#DFD9CC] hover:border-[#1A2E22]/30 hover-lift shadow-card hover:shadow-soft"
                 }`}
               >
                 <div>
@@ -100,7 +100,7 @@ export default function ExperienceSection() {
                       className={`inline-flex items-center justify-center w-8 h-8 rounded-lg font-bold text-xs ${
                         step.featured
                           ? "bg-[#C45525] text-white"
-                          : "bg-[#F3EFE6] text-[#1A2E22]"
+                          : "bg-[#ECE7DB] text-[#1A2E22]"
                       }`}
                     >
                       {step.num}
@@ -164,7 +164,7 @@ export default function ExperienceSection() {
           {/* Left Column: Featured Vehicle Photo */}
           <div className="lg:col-span-6 flex flex-col">
             <ScrollReveal delay={100} className="h-full flex flex-col">
-              <div className="relative rounded-2xl overflow-hidden border border-[#EAE6DC] bg-[#1A1D1A] flex-1 min-h-[380px] sm:min-h-[440px] shadow-sm flex flex-col justify-end">
+              <div className="relative rounded-2xl overflow-hidden border border-[#DFD9CC] bg-[#1A1D1A] flex-1 min-h-[380px] sm:min-h-[440px] shadow-soft flex flex-col justify-end">
                 <Image
                   src="/images/jeep-baluran-kuning-front.webp"
                   alt="Armada Jeep 4x4 Kuning siap melintasi rute Taman Nasional Baluran"
@@ -200,8 +200,8 @@ export default function ExperienceSection() {
               const Icon = item.icon;
               return (
                 <ScrollReveal key={idx} delay={150 + idx * 75} className="flex-1">
-                  <div className="h-full rounded-2xl p-5 sm:p-6 bg-[#FFFFFF] border border-[#EAE6DC] hover:border-[#1A2E22]/30 transition-all duration-300 shadow-xs flex items-start gap-4">
-                    <div className="w-11 h-11 rounded-xl bg-[#F3EFE6] text-[#1A2E22] flex items-center justify-center shrink-0 mt-0.5 border border-[#EAE6DC]">
+                  <div className="h-full rounded-2xl p-5 sm:p-6 bg-[#FAF7F0] border border-[#DFD9CC] hover:border-[#1A2E22]/30 hover-lift shadow-card hover:shadow-soft transition-all duration-300 flex items-start gap-4">
+                    <div className="w-11 h-11 rounded-xl bg-[#ECE7DB] text-[#1A2E22] flex items-center justify-center shrink-0 mt-0.5 border border-[#DFD9CC]">
                       <Icon className="w-5 h-5 text-[#C45525]" />
                     </div>
                     <div>

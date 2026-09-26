@@ -8,7 +8,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+import TrackedWhatsAppButton from "@/components/TrackedWhatsAppButton";
+import { trackFaqView } from "@/lib/analytics";
 
 export default function FaqSection() {
   const faqs = [
@@ -38,7 +39,7 @@ export default function FaqSection() {
     "https://wa.me/6285204572677?text=Halo%20Jeep%20Baluran%2C%20saya%20ingin%20tanya%20informasi%20seputar%20sewa%20Jeep.";
 
   return (
-    <section id="faq" className="py-16 sm:py-20 lg:py-24 bg-[#FFFFFF] border-b border-[#EAE6DC]">
+    <section id="faq" className="py-16 sm:py-20 lg:py-24 bg-savana-canvas border-b border-[#DFD9CC]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
@@ -64,9 +65,12 @@ export default function FaqSection() {
               <AccordionItem
                 key={idx}
                 value={`item-${idx}`}
-                className="rounded-2xl border border-[#EAE6DC] bg-[#FAF8F5] px-5 sm:px-6 py-1 data-[state=open]:border-[#1A2E22]/30 data-[state=open]:bg-white transition-all shadow-2xs"
+                className="rounded-2xl border border-[#DFD9CC] bg-[#FAF7F0] px-5 sm:px-6 py-1 data-[state=open]:border-[#1A2E22]/40 data-[state=open]:bg-[#FAF7F0] data-[state=open]:shadow-soft transition-all duration-300 shadow-card"
               >
-                <AccordionTrigger className="text-left font-bold text-sm sm:text-base text-[#1A1D1A] hover:text-[#C45525] py-4 hover:no-underline">
+                <AccordionTrigger
+                  onClick={() => trackFaqView({ question: faq.q })}
+                  className="text-left font-bold text-sm sm:text-base text-[#1A1D1A] hover:text-[#C45525] py-4 hover:no-underline transition-colors"
+                >
                   {faq.q}
                 </AccordionTrigger>
                 <AccordionContent className="text-xs sm:text-sm text-[#6E736D] leading-relaxed pb-4 pt-1">
@@ -79,7 +83,7 @@ export default function FaqSection() {
 
         {/* WhatsApp Help Banner */}
         <ScrollReveal delay={150}>
-          <div className="mt-10 sm:mt-12 text-center p-6 sm:p-7 rounded-2xl bg-[#FAF8F5] border border-[#EAE6DC]">
+          <div className="mt-10 sm:mt-12 text-center p-6 sm:p-7 rounded-2xl bg-[#ECE7DB]/80 border border-[#DFD9CC] shadow-card">
             <p className="text-sm sm:text-base font-bold text-[#1A1D1A]">
               Punya pertanyaan khusus seputar jadwal & rute rombongan?
             </p>
@@ -87,20 +91,16 @@ export default function FaqSection() {
               Konsultasikan gratis langsung bersama koordinator driver kami via WhatsApp.
             </p>
             <div className="pt-4">
-              <Button
-                asChild
-                className="bg-[#C45525] hover:bg-[#b04a1e] text-white font-semibold rounded-xl text-xs sm:text-sm h-10 px-5 shadow-xs transition-all"
+              <TrackedWhatsAppButton
+                href={waUrl}
+                packageName="Konsultasi FAQ"
+                ctaPosition="faq_section_help_box"
+                ariaLabel="Chat WhatsApp Koordinator Driver Jeep Baluran"
+                className="bg-[#C45525] hover:bg-[#b04a1e] text-white font-semibold rounded-xl text-xs sm:text-sm h-10 px-5 shadow-xs transition-all active:scale-95 inline-flex items-center justify-center gap-2"
               >
-                <a
-                  href={waUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="gap-2"
-                >
-                  <MessageCircle className="w-4 h-4 fill-current" />
-                  <span>Chat WhatsApp (0852-0457-2677)</span>
-                </a>
-              </Button>
+                <MessageCircle className="w-4 h-4 fill-current" />
+                <span>Chat WhatsApp (0852-0457-2677)</span>
+              </TrackedWhatsAppButton>
             </div>
           </div>
         </ScrollReveal>

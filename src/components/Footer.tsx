@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MessageCircle, MapPin, ShieldCheck } from "lucide-react";
+import TrackedWhatsAppButton from "@/components/TrackedWhatsAppButton";
 
 export default function Footer() {
   const waUrl =
-    "https://wa.me/6285204572677?text=Halo%20Jeep%20Baluran%2C%20saya%20ingin%20tanya%20informasi%20paket%20safari%20dan%20ketersediaan%20unit.";
+    "https://wa.me/6285204572677?text=" +
+    encodeURIComponent("Halo Kak, saya ingin tanya informasi paket safari Jeep Baluran.");
 
   const navLinks = [
     { name: "Beranda", href: "/" },
@@ -55,7 +57,17 @@ export default function Footer() {
               </p>
               <p className="flex items-center gap-2">
                 <MessageCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>WhatsApp: <strong>0852-0457-2677</strong></span>
+                <span>
+                  WhatsApp:{" "}
+                  <TrackedWhatsAppButton
+                    href={waUrl}
+                    packageName="Footer Direct Phone"
+                    ctaPosition="footer_phone_link"
+                    className="font-bold underline hover:text-[#F59E0B] transition-colors"
+                  >
+                    0852-0457-2677
+                  </TrackedWhatsAppButton>
+                </span>
               </p>
             </div>
           </div>
@@ -95,15 +107,16 @@ export default function Footer() {
             </div>
 
             <div className="pt-1 hidden sm:block">
-              <a
+              <TrackedWhatsAppButton
                 href={waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                packageName="Footer Inquiry"
+                ctaPosition="footer_quick_action"
+                ariaLabel="Chat WhatsApp Operator Jeep Baluran di Footer"
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F59E0B] hover:bg-[#EAB308] text-black text-xs font-bold transition-all shadow-xs"
               >
                 <MessageCircle className="w-3.5 h-3.5 fill-current" />
                 <span>Chat WhatsApp</span>
-              </a>
+              </TrackedWhatsAppButton>
             </div>
           </div>
 

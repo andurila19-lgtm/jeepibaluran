@@ -1,20 +1,21 @@
 import { MessageCircle, Check, Info, ArrowRight, Clock, Users, Shield } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import TrackedWhatsAppButton from "@/components/TrackedWhatsAppButton";
 
 export default function PackagesSection() {
   const waBase = "https://wa.me/6285204572677";
   const waShuttle = `${waBase}?text=${encodeURIComponent(
-    "Halo Jeep Baluran, saya ingin booking Paket Shuttle Baluran (Rp 600.000 / Jeep PP) untuk tanggal [Tentukan Tanggal]."
+    "Halo Kak, saya tertarik dengan Paket Shuttle Jeep Baluran (Rp 600.000 / Jeep PP). Saya ingin cek jadwal dan ketersediaan armada untuk tanggal [Tentukan Tanggal]."
   )}`;
   const waSunrise = `${waBase}?text=${encodeURIComponent(
-    "Halo Jeep Baluran, saya ingin menanyakan Paket Sunrise Savana Baluran untuk tanggal [Tentukan Tanggal]."
+    "Halo Kak, saya tertarik dengan Paket Sunrise Safari Baluran (Fajar). Saya ingin cek jadwal dan ketersediaan Jeep untuk tanggal [Tentukan Tanggal]."
   )}`;
   const waPrivate = `${waBase}?text=${encodeURIComponent(
-    "Halo Jeep Baluran, saya ingin konsultasi Paket Private + Antar-Jemput dari hotel/stasiun Banyuwangi."
+    "Halo Kak, saya tertarik dengan Paket Private All-In Jemput Kota Banyuwangi. Saya ingin konsultasi rute dan cek ketersediaan armada."
   )}`;
 
   return (
-    <section id="paket" className="py-20 sm:py-28 bg-[#FAF8F5] border-b border-[#EAE6DC]">
+    <section id="paket" className="py-20 sm:py-28 bg-savana-canvas border-b border-[#DFD9CC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -44,7 +45,7 @@ export default function PackagesSection() {
           
           {/* Card 1: Paket Shuttle Baluran (FEATURED / POPULER) */}
           <ScrollReveal delay={50}>
-            <div className="relative rounded-2xl bg-white border-2 border-[#C45525] p-6 sm:p-8 flex flex-col justify-between shadow-md hover:shadow-xl transition-all h-full">
+            <div className="relative rounded-2xl bg-[#FAF7F0] border-2 border-[#C45525] p-6 sm:p-8 flex flex-col justify-between shadow-soft hover:shadow-elevated hover-lift transition-all duration-300 h-full">
               
               {/* Orange Top Badge */}
               <div className="absolute -top-3.5 left-6 bg-[#C45525] text-white text-[10.5px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-sm">
@@ -70,7 +71,7 @@ export default function PackagesSection() {
                 </div>
 
                 {/* Highlight Box */}
-                <div className="bg-[#FAF8F5] rounded-xl p-4 space-y-2 border border-[#EAE6DC] text-xs text-[#1A1D1A]">
+                <div className="bg-[#ECE7DB]/80 rounded-xl p-4 space-y-2 border border-[#DFD9CC] text-xs text-[#1E2521]">
                   <p className="font-bold text-[11px] text-[#C45525] uppercase tracking-wider">
                     Rute & Destinasi Utama:
                   </p>
@@ -105,7 +106,7 @@ export default function PackagesSection() {
               </div>
 
               {/* Price & Action */}
-              <div className="pt-6 border-t border-[#EAE6DC] flex items-center justify-between gap-2 mt-6">
+              <div className="pt-6 border-t border-[#DFD9CC] flex items-center justify-between gap-2 mt-6">
                 <div>
                   <span className="text-[11px] text-[#6E736D] block font-mono">Tarif per Mobil:</span>
                   <p className="text-2xl sm:text-3xl font-black text-[#1A1D1A]">
@@ -113,15 +114,16 @@ export default function PackagesSection() {
                   </p>
                 </div>
 
-                <a
+                <TrackedWhatsAppButton
                   href={waShuttle}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-5 py-3 rounded-xl bg-[#1A1D1A] hover:bg-[#C45525] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-xs"
+                  packageName="Paket Shuttle Jeep Baluran"
+                  ctaPosition="packages_card_shuttle"
+                  ariaLabel="Booking Paket Shuttle Jeep Baluran via WhatsApp"
+                  className="inline-flex items-center gap-1.5 px-5 py-3 rounded-xl bg-[#1A1D1A] hover:bg-[#C45525] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-xs active:scale-95"
                 >
                   <span>Booking</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                </TrackedWhatsAppButton>
               </div>
 
             </div>
@@ -129,7 +131,7 @@ export default function PackagesSection() {
 
           {/* Card 2: Paket Sunrise Savana */}
           <ScrollReveal delay={100}>
-            <div className="rounded-2xl bg-white border border-[#EAE6DC] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all h-full">
+            <div className="rounded-2xl bg-[#FAF7F0] border border-[#DFD9CC] p-6 sm:p-8 flex flex-col justify-between shadow-soft hover:shadow-elevated hover-lift transition-all duration-300 h-full">
               
               <div className="space-y-4">
                 <div className="flex items-center justify-between text-xs text-[#6E736D] font-mono">
@@ -150,7 +152,7 @@ export default function PackagesSection() {
                 </div>
 
                 {/* Highlight Box */}
-                <div className="bg-[#FAF8F5] rounded-xl p-4 space-y-2 border border-[#EAE6DC] text-xs text-[#1A1D1A]">
+                <div className="bg-[#ECE7DB]/80 rounded-xl p-4 space-y-2 border border-[#DFD9CC] text-xs text-[#1E2521]">
                   <p className="font-bold text-[11px] text-[#C45525] uppercase tracking-wider">
                     Fasilitas & Sorotan Fajar:
                   </p>
@@ -185,7 +187,7 @@ export default function PackagesSection() {
               </div>
 
               {/* Price & Action */}
-              <div className="pt-6 border-t border-[#EAE6DC] flex items-center justify-between gap-2 mt-6">
+              <div className="pt-6 border-t border-[#DFD9CC] flex items-center justify-between gap-2 mt-6">
                 <div>
                   <span className="text-[11px] text-[#6E736D] block font-mono">Tarif per Mobil:</span>
                   <p className="text-2xl sm:text-3xl font-black text-[#1A1D1A]">
@@ -193,15 +195,16 @@ export default function PackagesSection() {
                   </p>
                 </div>
 
-                <a
+                <TrackedWhatsAppButton
                   href={waSunrise}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-5 py-3 rounded-xl bg-[#1A1D1A] hover:bg-[#C45525] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-xs"
+                  packageName="Paket Sunrise Savana"
+                  ctaPosition="packages_card_sunrise"
+                  ariaLabel="Booking Paket Sunrise Savana Baluran via WhatsApp"
+                  className="inline-flex items-center gap-1.5 px-5 py-3 rounded-xl bg-[#1A1D1A] hover:bg-[#C45525] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-xs active:scale-95"
                 >
                   <span>Booking</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                </TrackedWhatsAppButton>
               </div>
 
             </div>
@@ -209,7 +212,7 @@ export default function PackagesSection() {
 
           {/* Card 3: Paket Private All-In Antar-Jemput */}
           <ScrollReveal delay={150}>
-            <div className="rounded-2xl bg-white border border-[#EAE6DC] p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all h-full">
+            <div className="rounded-2xl bg-[#FAF7F0] border border-[#DFD9CC] p-6 sm:p-8 flex flex-col justify-between shadow-soft hover:shadow-elevated hover-lift transition-all duration-300 h-full">
               
               <div className="space-y-4">
                 <div className="flex items-center justify-between text-xs text-[#6E736D] font-mono">
@@ -230,7 +233,7 @@ export default function PackagesSection() {
                 </div>
 
                 {/* Highlight Box */}
-                <div className="bg-[#FAF8F5] rounded-xl p-4 space-y-2 border border-[#EAE6DC] text-xs text-[#1A1D1A]">
+                <div className="bg-[#ECE7DB]/80 rounded-xl p-4 space-y-2 border border-[#DFD9CC] text-xs text-[#1E2521]">
                   <p className="font-bold text-[11px] text-[#C45525] uppercase tracking-wider">
                     Layanan Penjemputan Privat:
                   </p>
@@ -265,7 +268,7 @@ export default function PackagesSection() {
               </div>
 
               {/* Price & Action */}
-              <div className="pt-6 border-t border-[#EAE6DC] flex items-center justify-between gap-2 mt-6">
+              <div className="pt-6 border-t border-[#DFD9CC] flex items-center justify-between gap-2 mt-6">
                 <div>
                   <span className="text-[11px] text-[#6E736D] block font-mono">Tarif per Mobil:</span>
                   <p className="text-xl sm:text-2xl font-black text-[#1A1D1A]">
@@ -273,15 +276,16 @@ export default function PackagesSection() {
                   </p>
                 </div>
 
-                <a
+                <TrackedWhatsAppButton
                   href={waPrivate}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-5 py-3 rounded-xl bg-[#1A1D1A] hover:bg-[#C45525] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-xs"
+                  packageName="Paket Private All-In Jemput Kota"
+                  ctaPosition="packages_card_private"
+                  ariaLabel="Konsultasi Paket Private All-In Jemput Kota via WhatsApp"
+                  className="inline-flex items-center gap-1.5 px-5 py-3 rounded-xl bg-[#1A1D1A] hover:bg-[#C45525] text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-xs active:scale-95"
                 >
                   <span>Konsultasi</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+                </TrackedWhatsAppButton>
               </div>
 
             </div>
@@ -289,9 +293,9 @@ export default function PackagesSection() {
 
         </div>
 
-        {/* Green Ticket Notice Box (From Mockup) */}
+        {/* Green Ticket Notice Box */}
         <ScrollReveal delay={200}>
-          <div className="rounded-2xl bg-[#F4F9F2] border border-[#D5E4CF] p-5 sm:p-6 flex items-start sm:items-center gap-4 text-xs sm:text-sm text-[#2D4532]">
+          <div className="rounded-2xl bg-[#EAF0E6] border border-[#CADDC5] p-5 sm:p-6 flex items-start sm:items-center gap-4 text-xs sm:text-sm text-[#2D4532] shadow-card">
             <div className="w-9 h-9 rounded-xl bg-[#DCECD7] text-[#24522A] flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
               <Info className="w-5 h-5" />
             </div>

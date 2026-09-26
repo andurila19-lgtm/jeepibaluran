@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { MessageCircle, Menu, X, Compass, Shield } from "lucide-react";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,7 +20,8 @@ export default function Navbar() {
   ];
 
   const waUrl =
-    "https://wa.me/6285204572677?text=Halo%20Jeep%20Baluran%2C%20saya%20ingin%20tanya%20informasi%20paket%20safari%20dan%20ketersediaan%20unit.";
+    "https://wa.me/6285204572677?text=" +
+    encodeURIComponent("Halo Kak, saya ingin booking / tanya jadwal ketersediaan armada Jeep Baluran.");
 
   return (
     <header
@@ -84,6 +86,13 @@ export default function Navbar() {
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackWhatsAppClick({
+                  packageName: "Navbar Booking",
+                  pageLocation: pathname,
+                  ctaPosition: "Desktop Navbar",
+                })
+              }
               id="navbar-book-btn"
               className="inline-flex items-center justify-center px-5 py-2.5 bg-[#F59E0B] hover:bg-[#EAB308] text-black text-xs font-extrabold uppercase tracking-wider rounded-full transition-all shadow-md active:scale-95"
             >
@@ -97,6 +106,13 @@ export default function Navbar() {
               href={waUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackWhatsAppClick({
+                  packageName: "Navbar Booking",
+                  pageLocation: pathname,
+                  ctaPosition: "Mobile Navbar Button",
+                })
+              }
               className="inline-flex items-center justify-center px-3 py-1.5 bg-[#F59E0B] text-black text-[11px] font-extrabold rounded-full uppercase tracking-wider shadow-xs"
               aria-label="Book Now WhatsApp"
             >
@@ -156,7 +172,14 @@ export default function Navbar() {
                 href={waUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  trackWhatsAppClick({
+                    packageName: "Navbar Mobile Drawer",
+                    pageLocation: pathname,
+                    ctaPosition: "Mobile Drawer",
+                  });
+                  setMobileMenuOpen(false);
+                }}
                 className="w-full flex items-center justify-center gap-2 py-3 bg-[#F59E0B] text-black text-xs font-extrabold uppercase tracking-wider rounded-full shadow-md active:scale-95 transition-transform"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
