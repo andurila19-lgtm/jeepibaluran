@@ -177,7 +177,7 @@ export default function ExperienceSection() {
                 <div className="relative z-10 p-5 sm:p-6 text-white space-y-2">
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="px-2.5 py-1 rounded-md bg-[#C45525] text-white text-[11px] font-bold tracking-wide">
-                      TOYOTA HARDTOP 4x4
+                      JEEP TROOPER 4x4
                     </span>
                     <span className="px-2.5 py-1 rounded-md bg-white/20 backdrop-blur-xs text-white text-[11px] font-semibold">
                       Kapasitas 5–6 Wisatawan

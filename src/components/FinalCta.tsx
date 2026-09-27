@@ -8,10 +8,6 @@ export default function FinalCta() {
 
   return (
     <section className="py-10 xs:py-12 sm:py-16 lg:py-20 bg-[#0E1B16] text-white relative overflow-hidden border-t border-white/10">
-      {/* Background warm radial glow */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-[#F59E0B]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#F59E0B]/5 rounded-full blur-3xl pointer-events-none" />
-
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 sm:space-y-6 relative z-10">
 
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] sm:text-xs font-semibold text-white/90 uppercase tracking-wider">

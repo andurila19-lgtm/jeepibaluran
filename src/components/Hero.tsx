@@ -67,7 +67,7 @@ export default function Hero() {
             muted
             playsInline
             preload="metadata"
-            poster="/images/jeep-baluran-oranye-tamu.webp"
+            poster="/images/jeep-trooper-baluran-hero.webp"
             className="w-full h-full object-cover object-center hero-cinematic-zoom brightness-95"
           >
             <source src="/Cinematic_drone_tracking_shot.webm" type="video/webm" />
@@ -115,10 +115,10 @@ export default function Hero() {
               <span>Book via WhatsApp</span>
             </a>
 
-            {/* Secondary Button: Glass Dark Translucent Pill */}
+            {/* Secondary Button: Premium Dark Translucent Pill without blur */}
             <a
               href="#paket"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm sm:text-base font-medium border border-white/20 backdrop-blur-xs transition-all duration-200"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm sm:text-base font-medium border border-white/20 transition-all duration-200"
             >
               <span>Lihat Paket & Tarif ↓</span>
             </a>

@@ -19,7 +19,7 @@ export default function FaqSection() {
     },
     {
       q: "Satu unit Jeep muat untuk berapa orang?",
-      a: "Satu unit Jeep 4x4 Toyota Hardtop memiliki kapasitas ideal 5 hingga 6 orang penumpang. Kapasitas ini memastikan posisi duduk tetap lega dan nyaman saat melewati jalan berbatu makadam.",
+      a: "Satu unit armada Jeep 4x4 Trooper memiliki kapasitas ideal 5 hingga 6 orang penumpang. Kapasitas ini memastikan posisi duduk tetap lega dan nyaman saat melewati jalan berbatu makadam.",
     },
     {
       q: "Apakah biaya sewa sudah termasuk tiket masuk TN Baluran?",
