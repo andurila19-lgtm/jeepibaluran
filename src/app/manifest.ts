@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Jeep Baluran - Layanan Safari & Shuttle Resmi",
     short_name: "Jeep Baluran",
     description:
-      "Sewa Jeep 4x4 Resmi Taman Nasional Baluran. Paket Shuttle Rp 600.000 PP Savana Bekol & Pantai Bama.",
+      "Sewa Jeep 4x4 Resmi Taman Nasional Baluran. Paket Shuttle Rp 597.000 PP Savana Bekol & Pantai Bama.",
     start_url: "/",
     display: "standalone",
     background_color: "#F4F0E6",

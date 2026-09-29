@@ -155,7 +155,7 @@ export default function Navbar() {
                   <span>{item.name}</span>
                   {item.href === "/paket" && (
                     <span className="text-[10px] bg-[#F59E0B]/20 text-[#F59E0B] px-2 py-0.5 rounded font-mono font-bold">
-                      600rb PP
+                      597rb PP
                     </span>
                   )}
                 </Link>

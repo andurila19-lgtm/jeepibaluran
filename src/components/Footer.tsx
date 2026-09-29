@@ -99,7 +99,7 @@ export default function Footer() {
                 <strong className="text-white">Jam Layanan:</strong> 05:00 - 18:00 WIB (Setiap Hari)
               </p>
               <p>
-                <strong className="text-white">Paket Shuttle:</strong> Rp 600.000 / Jeep PP (5–6 Org)
+                <strong className="text-white">Paket Shuttle:</strong> Rp 597.000 / Jeep PP (Ideal 5 Org)
               </p>
               <p className="text-white/60 text-[11px]">
                 Melayani Sunrise Safari (Fajar), Day Safari, dan Sunset Safari.

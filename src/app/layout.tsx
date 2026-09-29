@@ -127,7 +127,7 @@ const jsonLd = {
       },
       "telephone": "+6285204572677",
       "url": "https://jeepbaluran.reaksy.com",
-      "priceRange": "Rp 600.000",
+      "priceRange": "Rp 597.000",
       "currenciesAccepted": "IDR",
       "paymentAccepted": "Cash, QRIS, Bank Transfer",
       "openingHours": "Mo-Su 05:00-18:00",
@@ -173,11 +173,11 @@ const jsonLd = {
       "@type": "TouristTrip",
       "@id": "https://jeepbaluran.reaksy.com/#trip-shuttle",
       "name": "Paket Shuttle Safari Baluran (PP 3-4 Jam)",
-      "description": "Layanan sewa Jeep 4x4 kapasitas 5-6 orang pulang pergi dari Pos Batangan ke Evergreen Forest, Savana Bekol, dan Pantai Bama.",
+      "description": "Layanan sewa Jeep 4x4 kapasitas ideal 5 orang pulang pergi dari Pos Batangan ke Evergreen Forest, Savana Bekol, dan Pantai Bama.",
       "touristType": "Keluarga, Sahabat, Wisatawan Nusantara & Mancanegara",
       "offers": {
         "@type": "Offer",
-        "price": "600000",
+        "price": "597000",
         "priceCurrency": "IDR",
         "availability": "https://schema.org/InStock",
         "validFrom": "2024-01-01"

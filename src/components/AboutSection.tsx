@@ -14,7 +14,7 @@ export default function AboutSection() {
     },
     {
       icon: CheckCircle2,
-      title: "Tarif Pasti Rp 600.000 PP Tanpa Calo",
+      title: "Tarif Pasti Rp 597.000 PP Tanpa Calo",
       desc: "Harga jujur dan transparan langsung ke pemilik armada untuk rute shuttle lengkap Batangan ⇄ Evergreen ⇄ Bekol ⇄ Bama PP.",
     },
     {

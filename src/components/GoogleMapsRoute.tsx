@@ -522,7 +522,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
           <span>Waktu & durasi di setiap spot sangat fleksibel sesuai ritme keluarga Anda.</span>
         </div>
         <span className="font-semibold text-[#C25624]">
-          Paket Shuttle Rp 600.000 / Jeep PP Lengkap
+          Paket Shuttle Rp 597.000 / Jeep PP Lengkap
         </span>
       </div>
 

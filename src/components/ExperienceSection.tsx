@@ -180,7 +180,7 @@ export default function ExperienceSection() {
                       JEEP TROOPER 4x4
                     </span>
                     <span className="px-2.5 py-1 rounded-md bg-white/20 backdrop-blur-xs text-white text-[11px] font-semibold">
-                      Kapasitas 5–6 Wisatawan
+                      Kapasitas Ideal 5 Wisatawan
                     </span>
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-white leading-tight">

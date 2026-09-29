@@ -140,7 +140,7 @@ export default function RutePage() {
             Siap Menjelajahi Rute Baluran Bersama Kami?
           </h3>
           <p className="text-sm text-charcoal-muted max-w-lg mx-auto">
-            Paket Shuttle Baluran lengkap pulang-pergi melintasi rute ini hanya <strong>Rp 600.000 / Jeep</strong> (muat 5–6 orang).
+            Paket Shuttle Baluran lengkap pulang-pergi melintasi rute ini hanya <strong>Rp 597.000 / Jeep</strong> (ideal muat 5 orang).
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
             <Link

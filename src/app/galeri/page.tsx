@@ -192,7 +192,7 @@ export default function GaleriPage() {
               <div className="w-9 h-9 rounded-lg bg-olive/10 text-olive flex items-center justify-center">
                 <Users className="w-5 h-5" />
               </div>
-              <h4 className="font-bold text-sm text-charcoal">Kapasitas 5–6 Orang</h4>
+              <h4 className="font-bold text-sm text-charcoal">Kapasitas Ideal 5 Orang</h4>
               <p className="text-xs text-charcoal-muted">
                 Cukup luas dan lega untuk rombongan keluarga kecil maupun lingkaran sahabat.
               </p>
@@ -216,14 +216,14 @@ export default function GaleriPage() {
             Ingin Mengabadikan Momen Bersama Jeep Baluran?
           </h3>
           <p className="text-sm text-charcoal-muted max-w-lg mx-auto">
-            Booking sekarang mulai <strong>Rp 600.000 / Jeep PP</strong>. Driver kami siap membantu mengambil foto-foto terbaik Anda selama safari!
+            Booking sekarang mulai <strong>Rp 597.000 / Jeep PP</strong>. Driver kami siap membantu mengambil foto-foto terbaik Anda selama safari!
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
             <Link
               href="/paket"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-olive hover:bg-olive-hover text-white text-sm font-semibold transition-all duration-200 shadow-sm"
             >
-              <span>Lihat Paket Shuttle Rp 600.000</span>
+              <span>Lihat Paket Shuttle Rp 597.000</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
             <TrackedWhatsAppButton

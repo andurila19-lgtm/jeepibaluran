@@ -45,7 +45,7 @@ export default function TentangPage() {
     },
     {
       title: "Tarif Jujur & Transparan",
-      desc: "Tidak ada biaya tersembunyi. Paket Shuttle Baluran kami tetapkan jelas Rp 600.000 / Jeep PP dengan fasilitas unit, sopir, dan BBM yang sudah termasuk.",
+      desc: "Tidak ada biaya tersembunyi. Paket Shuttle Baluran kami tetapkan jelas Rp 597.000 / Jeep PP dengan fasilitas unit, sopir, dan BBM yang sudah termasuk.",
       icon: ShieldCheck,
     },
     {

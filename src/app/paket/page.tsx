@@ -5,24 +5,24 @@ import TrackedWhatsAppButton from "@/components/TrackedWhatsAppButton";
 import { safeJsonStringify } from "@/lib/security";
 
 export const metadata: Metadata = {
-  title: "Paket Sewa Jeep Baluran & Tour Banyuwangi | Shuttle Rp 600rb",
+  title: "Paket Sewa Jeep Baluran & Tour Banyuwangi | Shuttle Rp 597rb",
   description:
-    "Pilihan paket sewa Jeep 4x4 Taman Nasional Baluran untuk tour Banyuwangi & open trip Baluran. Paket Shuttle Rp 600.000 PP Savana Bekol & Bama hingga Sunrise Safari.",
+    "Pilihan paket sewa Jeep 4x4 Taman Nasional Baluran untuk tour Banyuwangi & open trip Baluran. Paket Shuttle Rp 597.000 PP Savana Bekol & Bama hingga Sunrise Safari.",
   keywords: [
     "Paket Jeep Baluran",
     "Sewa Jeep Baluran",
     "Tour Banyuwangi",
     "Open Trip Baluran",
     "Harga Jeep Baluran",
-    "Shuttle Baluran 600rb",
+    "Shuttle Baluran 597rb",
   ],
   alternates: {
     canonical: "https://jeepbaluran.reaksy.com/paket",
   },
   openGraph: {
-    title: "Paket Sewa Jeep Baluran & Tour Banyuwangi | Shuttle Rp 600rb",
+    title: "Paket Sewa Jeep Baluran & Tour Banyuwangi | Shuttle Rp 597rb",
     description:
-      "Pilihan paket sewa Jeep 4x4 Taman Nasional Baluran resmi untuk tour Banyuwangi. Shuttle Rp 600.000 / Jeep PP lengkap.",
+      "Pilihan paket sewa Jeep 4x4 Taman Nasional Baluran resmi untuk tour Banyuwangi. Shuttle Rp 597.000 / Jeep PP lengkap.",
     url: "https://jeepbaluran.reaksy.com/paket",
     images: ["/images/jeep-baluran-oranye-tamu.webp"],
   },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 export default function PaketPage() {
   const waBase = "https://wa.me/6285204572677";
   const waShuttle = `${waBase}?text=${encodeURIComponent(
-    "Halo Jeep Baluran, saya ingin booking Paket Shuttle Baluran (Rp 600.000 / Jeep PP) untuk tanggal [Tentukan Tanggal]."
+    "Halo Jeep Baluran, saya ingin booking Paket Shuttle Baluran (Rp 597.000 / Jeep PP) untuk tanggal [Tentukan Tanggal]."
   )}`;
   const waSunrise = `${waBase}?text=${encodeURIComponent(
     "Halo Jeep Baluran, saya ingin menanyakan ketersediaan Paket Sunrise Safari Baluran (Fajar) untuk tanggal [Tentukan Tanggal]."
@@ -145,12 +145,12 @@ export default function PaketPage() {
               <div className="pt-5 border-t border-base-border/80">
                 <p className="text-xs text-charcoal-light font-medium">Tarif Resmi:</p>
                 <div className="flex items-baseline gap-1 mt-1">
-                  <span className="text-3xl font-black text-charcoal">Rp 600.000</span>
+                  <span className="text-3xl font-black text-charcoal">Rp 597.000</span>
                   <span className="text-xs text-charcoal-muted">/ Jeep (PP)</span>
                 </div>
                 <p className="text-xs text-charcoal-muted mt-1 flex items-center gap-1.5">
                   <Users className="w-3.5 h-3.5 text-olive" />
-                  <span>Kapasitas 1 unit (1 hingga 5–6 orang)</span>
+                  <span>Kapasitas 1 unit (Ideal 5 orang)</span>
                 </p>
               </div>
             </div>
@@ -163,7 +163,7 @@ export default function PaketPage() {
                 className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-olive hover:bg-olive-hover text-white text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow hover:ring-2 hover:ring-olive/20 active:opacity-95"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
-                <span>Pesan Paket Shuttle (600rb)</span>
+                <span>Pesan Paket Shuttle (597rb)</span>
               </TrackedWhatsAppButton>
             </div>
           </div>
@@ -216,12 +216,12 @@ export default function PaketPage() {
               <div className="pt-5 border-t border-base-border/80">
                 <p className="text-xs text-charcoal-light font-medium">Informasi Tarif:</p>
                 <div className="flex items-baseline gap-1 mt-1">
-                  <span className="text-3xl font-black text-charcoal">Mulai Rp 600.000</span>
+                  <span className="text-3xl font-black text-charcoal">Mulai Rp 597.000</span>
                   <span className="text-xs text-charcoal-muted">/ Jeep</span>
                 </div>
                 <p className="text-xs text-charcoal-muted mt-1 flex items-center gap-1.5">
                   <Users className="w-3.5 h-3.5 text-olive" />
-                  <span>Kapasitas 1 unit (1 hingga 5–6 orang)</span>
+                  <span>Kapasitas 1 unit (Ideal 5 orang)</span>
                 </p>
               </div>
             </div>

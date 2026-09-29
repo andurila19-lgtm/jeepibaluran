@@ -5,7 +5,7 @@ import TrackedWhatsAppButton from "@/components/TrackedWhatsAppButton";
 export default function PackagesSection() {
   const waBase = "https://wa.me/6285204572677";
   const waShuttle = `${waBase}?text=${encodeURIComponent(
-    "Halo Kak, saya tertarik dengan Paket Shuttle Jeep Baluran (Rp 600.000 / Jeep PP). Saya ingin cek jadwal dan ketersediaan armada untuk tanggal [Tentukan Tanggal]."
+    "Halo Kak, saya tertarik dengan Paket Shuttle Jeep Baluran (Rp 597.000 / Jeep PP). Saya ingin cek jadwal dan ketersediaan armada untuk tanggal [Tentukan Tanggal]."
   )}`;
   const waSunrise = `${waBase}?text=${encodeURIComponent(
     "Halo Kak, saya tertarik dengan Paket Sunrise Safari Baluran (Fajar). Saya ingin cek jadwal dan ketersediaan Jeep untuk tanggal [Tentukan Tanggal]."
@@ -98,7 +98,7 @@ export default function PackagesSection() {
                 <div className="flex items-center gap-4 text-xs text-[#6E736D] pt-1">
                   <span className="flex items-center gap-1">
                     <Users className="w-3.5 h-3.5 text-[#1A2E22]" />
-                    Kapasitas 1-6 Orang
+                    Kapasitas Ideal 5 Orang
                   </span>
                   <span>•</span>
                   <span>Sopir, BBM & Parkir</span>
@@ -110,7 +110,7 @@ export default function PackagesSection() {
                 <div>
                   <span className="text-[11px] text-[#6E736D] block font-mono">Tarif per Mobil:</span>
                   <p className="text-2xl sm:text-3xl font-black text-[#1A1D1A]">
-                    Rp 600.000
+                    Rp 597.000
                   </p>
                 </div>
 
@@ -179,7 +179,7 @@ export default function PackagesSection() {
                 <div className="flex items-center gap-4 text-xs text-[#6E736D] pt-1">
                   <span className="flex items-center gap-1">
                     <Users className="w-3.5 h-3.5 text-[#1A2E22]" />
-                    Kapasitas 1-6 Orang
+                    Kapasitas Ideal 5 Orang
                   </span>
                   <span>•</span>
                   <span>Sopir, BBM & Parkir</span>
@@ -191,7 +191,7 @@ export default function PackagesSection() {
                 <div>
                   <span className="text-[11px] text-[#6E736D] block font-mono">Tarif per Mobil:</span>
                   <p className="text-2xl sm:text-3xl font-black text-[#1A1D1A]">
-                    Mulai Rp 600.000
+                    Mulai Rp 597.000
                   </p>
                 </div>
 

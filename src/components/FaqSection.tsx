@@ -15,11 +15,11 @@ export default function FaqSection() {
   const faqs = [
     {
       q: "Berapa harga sewa Jeep shuttle Baluran?",
-      a: "Tarif resmi paket shuttle adalah Rp 600.000 per unit Jeep untuk rute pulang-pergi (PP) dari Pos Batangan ⇄ Hutan Evergreen ⇄ Savana Bekol ⇄ Pantai Bama. Biaya ini sudah termasuk unit Jeep 4x4, bahan bakar (BBM), dan jasa driver lokal berpengalaman.",
+      a: "Tarif resmi paket shuttle adalah Rp 597.000 per unit Jeep untuk rute pulang-pergi (PP) dari Pos Batangan ⇄ Hutan Evergreen ⇄ Savana Bekol ⇄ Pantai Bama. Biaya ini sudah termasuk unit Jeep 4x4, bahan bakar (BBM), dan jasa driver lokal berpengalaman.",
     },
     {
       q: "Satu unit Jeep muat untuk berapa orang?",
-      a: "Satu unit armada Jeep 4x4 Trooper memiliki kapasitas ideal 5 hingga 6 orang penumpang. Kapasitas ini memastikan posisi duduk tetap lega dan nyaman saat melewati jalan berbatu makadam.",
+      a: "Satu unit armada Jeep 4x4 Trooper ideal memuat 5 orang penumpang (bisa hingga 5–6 orang). Kapasitas ini memastikan posisi duduk tetap lega dan nyaman saat melewati jalan berbatu makadam.",
     },
     {
       q: "Apakah biaya sewa sudah termasuk tiket masuk TN Baluran?",
