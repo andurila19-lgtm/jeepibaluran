@@ -7,13 +7,14 @@ import { safeJsonStringify } from "@/lib/security";
 export const metadata: Metadata = {
   title: "Paket Sewa Jeep Baluran & Tour Banyuwangi | Shuttle Rp 597rb",
   description:
-    "Pilihan paket sewa Jeep 4x4 Taman Nasional Baluran untuk tour Banyuwangi & open trip Baluran. Paket Shuttle Rp 597.000 PP Savana Bekol & Bama hingga Sunrise Safari.",
+    "Pilihan paket sewa Jeep 4x4 Taman Nasional Baluran resmi. Program Pagi (07.30 WIB) dan Program Siang (14.00 WIB) berangkat dari Visitor Baluran Rp 597.000 / Jeep PP.",
   keywords: [
     "Paket Jeep Baluran",
     "Sewa Jeep Baluran",
     "Tour Banyuwangi",
-    "Open Trip Baluran",
-    "Harga Jeep Baluran",
+    "Program Pagi Jeep Baluran",
+    "Program Siang Jeep Baluran",
+    "Visitor Baluran Jeep",
     "Shuttle Baluran 597rb",
   ],
   alternates: {
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Paket Sewa Jeep Baluran & Tour Banyuwangi | Shuttle Rp 597rb",
     description:
-      "Pilihan paket sewa Jeep 4x4 Taman Nasional Baluran resmi untuk tour Banyuwangi. Shuttle Rp 597.000 / Jeep PP lengkap.",
+      "Pilihan paket sewa Jeep 4x4 Taman Nasional Baluran resmi. Program Pagi (07.30) & Siang (14.00) berangkat dari Visitor Baluran Rp 597.000 / Jeep PP.",
     url: "https://jeepbaluran.reaksy.com/paket",
     images: ["/images/jeep-baluran-oranye-tamu.webp"],
   },
@@ -30,14 +31,14 @@ export const metadata: Metadata = {
 
 export default function PaketPage() {
   const waBase = "https://wa.me/6285204572677";
-  const waShuttle = `${waBase}?text=${encodeURIComponent(
-    "Halo Jeep Baluran, saya ingin booking Paket Shuttle Baluran (Rp 597.000 / Jeep PP) untuk tanggal [Tentukan Tanggal]."
+  const waPagi = `${waBase}?text=${encodeURIComponent(
+    "Halo Jeep Baluran, saya ingin booking Program Pagi (07.30 WIB) Rp 597.000 / Jeep PP dari Visitor Baluran untuk tanggal [Tentukan Tanggal]."
   )}`;
-  const waSunrise = `${waBase}?text=${encodeURIComponent(
-    "Halo Jeep Baluran, saya ingin menanyakan ketersediaan Paket Sunrise Safari Baluran (Fajar) untuk tanggal [Tentukan Tanggal]."
+  const waSiang = `${waBase}?text=${encodeURIComponent(
+    "Halo Jeep Baluran, saya ingin booking Program Siang (14.00 WIB) Rp 597.000 / Jeep PP dari Visitor Baluran untuk tanggal [Tentukan Tanggal]."
   )}`;
   const waAntarJemput = `${waBase}?text=${encodeURIComponent(
-    "Halo Jeep Baluran, saya ingin konsultasi Paket Private Trip + Antar Jemput dari hotel/stasiun di Banyuwangi."
+    "Halo Jeep Baluran, saya ingin konsultasi Paket Private Trip + Antar Jemput Banyuwangi untuk jadwal Program Pagi (07.30) / Siang (14.00)."
   )}`;
 
   const breadcrumbSchema = {
@@ -93,7 +94,7 @@ export default function PaketPage() {
         {/* 3 Main Packages */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
 
-          {/* Paket 1: Shuttle Baluran (BEST SELLER) */}
+          {/* Paket 1: Program Pagi (07.30 WIB) */}
           <div className="rounded-2xl border-2 border-olive/50 bg-base-light p-6 sm:p-8 flex flex-col justify-between relative hover:border-olive hover:shadow-lg transition-all duration-300">
             <div className="absolute -top-3.5 left-6 bg-olive text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
               Paling Populer (Best Seller)
@@ -103,26 +104,26 @@ export default function PaketPage() {
               <div className="flex items-center justify-between border-b border-base-border/80 pb-3">
                 <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-olive uppercase tracking-wider">
                   <Sunset className="w-3.5 h-3.5" />
-                  Shuttle Safari PP
+                  Program Pagi
                 </span>
                 <span className="text-xs text-charcoal-light flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5" /> 3 - 4 Jam
+                  <Clock className="w-3.5 h-3.5" /> 07.30 WIB
                 </span>
               </div>
 
               <div>
                 <h2 className="text-2xl font-bold text-charcoal">
-                  Paket Shuttle Baluran
+                  Program Pagi (07.30 WIB)
                 </h2>
                 <p className="mt-2 text-xs sm:text-sm text-charcoal-muted leading-relaxed">
-                  Rute standar safari terlengkap dari gerbang masuk hingga pesisir pantai. Sangat pas untuk trip santai bersama keluarga dan rombongan sahabat.
+                  Format safari pagi terpopuler pulang-pergi. Titik keberangkatan pukul 07.30 WIB dari Visitor Baluran, melintasi Evergreen Forest, Savana Bekol, hingga pesisir Pantai Bama.
                 </p>
               </div>
 
               <div className="space-y-3 pt-2 text-xs sm:text-sm text-charcoal">
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Jemput di Visitor Center Baluran (Pos Batangan)</span>
+                  <span>Keberangkatan pukul 07.30 WIB dari Visitor Baluran</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
@@ -138,7 +139,7 @@ export default function PaketPage() {
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Diantar kembali ke Visitor Center Baluran (PP)</span>
+                  <span>Diantar kembali ke Visitor Baluran (PP 3-4 Jam)</span>
                 </div>
               </div>
 
@@ -157,67 +158,67 @@ export default function PaketPage() {
 
             <div className="pt-6">
               <TrackedWhatsAppButton
-                href={waShuttle}
-                packageName="Paket Shuttle Baluran"
-                ctaPosition="paket_page_shuttle_card"
+                href={waPagi}
+                packageName="Program Pagi (07.30 WIB)"
+                ctaPosition="paket_page_pagi_card"
                 className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-olive hover:bg-olive-hover text-white text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow hover:ring-2 hover:ring-olive/20 active:opacity-95"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
-                <span>Pesan Paket Shuttle (597rb)</span>
+                <span>Pesan Program Pagi (597rb)</span>
               </TrackedWhatsAppButton>
             </div>
           </div>
 
-          {/* Paket 2: Sunrise Safari */}
+          {/* Paket 2: Program Siang (14.00 WIB) */}
           <div className="rounded-2xl border border-base-border bg-base-light p-6 sm:p-8 flex flex-col justify-between hover:border-charcoal/40 hover:shadow-md transition-all duration-300">
             <div className="space-y-5">
               <div className="flex items-center justify-between border-b border-base-border/80 pb-3">
                 <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-earth uppercase tracking-wider">
                   <Sun className="w-3.5 h-3.5" />
-                  Sunrise Safari
+                  Program Siang
                 </span>
                 <span className="text-xs text-charcoal-light flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5" /> 05:00 - 09:30
+                  <Clock className="w-3.5 h-3.5" /> 14.00 WIB
                 </span>
               </div>
 
               <div>
                 <h2 className="text-2xl font-bold text-charcoal">
-                  Sunrise Safari Baluran
+                  Program Siang (14.00 WIB)
                 </h2>
                 <p className="mt-2 text-xs sm:text-sm text-charcoal-muted leading-relaxed">
-                  Berangkat subuh untuk menyaksikan momen emas terbitnya matahari di Savana Bekol saat kawanan rusa, merak, dan banteng liar aktif merumput.
+                  Safari siang santai menjelang sore. Titik keberangkatan pukul 14.00 WIB dari Visitor Baluran, menikmati eksotisme savana dan angin pesisir Pantai Bama.
                 </p>
               </div>
 
               <div className="space-y-3 pt-2 text-xs sm:text-sm text-charcoal">
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Start fajar 05:00 WIB dari Pos Batangan</span>
+                  <span>Keberangkatan pukul 14.00 WIB dari Visitor Baluran</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Spot Sunrise Menara Pandang Savana Bekol</span>
+                  <span>Lintas Hutan Musim (Evergreen Forest)</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Peluang maksimal mengamati satwa liar pagi hari</span>
+                  <span>Wisata Pantai Bama & Hutan Mangrove</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Lanjut santai pagi ke Pantai Bama & Mangrove</span>
+                  <span>Sesi foto cahaya sore di padang Savana Bekol</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <Check className="w-4 h-4 text-olive shrink-0 mt-0.5" />
-                  <span>Sopir lokal pemandu spot foto satwa</span>
+                  <span>Diantar kembali ke Visitor Baluran (PP 3-4 Jam)</span>
                 </div>
               </div>
 
               <div className="pt-5 border-t border-base-border/80">
-                <p className="text-xs text-charcoal-light font-medium">Informasi Tarif:</p>
+                <p className="text-xs text-charcoal-light font-medium">Tarif Resmi:</p>
                 <div className="flex items-baseline gap-1 mt-1">
-                  <span className="text-3xl font-black text-charcoal">Mulai Rp 597.000</span>
-                  <span className="text-xs text-charcoal-muted">/ Jeep</span>
+                  <span className="text-3xl font-black text-charcoal">Rp 597.000</span>
+                  <span className="text-xs text-charcoal-muted">/ Jeep (PP)</span>
                 </div>
                 <p className="text-xs text-charcoal-muted mt-1 flex items-center gap-1.5">
                   <Users className="w-3.5 h-3.5 text-olive" />
@@ -228,13 +229,13 @@ export default function PaketPage() {
 
             <div className="pt-6">
               <TrackedWhatsAppButton
-                href={waSunrise}
-                packageName="Sunrise Safari Baluran"
-                ctaPosition="paket_page_sunrise_card"
+                href={waSiang}
+                packageName="Program Siang (14.00 WIB)"
+                ctaPosition="paket_page_siang_card"
                 className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-earth hover:bg-earth-hover text-white text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow hover:ring-2 hover:ring-earth/20 active:opacity-95"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
-                <span>Tanya Paket Sunrise</span>
+                <span>Pesan Program Siang (597rb)</span>
               </TrackedWhatsAppButton>
             </div>
           </div>
@@ -380,9 +381,9 @@ export default function PaketPage() {
 
           <div className="space-y-4 border-l-2 border-olive/30 pl-4 sm:pl-6 text-sm">
             <div>
-              <span className="font-bold text-olive block text-xs">Pemberangkatan / Titik Kumpul</span>
-              <p className="text-charcoal font-semibold mt-0.5">Pos Batangan (Visitor Center Baluran)</p>
-              <p className="text-charcoal-muted text-xs">Bertemu driver Jeep Baluran, cek tiket masuk, dan persiapan briefing singkat.</p>
+              <span className="font-bold text-olive block text-xs">Pemberangkatan / Titik Kumpul (Program Pagi 07.30 & Siang 14.00)</span>
+              <p className="text-charcoal font-semibold mt-0.5">Visitor Baluran (Pos Batangan)</p>
+              <p className="text-charcoal-muted text-xs">Tersedia 2 jadwal keberangkatan resmi: Program Pagi pukul 07.30 WIB dan Program Siang pukul 14.00 WIB. Bertemu driver Jeep Baluran, cek tiket masuk, dan persiapan briefing singkat.</p>
             </div>
             <div>
               <span className="font-bold text-olive block text-xs">Jalur 1: Evergreen Forest (15 - 20 Menit)</span>
@@ -401,8 +402,8 @@ export default function PaketPage() {
             </div>
             <div>
               <span className="font-bold text-olive block text-xs">Selesai Trip</span>
-              <p className="text-charcoal font-semibold mt-0.5">Kembali ke Pos Batangan (PP)</p>
-              <p className="text-charcoal-muted text-xs">Perjalanan pulang menuju pintu gerbang utama. Trip selesai dengan aman dan menyenangkan.</p>
+              <p className="text-charcoal font-semibold mt-0.5">Kembali ke Visitor Baluran (PP)</p>
+              <p className="text-charcoal-muted text-xs">Perjalanan pulang menuju titik awal Visitor Baluran. Trip selesai dengan aman dan menyenangkan.</p>
             </div>
           </div>
         </div>
@@ -413,7 +414,7 @@ export default function PaketPage() {
             Ingin tanggal tertentu atau butuh lebih dari 1 unit Jeep?
           </p>
           <TrackedWhatsAppButton
-            href={waShuttle}
+            href={waPagi}
             packageName="Paket Page Bottom CTA"
             ctaPosition="paket_page_bottom_cta"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-earth hover:bg-earth-hover text-white text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg active:opacity-95"

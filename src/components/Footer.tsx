@@ -53,7 +53,7 @@ export default function Footer() {
             <div className="space-y-1.5 text-xs text-white/75 pt-0.5">
               <p className="flex items-center gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#F59E0B] shrink-0" />
-                <span>Pos Batangan (Gerbang Utama TN Baluran KM 35)</span>
+                <span>Visitor Baluran (Gerbang Pos Batangan KM 35)</span>
               </p>
               <p className="flex items-center gap-2">
                 <MessageCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
@@ -96,13 +96,13 @@ export default function Footer() {
             </h3>
             <div className="text-xs text-white/75 space-y-1 leading-snug">
               <p>
-                <strong className="text-white">Jam Layanan:</strong> 05:00 - 18:00 WIB (Setiap Hari)
+                <strong className="text-white">Jadwal Safari:</strong> Program Pagi 07.30 & Program Siang 14.00 WIB
+              </p>
+              <p>
+                <strong className="text-white">Titik Berangkat:</strong> Visitor Baluran (Pos Batangan)
               </p>
               <p>
                 <strong className="text-white">Paket Shuttle:</strong> Rp 597.000 / Jeep PP (Ideal 5 Org)
-              </p>
-              <p className="text-white/60 text-[11px]">
-                Melayani Sunrise Safari (Fajar), Day Safari, dan Sunset Safari.
               </p>
             </div>
 

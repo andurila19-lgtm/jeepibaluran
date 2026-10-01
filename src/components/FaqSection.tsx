@@ -15,7 +15,7 @@ export default function FaqSection() {
   const faqs = [
     {
       q: "Berapa harga sewa Jeep shuttle Baluran?",
-      a: "Tarif resmi paket shuttle adalah Rp 597.000 per unit Jeep untuk rute pulang-pergi (PP) dari Pos Batangan ⇄ Hutan Evergreen ⇄ Savana Bekol ⇄ Pantai Bama. Biaya ini sudah termasuk unit Jeep 4x4, bahan bakar (BBM), dan jasa driver lokal berpengalaman.",
+      a: "Tarif resmi paket shuttle adalah Rp 597.000 per unit Jeep untuk rute pulang-pergi (PP) dari titik keberangkatan Visitor Baluran ⇄ Hutan Evergreen ⇄ Savana Bekol ⇄ Pantai Bama. Tersedia untuk Program Pagi (07.30 WIB) dan Program Siang (14.00 WIB). Biaya ini sudah termasuk unit Jeep 4x4, bahan bakar (BBM), dan jasa driver lokal berpengalaman.",
     },
     {
       q: "Satu unit Jeep muat untuk berapa orang?",
@@ -23,15 +23,15 @@ export default function FaqSection() {
     },
     {
       q: "Apakah biaya sewa sudah termasuk tiket masuk TN Baluran?",
-      a: "Belum termasuk. Sesuai regulasi resmi Balai Taman Nasional Baluran, tiket masuk kawasan dibayarkan langsung oleh pengunjung di loket resmi gerbang Pos Batangan saat tiba.",
+      a: "Belum termasuk. Sesuai regulasi resmi Balai Taman Nasional Baluran, tiket masuk kawasan dibayarkan langsung oleh pengunjung di loket resmi gerbang Visitor Baluran (Pos Batangan) saat tiba.",
     },
     {
-      q: "Kapan waktu terbaik untuk safari dan melihat satwa liar?",
-      a: "Waktu terbaik adalah pagi hari (Sunrise Safari pukul 05:00 - 08:00 WIB) saat udara masih sejuk dan satwa savana (banteng, rusa timor, burung merak) aktif keluar merumput. Opsi kedua adalah sore hari (15:30 - 17:30 WIB) untuk menikmati keindahan matahari terbenam di Bekol.",
+      q: "Jam berapa jadwal keberangkatan safari Jeep Baluran?",
+      a: "Tersedia 2 jadwal keberangkatan resmi setiap hari: Program Pagi pukul 07.30 WIB dan Program Siang pukul 14.00 WIB. Seluruh keberangkatan dimulai dari titik kumpul Visitor Baluran (Pos Batangan). Durasi masing-masing trip berkisar 3–4 jam santai pulang-pergi.",
     },
     {
       q: "Bagaimana cara reservasi Jeep Baluran?",
-      a: "Pemesanan langsung dan tanpa calo. Anda cukup menghubungi koordinator via WhatsApp di nomor 0852-0457-2677, sebutkan tanggal berkunjung dan jumlah peserta rombongan. Kami akan langsung menyiapkan unit untuk Anda.",
+      a: "Pemesanan langsung dan tanpa calo. Anda cukup menghubungi koordinator via WhatsApp di nomor 0852-0457-2677, sebutkan tanggal berkunjung, pilihan Program Pagi (07.30) atau Siang (14.00), dan jumlah peserta rombongan. Kami akan langsung menyiapkan unit untuk Anda.",
     },
   ];
 

@@ -4,7 +4,7 @@ import TrackedWhatsAppButton from "@/components/TrackedWhatsAppButton";
 export default function FinalCta() {
   const waUrl =
     "https://wa.me/6285204572677?text=" +
-    encodeURIComponent("Halo Kak, saya ingin konsultasi jadwal dan booking Jeep Baluran di Pos Batangan.");
+    encodeURIComponent("Halo Kak, saya ingin konsultasi jadwal dan booking Jeep Baluran untuk Program Pagi (07.30) / Siang (14.00) dari Visitor Baluran.");
 
   return (
     <section className="py-10 xs:py-12 sm:py-16 lg:py-20 bg-[#0E1B16] text-white relative overflow-hidden border-t border-white/10">
@@ -21,7 +21,7 @@ export default function FinalCta() {
         </h2>
 
         <p className="text-xs sm:text-sm lg:text-base text-white/80 max-w-xl mx-auto leading-relaxed">
-          Pastikan unit Jeep Anda siap di Pos Batangan sebelum kuota harian penuh, terutama saat akhir pekan, musim liburan, atau jadwal Sunrise Safari fajar.
+          Pastikan unit Jeep Anda siap di Visitor Baluran sebelum kuota harian penuh, baik untuk Program Pagi (07.30 WIB) maupun Program Siang (14.00 WIB).
         </p>
 
         <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">

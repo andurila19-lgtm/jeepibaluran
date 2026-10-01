@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 
 export default function KontakPage() {
   const waUrl =
-    "https://wa.me/6285204572677?text=Halo%20Jeep%20Baluran%2C%20saya%20ingin%20tanya%20informasi%20sewa%20Jeep%20dan%20titik%20temu.";
+    "https://wa.me/6285204572677?text=Halo%20Jeep%20Baluran%2C%20saya%20ingin%20tanya%20informasi%20sewa%20Jeep%20untuk%20Program%20Pagi%20(07.30)%20%2F%20Siang%20(14.00)%20dari%20Visitor%20Baluran.";
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -153,22 +153,23 @@ export default function KontakPage() {
             </div>
           </div>
 
-          {/* Card 3: Jam Operasional */}
+          {/* Card 3: Jadwal Program */}
           <div className="rounded-2xl border border-base-border bg-base-light p-6 sm:p-8 space-y-4 hover:border-charcoal/40 hover:shadow-md transition-all duration-300">
             <div className="w-12 h-12 rounded-xl bg-charcoal/10 text-charcoal flex items-center justify-center">
               <Clock className="w-6 h-6" />
             </div>
             <div>
               <span className="text-xs font-bold text-charcoal-light uppercase tracking-wider block">
-                Jadwal Layanan
+                Jadwal Program Resmi
               </span>
-              <h2 className="text-xl font-bold text-charcoal mt-1">Jam Safari Harian</h2>
+              <h2 className="text-xl font-bold text-charcoal mt-1">2 Sesi Safari Setiap Hari</h2>
               <p className="text-xs sm:text-sm text-charcoal-muted mt-1.5 leading-relaxed">
-                Melayani safari setiap hari (Senin - Minggu) mengikuti jam operasional resmi Taman Nasional Baluran.
+                Tersedia 2 program safari setiap hari dengan titik keberangkatan resmi dari Visitor Baluran:
               </p>
             </div>
-            <div className="pt-2 text-xs font-semibold text-charcoal bg-base-white p-3 rounded-lg border border-base-border/70">
-              05:00 WIB - 18:00 WIB (Setiap Hari)
+            <div className="pt-2 text-xs font-semibold text-charcoal bg-base-white p-3 rounded-lg border border-base-border/70 space-y-1">
+              <p>• <strong>Program Pagi:</strong> Pukul 07.30 WIB</p>
+              <p>• <strong>Program Siang:</strong> Pukul 14.00 WIB</p>
             </div>
           </div>
 
@@ -178,13 +179,13 @@ export default function KontakPage() {
         <div className="rounded-2xl border border-base-border bg-base-subtle p-6 sm:p-10 mb-16">
           <div className="max-w-2xl mb-8">
             <span className="text-xs font-bold uppercase tracking-wider text-earth block mb-1">
-              Titik Temu Resmi
+              Titik Temu & Keberangkatan
             </span>
             <h3 className="text-2xl font-bold text-charcoal">
-              Pos Batangan (Pintu Gerbang Utama Baluran)
+              Visitor Baluran (Pintu Gerbang Pos Batangan)
             </h3>
             <p className="mt-2 text-sm text-charcoal-muted">
-              Alamat: Jl. Raya Banyuwangi - Situbondo KM 35, Desa Wonorejo, Kec. Banyuputih, Jawa Timur.
+              Alamat: Visitor Baluran, Gerbang Masuk Pos Batangan, Jl. Raya Banyuwangi - Situbondo KM 35, Desa Wonorejo, Kec. Banyuputih, Jawa Timur.
             </p>
           </div>
 

@@ -96,16 +96,16 @@ export default function RutePage() {
               <Clock className="w-5 h-5" />
             </div>
             <h3 className="text-lg font-bold text-charcoal">
-              Waktu Terbaik Berkunjung
+              Jadwal Program Safari Resmi
             </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm text-charcoal-muted">
               <li className="flex items-start gap-2">
                 <span className="text-earth font-bold">•</span>
-                <span><strong>Pagi Hari (05:30 - 08:30 WIB):</strong> Udara masih sangat sejuk dan merupakan waktu paling aktif bagi satwa liar seperti kawanan rusa dan banteng keluar merumput.</span>
+                <span><strong>Program Pagi (Pukul 07.30 WIB):</strong> Titik keberangkatan dari Visitor Baluran. Udara savana masih sejuk alami dan merupakan waktu aktif satwa liar keluar merumput di Savana Bekol.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-earth font-bold">•</span>
-                <span><strong>Sore Hari (15:00 - 17:30 WIB):</strong> Cahaya matahari melandai keemasan (*golden hour*), sangat indah untuk sesi foto di atas mobil Jeep di Savana Bekol.</span>
+                <span><strong>Program Siang (Pukul 14.00 WIB):</strong> Titik keberangkatan dari Visitor Baluran. Menikmati panorama savana Afrika van Java dan pesisir Pantai Bama dengan suasana cahaya keemasan (*golden hour*).</span>
               </li>
             </ul>
           </div>

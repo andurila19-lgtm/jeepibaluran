@@ -42,7 +42,7 @@ export default function Hero() {
 
   const waUrl =
     "https://wa.me/6285204572677?text=" +
-    encodeURIComponent("Halo Kak, saya tertarik dengan sewa Jeep Baluran. Saya ingin cek jadwal dan ketersediaan armada.");
+    encodeURIComponent("Halo Kak, saya tertarik dengan sewa Jeep Baluran. Saya ingin cek jadwal Program Pagi (07.30) / Program Siang (14.00) dari Visitor Baluran.");
 
   // Parallax subtle calculation
   const isScrolled = scrollY > 0 && !reducedMotion;
@@ -91,7 +91,7 @@ export default function Hero() {
 
           {/* Supporting Narrative */}
           <p className="text-xs sm:text-base lg:text-lg text-white/85 max-w-2xl mx-auto leading-relaxed hero-motion-text px-2">
-            Petualangan safari 4x4 santai & ramah keluarga melintasi Evergreen Forest, padang Savana Bekol, hingga Pantai Bama. Semua sudah lengkap — armada Jeep 4x4, BBM, sopir lokal, dan spot foto bebas di atas atap Jeep.
+            Petualangan safari 4x4 santai & ramah keluarga melintasi Evergreen Forest, padang Savana Bekol, hingga Pantai Bama. Tersedia Program Pagi (07.30 WIB) & Program Siang (14.00 WIB) berangkat dari Visitor Baluran.
           </p>
 
           {/* Dual CTAs: Standard comfortable layout */}
@@ -120,7 +120,7 @@ export default function Hero() {
               href="#paket"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 sm:py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm sm:text-base font-medium border border-white/20 transition-all duration-200"
             >
-              <span>Lihat Paket & Tarif ↓</span>
+              <span>Lihat Jadwal & Paket ↓</span>
             </a>
           </div>
 
@@ -131,7 +131,9 @@ export default function Hero() {
               <strong className="text-[#F59E0B]">4.9</strong> on Google (180+ ulasan)
             </span>
             <span className="text-white/40">•</span>
-            <span className="whitespace-nowrap">Tanpa perantara calo</span>
+            <span className="whitespace-nowrap font-medium text-amber-300">Program Pagi 07.30 & Siang 14.00</span>
+            <span className="text-white/40">•</span>
+            <span className="whitespace-nowrap">Visitor Baluran</span>
           </div>
 
         </div>

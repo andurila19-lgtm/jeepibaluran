@@ -97,6 +97,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "sJN1ESlb123mrKs37L5nJnkCXnJhUwC0X1InuvMRr90",
+  },
 };
 
 const jsonLd = {
@@ -130,7 +133,7 @@ const jsonLd = {
       "priceRange": "Rp 597.000",
       "currenciesAccepted": "IDR",
       "paymentAccepted": "Cash, QRIS, Bank Transfer",
-      "openingHours": "Mo-Su 05:00-18:00",
+      "openingHours": "Mo-Su 07:00-18:00",
       "areaServed": [
         {
           "@type": "Place",
@@ -172,8 +175,8 @@ const jsonLd = {
     {
       "@type": "TouristTrip",
       "@id": "https://jeepbaluran.reaksy.com/#trip-shuttle",
-      "name": "Paket Shuttle Safari Baluran (PP 3-4 Jam)",
-      "description": "Layanan sewa Jeep 4x4 kapasitas ideal 5 orang pulang pergi dari Pos Batangan ke Evergreen Forest, Savana Bekol, dan Pantai Bama.",
+      "name": "Paket Safari Jeep Baluran (Program Pagi 07.30 & Program Siang 14.00)",
+      "description": "Layanan sewa Jeep 4x4 kapasitas ideal 5 orang pulang pergi berangkat dari Visitor Baluran ke Evergreen Forest, Savana Bekol, dan Pantai Bama.",
       "touristType": "Keluarga, Sahabat, Wisatawan Nusantara & Mancanegara",
       "offers": {
         "@type": "Offer",
@@ -189,10 +192,10 @@ const jsonLd = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Kapan waktu terbaik menyewa Jeep untuk melihat satwa di Savana Bekol Baluran?",
+          "name": "Jam berapa jadwal keberangkatan safari Jeep Baluran?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Waktu terbaik adalah pagi hari pukul 05:30 - 08:00 (Sunrise Safari) saat kawanan rusa, banteng jawa, dan merak keluar merumput, atau sore hari pukul 15:30 - 17:30 menjelang matahari terbenam."
+            "text": "Tersedia 2 jadwal keberangkatan resmi setiap hari dari Visitor Baluran: Program Pagi pukul 07.30 WIB untuk udara sejuk dan momen satwa merumput aktif di Savana Bekol, serta Program Siang pukul 14.00 WIB untuk suasana savana eksotis dan pesisir Pantai Bama saat sore hari."
           }
         },
         {
@@ -205,10 +208,10 @@ const jsonLd = {
         },
         {
           "@type": "Question",
-          "name": "Di mana titik temu (meeting point) sewa Jeep Baluran?",
+          "name": "Di mana titik keberangkatan dan kumpul sewa Jeep Baluran?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Meeting point utama berada di Pos Batangan (Gerbang Masuk TN Baluran). Kami juga melayani penjemputan dari hotel/stasiun di Banyuwangi atau Ketapang sesuai kesepakatan."
+            "text": "Titik keberangkatan dan kumpul resmi berlokasi di Visitor Baluran (area gerbang masuk utama Pos Batangan). Untuk paket private jemput kota, titik penjemputan dari hotel atau stasiun Banyuwangi disesuaikan menuju jadwal safari di Baluran."
           }
         }
       ]
@@ -224,6 +227,10 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${jakartaSans.variable} ${playfairDisplay.variable} scroll-smooth`}>
       <head>
+        <meta
+          name="google-site-verification"
+          content="sJN1ESlb123mrKs37L5nJnkCXnJhUwC0X1InuvMRr90"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: safeJsonStringify(jsonLd) }}

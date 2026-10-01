@@ -117,6 +117,6 @@ export const config = {
      * - favicon.ico (favicon file)
      * - images / media folders
      */
-    "/((?!_next/static|_next/image|favicon.ico|images/|.*\\.(?:svg|png|jpg|jpeg|gif|webp|mp4|webm)).*)",
+    "/((?!_next/static|_next/image|favicon.ico|images/|.*\\.(?:svg|png|jpg|jpeg|gif|webp|mp4|webm|html|txt)).*)",
   ],
 };

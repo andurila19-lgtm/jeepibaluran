@@ -93,22 +93,22 @@ export default function AboutSection() {
                     <MapPin className="w-4 h-4 text-[#C45525]" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-[#1A1D1A]">Titik Kumpul Utama</p>
+                    <p className="text-xs font-semibold text-[#1A1D1A]">Titik Keberangkatan & Kumpul</p>
                     <p className="text-xs text-[#6E736D] mt-0.5 leading-snug">
-                      Pos Batangan (Visitor Center Pintu Gerbang Masuk TN Baluran KM 35, Banyuwangi - Situbondo).
+                      Visitor Baluran (Pos Batangan, Pintu Gerbang Masuk TN Baluran KM 35, Banyuwangi - Situbondo).
                     </p>
                   </div>
                 </div>
 
-                {/* Jam Operasional */}
+                {/* Jadwal Program */}
                 <div className="flex items-start gap-3.5">
                   <div className="w-8 h-8 rounded-lg bg-[#ECE7DB] flex items-center justify-center shrink-0 mt-0.5 border border-[#DFD9CC]">
                     <Clock className="w-4 h-4 text-[#1A2E22]" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-[#1A1D1A]">Jam Operasional Safari</p>
+                    <p className="text-xs font-semibold text-[#1A1D1A]">Jadwal Program Safari</p>
                     <p className="text-xs text-[#6E736D] mt-0.5 leading-snug">
-                      Buka Setiap Hari: 05:00 - 18:00 WIB (Termasuk Sunrise Safari & Weekend).
+                      Setiap Hari: Program Pagi (07.30 WIB) & Program Siang (14.00 WIB). Keberangkatan dari Visitor Baluran.
                     </p>
                   </div>
                 </div>

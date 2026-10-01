@@ -24,7 +24,7 @@ export const INJECTION_PATTERNS = {
   pathTraversal: /(?:\.\.[\/\\]|\.\.%2f|\.\.%5c|%2e%2e[\/\\]|\/etc\/(?:passwd|shadow|hosts)|(?:win(?:dows)?|winnt)[\/\\]system32)/i,
 
   // Remote Code Execution / Command Injection patterns
-  commandInjection: /(?:;\s*(?:cat|ls|rm|chmod|chown|wget|curl|nc|bash|sh|powershell|cmd\.exe|whoami|id|uname|dir)\b)|(?:\|\s*(?:cat|ls|rm|wget|curl|nc|bash|sh|powershell|cmd|whoami)\b)|(?:\b(curl|wget)\s+https?:\/\/)|(?:`[\s\S]*`)/i,
+  commandInjection: /(?:;\s*(?:cat|ls|rm|chmod|chown|wget|curl|nc|bash|powershell|cmd\.exe|whoami|uname|dir)\b)|(?:;\s*id(?!\s*[-_][a-zA-Z]{2,3}\b)(?:\s+-[a-zA-Z]|\s+[a-zA-Z0-9_]+|\s*$|\s*[;&|]))|(?:\|\s*(?:cat|ls|rm|wget|curl|nc|bash|powershell|cmd|whoami)\b)|(?:\b(?:curl|wget)\s+https?:\/\/)|(?:`[\s\S]*`)/i,
 
   // Prototype Pollution patterns
   prototypePollution: /(?:__proto__|constructor\s*\.\s*prototype|Object\s*\.\s*prototype)/i,

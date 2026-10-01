@@ -33,12 +33,12 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
       time: "Menit ke-0",
       duration: "15 - 20 Menit",
       distance: "KM 0.0",
-      shortName: "Pos Batangan",
-      mobileName: "Batangan",
-      name: "Pos Batangan (Visitor Center Baluran)",
-      role: "Titik Kumpul, Tiket & Briefing",
-      desc: "Titik temu resmi perjalanan safari Anda di gerbang masuk utama TN Baluran. Bertemu driver Jeep 4x4 lokal kami, pengecekan tiket resmi, dan persiapan briefing santai sebelum start.",
-      badge: "Titik Kumpul Resmi",
+      shortName: "Visitor Baluran",
+      mobileName: "Visitor",
+      name: "Visitor Baluran (Pos Batangan)",
+      role: "Titik Keberangkatan (Pagi 07.30 & Siang 14.00)",
+      desc: "Titik kumpul & keberangkatan safari resmi di Visitor Baluran (Pos Batangan). Bertemu driver Jeep 4x4 lokal kami, pengecekan tiket resmi, dan persiapan briefing santai sebelum start.",
+      badge: "Titik Keberangkatan Resmi",
       badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-300",
       pinBg: "bg-emerald-700 text-white",
       image: "/images/jeep-baluran-kuning-front.webp",
@@ -128,9 +128,9 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
       distance: "KM 30.0 (PP)",
       shortName: "Kembali / Finish",
       mobileName: "Finish",
-      name: "Kembali ke Pos Batangan (Finish)",
+      name: "Kembali ke Visitor Baluran (Finish)",
       role: "Selesai Trip Safari Pulang Pergi (PP)",
-      desc: "Tiba kembali di gerbang utama Pos Batangan dengan aman dan membawa banyak koleksi foto estetik. Driver kami siap mengantar Anda kembali ke kendaraan pribadi.",
+      desc: "Tiba kembali di titik kumpul Visitor Baluran (Pos Batangan) dengan aman dan membawa banyak koleksi foto estetik. Driver kami siap mengantar Anda kembali ke kendaraan pribadi.",
       badge: "Selesai PP Lengkap",
       badgeColor: "bg-[#1B211E] text-white border-[#1B211E]",
       pinBg: "bg-[#1B211E] text-white",
@@ -166,7 +166,7 @@ export default function GoogleMapsRoute({ embedded = false }: GoogleMapsRoutePro
               <span>Rundown Rute Google Maps 4x4</span>
             </div>
             <h3 className="text-lg sm:text-xl font-bold tracking-tight text-white flex items-center gap-2">
-              <span>Pos Batangan</span>
+              <span>Visitor Baluran</span>
               <span className="text-white/40">⇄</span>
               <span>Savana Bekol & Bama</span>
               <span className="text-xs font-normal text-white/60 hidden sm:inline">(PP ±30 KM)</span>

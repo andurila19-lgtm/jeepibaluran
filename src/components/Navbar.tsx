@@ -4,14 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { MessageCircle, Menu, X, Compass, Shield } from "lucide-react";
+import { MessageCircle, Menu, X, Compass, Shield, Home } from "lucide-react";
 import { trackWhatsAppClick } from "@/lib/analytics";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const navLinks = [
+  const desktopNavLinks = [
     { name: "PAKET SAFARI", href: "/paket" },
     { name: "TENTANG", href: "/tentang" },
     { name: "ULASAN", href: "/#faq" },
@@ -19,9 +19,14 @@ export default function Navbar() {
     { name: "LOKASI", href: "/kontak" },
   ];
 
+  const mobileNavLinks = [
+    { name: "BERANDA", href: "/" },
+    ...desktopNavLinks,
+  ];
+
   const waUrl =
     "https://wa.me/6285204572677?text=" +
-    encodeURIComponent("Halo Kak, saya ingin booking / tanya jadwal ketersediaan armada Jeep Baluran.");
+    encodeURIComponent("Halo Kak, saya ingin booking / tanya ketersediaan armada Jeep Baluran untuk Program Pagi (07.30) / Siang (14.00).");
 
   return (
     <header
@@ -58,7 +63,7 @@ export default function Navbar() {
 
           {/* Center Navigation Links (Uppercase & Letterspaced) */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((item) => {
+            {desktopNavLinks.map((item) => {
               const isActive =
                 pathname === item.href ||
                 (item.href !== "/" && pathname.startsWith(item.href));
@@ -144,28 +149,46 @@ export default function Navbar() {
 
           {/* Floating Dropdown Drawer (100% Solid Opaque, No Transparency) */}
           <div className="absolute top-full left-0 w-full bg-[#0B1319] border-b border-white/15 px-5 py-5 space-y-4 shadow-2xl z-50 lg:hidden animate-fade-in">
-            <nav className="flex flex-col space-y-2">
-              {navLinks.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="py-2.5 px-3 text-xs font-bold uppercase tracking-wider rounded-lg text-white/90 hover:text-[#F59E0B] hover:bg-white/5 transition-colors flex items-center justify-between"
-                >
-                  <span>{item.name}</span>
-                  {item.href === "/paket" && (
-                    <span className="text-[10px] bg-[#F59E0B]/20 text-[#F59E0B] px-2 py-0.5 rounded font-mono font-bold">
-                      597rb PP
+            <nav className="flex flex-col space-y-1.5">
+              {mobileNavLinks.map((item) => {
+                const isActive =
+                  item.href === "/"
+                    ? pathname === "/"
+                    : pathname === item.href || (item.href !== "/#faq" && pathname.startsWith(item.href));
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`py-2.5 px-3 text-xs font-bold uppercase tracking-wider rounded-lg transition-colors flex items-center justify-between ${
+                      isActive
+                        ? "text-[#F59E0B] bg-white/10"
+                        : "text-white/90 hover:text-[#F59E0B] hover:bg-white/5"
+                    }`}
+                  >
+                    <span className="flex items-center gap-2.5">
+                      {item.href === "/" && <Home className="w-3.5 h-3.5 text-[#F59E0B] shrink-0" />}
+                      <span>{item.name}</span>
                     </span>
-                  )}
-                </Link>
-              ))}
+                    {item.href === "/" && (
+                      <span className="text-[10px] text-white/50 font-normal lowercase tracking-normal">
+                        home
+                      </span>
+                    )}
+                    {item.href === "/paket" && (
+                      <span className="text-[10px] bg-[#F59E0B]/20 text-[#F59E0B] px-2 py-0.5 rounded font-mono font-bold">
+                        597rb PP
+                      </span>
+                    )}
+                  </Link>
+                );
+              })}
             </nav>
 
             <div className="pt-3 border-t border-white/10 space-y-3">
               <div className="text-xs text-white/70 flex items-center justify-between px-1">
-                <span>📍 Pos Batangan (KM 35)</span>
-                <span className="text-[#F59E0B] font-bold">05:00 - 18:00 WIB</span>
+                <span>📍 Visitor Baluran</span>
+                <span className="text-[#F59E0B] font-bold">Pagi 07.30 · Siang 14.00</span>
               </div>
 
               <a

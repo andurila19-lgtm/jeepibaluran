@@ -137,15 +137,15 @@ export default function TentangPage() {
               <div className="space-y-3 text-xs sm:text-sm text-charcoal-muted">
                 <div className="flex items-start gap-2.5">
                   <MapPin className="w-4 h-4 text-earth shrink-0 mt-0.5" />
-                  <span><strong>Pos Batangan</strong> (Pintu Gerbang Utama TN Baluran), Jl. Raya Banyuwangi - Situbondo KM 35, Jawa Timur.</span>
+                  <span><strong>Visitor Baluran</strong> (Gerbang Utama Pos Batangan KM 35), Jl. Raya Banyuwangi - Situbondo, Jawa Timur.</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <span className="w-4 text-center font-bold text-olive">WA:</span>
                   <span><strong>0852-0457-2677</strong> (Fast Response Pemilik)</span>
                 </div>
                 <div className="flex items-start gap-2.5">
-                  <span className="w-4 text-center font-bold text-olive">Jam:</span>
-                  <span>Setiap hari: 05:00 - 18:00 WIB</span>
+                  <span className="w-4 text-center font-bold text-olive">Jadwal:</span>
+                  <span>Program Pagi (07.30 WIB) & Program Siang (14.00 WIB) setiap hari dari Visitor Baluran</span>
                 </div>
               </div>
 
